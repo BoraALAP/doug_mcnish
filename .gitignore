@@ -10,3 +10,4 @@ yarn-error.log
 .google/
 .env
 .env.*
+client_secret.json
