@@ -5,8 +5,7 @@ import { ChevronLeft } from 'react-feather'
 
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
-import Layout from '../components/Layout'
-import './SinglePost.css'
+import Layout from '../components/Global/Layout'
 
 export const SinglePostTemplate = ({
   title,

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
-import './Form.css'
+
 import StoreContext from '../context/StoreContext'
 
 const ProductForm = ({ product }) => {

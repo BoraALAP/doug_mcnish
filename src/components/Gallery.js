@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { PhotoSwipe } from 'react-photoswipe'
-import Image from './Image'
+import Image from './UI/Image'
 
 import _kebabCase from 'lodash/kebabCase'
 
-import './Gallery.css'
-import 'react-photoswipe/lib/photoswipe.css'
+// import './Gallery.css'
+// import 'react-photoswipe/lib/photoswipe.css'
 
 export const query = graphql`
   fragment Gallery on MarkdownRemark {

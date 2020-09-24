@@ -4,7 +4,6 @@ import Image from 'gatsby-image'
 
 import StoreContext from '../context/StoreContext'
 
-import './ProductGrid.css'
 
 const ProductGrid = () => {
   const {

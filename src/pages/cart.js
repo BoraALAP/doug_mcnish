@@ -2,7 +2,7 @@ import React from 'react'
 
 
 import PageHeader from '../components/PageHeader'
-import Layout from '../components/Layout'
+import Layout from '../components/Global/Layout'
 
 import Cart from '../components/Cart'
 

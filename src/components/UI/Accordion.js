@@ -3,7 +3,6 @@ import ChevronDown from 'react-feather/dist/icons/chevron-down'
 import _kebabCase from 'lodash/kebabCase'
 import remark from 'remark'
 import remarkHTML from 'remark-html'
-import './Accordion.css'
 
 export default class Accordion extends React.Component {
   static defaultProps = {

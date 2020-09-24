@@ -4,8 +4,8 @@ import _ from 'lodash'
 import PageHeader from '../components/PageHeader'
 import PostSection from '../components/PostSection'
 import Content from '../components/Content'
-import Layout from '../components/Layout'
-import Accordion from '../components/Accordion'
+import Layout from '../components/Global/Layout'
+import Accordion from '../components/UI/Accordion'
 
 export const convertProductsToPostFormat = products => {
   let formattedProducts = []

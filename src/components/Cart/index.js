@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem'
-import './Cart.css'
+
 
 const Cart = () => {
   const {

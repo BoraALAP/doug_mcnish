@@ -4,11 +4,11 @@ import { graphql, Link } from 'gatsby'
 import { ChevronLeft } from 'react-feather'
 
 
-import Layout from '../components/Layout'
+import Layout from '../components/Global/Layout'
 import ProductForm from '../components/ProductForm'
 import ProductGalleryThumbnails from '../components/ProductGalleryThumbnails'
 
-import './ProductPage.css'
+
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
         title
         price
         availableForSale
-        compareAtPrice
+        # compareAtPrice
         shopifyId
         selectedOptions {
           name

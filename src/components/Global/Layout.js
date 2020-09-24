@@ -1,15 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { useState } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import styled, { ThemeProvider } from "styled-components"
+import GlobalStyle from "../../styles/global"
+import { primaryTheme, secondaryTheme } from "../../styles/theme"
 import Meta from './Meta'
 import Nav from './Nav'
 import Footer from './Footer'
-import ContextProvider from '../provider/ContextProvider'
+import ContextProvider from '../../provider/ContextProvider'
 
-import 'modern-normalize/modern-normalize.css'
-import './globalStyles.css'
+
 
 export default ({ children, meta, title }) => {
+  // eslint-disable-next-line
+  const [mode, setMode] = useState(true)
   return (
     <ContextProvider>
       <StaticQuery
@@ -48,11 +52,12 @@ export default ({ children, meta, title }) => {
                 ? data.allPosts.edges.map(post => {
                     return { ...post.node.fields, ...post.node.frontmatter }
                   })
-                : false,
+                : false
             }
 
           return (
-            <Fragment>
+            <ThemeProvider theme={mode ? primaryTheme : secondaryTheme}>
+              <GlobalStyle />
               <Helmet
                 defaultTitle={`${title} | ${siteTitle}`}
                 titleTemplate={`%s | ${siteTitle}`}
@@ -83,10 +88,14 @@ export default ({ children, meta, title }) => {
               <Fragment>{children}</Fragment>
 
               <Footer />
-            </Fragment>
+            </ThemeProvider>
           )
         }}
       />
     </ContextProvider>
   )
 }
+
+const Fragment = styled.div`
+  display: grid;
+`

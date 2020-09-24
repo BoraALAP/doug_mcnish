@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import Marked from 'react-markdown'
 import PropTypes from 'prop-types'
-import Image from './Image'
+import Image from './UI/Image'
 
-import './Content.css'
+
 
 const encodeMarkdownURIs = (source = '') => {
   const markdownLinkRegex = /\[(.+)\]\((.+)(".+)\)/g

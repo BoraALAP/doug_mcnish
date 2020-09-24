@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'gatsby-image'
-import './ProductGalleryThumbnails.css'
+
 
 const ProductGalleryThumbnails = ({ productimages }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
