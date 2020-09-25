@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
   p{
     font-size: 0.875em;
     max-width: 600px;
+    line-height: 2em;
     color: ${({ theme }) => theme.color.secondary};
   }
 

@@ -12,6 +12,12 @@ module.exports = {
     siteUrl: 'https://github.com/BoraALAP/doug_mcnish',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     'gatsby-transformer-yaml',
     {
       resolve: `gatsby-source-shopify`,

@@ -2,7 +2,7 @@
 template: HomePage
 slug: ''
 title: headless - the shopify + gatsby starter theme for digital commerce
-featuredImage: './images/headless_hero.jpg'
+featuredImage: './images/headerImage.jpg'
 subtitle: >-
   ## the shopify + gatsby starter theme for digital commerce
 

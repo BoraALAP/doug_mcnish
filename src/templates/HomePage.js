@@ -1,11 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
-import PageHeader from '../components/PageHeader'
-import PostSection from '../components/PostSection'
-import Content from '../components/Content'
+import styled from 'styled-components'
+
+
+// import PageHeader from '../components/PageHeader'
+// import PostSection from '../components/PostSection'
+// import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
-import Accordion from '../components/UI/Accordion'
+// import Accordion from '../components/UI/Accordion'
+import FullWidthImage from '../components/Component/FullWidthImage'
+import HomeAbout from '../components/Component/HomeAbout'
+import Partnership from '../components/Component/Partnership'
+
+
 
 export const convertProductsToPostFormat = products => {
   let formattedProducts = []
@@ -27,7 +35,7 @@ export const convertProductsToPostFormat = products => {
 }
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ({
+export const HomePageTemplate = ( {
   title,
   subtitle,
   featuredImage,
@@ -35,9 +43,22 @@ export const HomePageTemplate = ({
   accordion,
   posts,
   products,
-}) => (
-  <main className="Home">
-    <PageHeader
+  headerImage,
+  aboutImage,
+  partner1,
+partner2,
+partner3
+}) => {
+  return(
+  <Main>
+    <FullWidthImage featuredImage={headerImage.fluid} />
+    <LayoutS>
+    <HomeAbout featuredImage={aboutImage.fluid}/>
+    <Partnership partner1={partner1.fixed} partner2={partner2.fixed} partner3={partner3.fixed}/>
+    </LayoutS>
+    
+
+    {/* <PageHeader
       large
       title={title}
       subtitle={subtitle}
@@ -48,9 +69,9 @@ export const HomePageTemplate = ({
       <div className="container">
         <Content source={body} />
       </div>
-    </section>
+    </section> */}
 
-    {!!products.length && convertProductsToPostFormat(products) && (
+    {/* {!!products.length && convertProductsToPostFormat(products) && (
       <section className="section">
         <div className="container">
           <PostSection
@@ -59,9 +80,9 @@ export const HomePageTemplate = ({
           />
         </div>
       </section>
-    )}
+    )} */}
 
-    <section className="section">
+    {/* <section className="section">
       <div className="container">
         <PostSection title="features" />
         <Accordion title="features" items={accordion} />
@@ -74,12 +95,14 @@ export const HomePageTemplate = ({
           <PostSection title="Recent Blog Posts" posts={posts} />
         </div>
       </section>
-    )}
-  </main>
-)
+    )} */}
+  </Main>
+)}
 
 // Export Default HomePage for front-end
-const HomePage = ({ data: { page, posts, products, projects } }) => (
+const HomePage = ({ data: { page, posts, products, projects, headerImage,aboutImage, partner1, partner2, partner3 } }) => {
+
+  return (
   <Layout meta={page.frontmatter.meta || false}>
     <HomePageTemplate
       {...page}
@@ -93,9 +116,14 @@ const HomePage = ({ data: { page, posts, products, projects } }) => (
       products={products.edges.map(service => ({
         ...service.node,
       }))}
+      headerImage={headerImage.childImageSharp}
+      aboutImage={aboutImage.childImageSharp}
+      partner1={partner1.childImageSharp}
+      partner2={partner2.childImageSharp}
+      partner3={partner3.childImageSharp}
     />
   </Layout>
-)
+)}
 
 export default HomePage
 
@@ -158,5 +186,68 @@ export const pageQuery = graphql`
         }
       }
     }
+  
+
+    headerImage: file(relativePath: { eq: "headerImage.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    aboutImage: file(relativePath: { eq: "doug.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    partner1: file(relativePath: { eq: "evviva.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(height: 70) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    partner2: file(relativePath: { eq: "neontiger.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(height: 70) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    partner3: file(relativePath: { eq: "sweden.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(height: 70) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
+
+
+
+
+const Main = styled.main`
+
+`
+
+const LayoutS = styled.div`
+  display: grid;
+  padding: 0 ${({ theme }) => theme.pagePaddingM};
+  box-sizing: border-box;
+  @media screen and (min-width: 768px){
+  padding: 0 ${({ theme }) => theme.pagePaddingD};
   }
 `

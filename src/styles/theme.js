@@ -8,17 +8,19 @@ export const primaryTheme = {
 
   paddingW: "5vw",
   paddingH: "5vh",
-  pagePaddingW: "5vh 5vw",
+  pagePaddingM: "5vh 5vw",
   pagePaddingD: "2.5vh 2.5vw",
   color: {
     primary: "hsl(0, 0%, 0%)",
-    secondary: "hsl(0, 0%, 22%)",
+    secondary: "hsl(0, 0%, 35%)",
+    accent: "hsl(21, 99%, 31%)",
     grey: "hsl(0, 0%, 50%)",
     lightGrey: "hsl(0, 0%, 60%)",
     bg: "hsl(0, 0%, 100%)",
     negative: "hsl(0, 0%, 0%)",
     boxShadow: "hsla(0, 0%, 0%, 20%)",
     positive: "hsl(0, 0%, 100%)",
+    goldGradient: "linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
   },
 };
 

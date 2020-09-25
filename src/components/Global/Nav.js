@@ -71,7 +71,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: stretch;
   background-color: ${({ theme }) => theme.color.bg};
-  padding: ${({ theme }) => theme.pagePaddingW};
+  padding: ${({ theme }) => theme.pagePaddingM};
   position: fixed;
   height: ${props => (props.active ? '100%' : 'auto')};
   align-content: start;
@@ -80,6 +80,7 @@ const Header = styled.header`
   top: 0;
   width: 100%;
   box-sizing: border-box;
+  z-index: 1000;
 
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
