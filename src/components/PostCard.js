@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import styled from 'styled-components'
 import Image from './UI/Image'
-
+import Button from './UI/Button'
 
 const PostCard = ({
   featuredImage,
@@ -11,25 +11,54 @@ const PostCard = ({
   date,
   client,
   slug,
+  price,
   categories = [],
   className = '',
   ...props
 }) => (
-  <Link to={slug} className={`PostCard ${className}`}>
+  <Container to={slug}>
     {featuredImage && (
-      <div className="PostCard--Image relative">
+      <div>
         <Image background src={featuredImage} alt={title} />
       </div>
     )}
-    <div className="PostCard--Content">
-      {title && <h3 className="PostCard--Title">{title}</h3>}
-      <div className="PostCard--Category">
+    <Text>
+      {title && <h3>{title}</h3>}
+      {/* <div>
         {date} <br />
-      </div>
-      <div className="PostCard--Date"></div>
-      {excerpt && <div className="PostCard--Excerpt">{excerpt}</div>}
-    </div>
-  </Link>
+      </div> */}
+
+      {excerpt && <p>{excerpt}</p>}
+    </Text>
+    <ButtonS>Buy Now - {price}</ButtonS>
+  </Container>
 )
 
+
+
+const Container = styled(Link)`
+  display: grid;
+  text-decoration: none;
+  align-content: space-between;
+  transition: ${({ theme }) => theme.transition};
+  &:hover{
+  box-shadow: ${({ theme }) => theme.boxShadow};
+
+  }
+`
+const Text = styled.div`
+  display: grid;
+  padding: 16px;
+  grid-gap: 8px;
+  align-self: start;
+  h3,
+  p {
+    margin: 0;
+  }
+`
+
+const ButtonS = styled(Button)`
+  display: grid;
+  align-self: end;
+`
 export default PostCard

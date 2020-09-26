@@ -46,12 +46,13 @@ const HomeAbout = ({ featuredImage }) => {
 const Container = styled.div`
   display: grid;
   align-items: flex-end;
-  margin: 64px 0;
+  
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-gap: 64px;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 2fr 3fr;
     border-bottom: 1px solid ${({ theme }) => theme.color.accent};
+    justify-self: center;
   }
 `
 

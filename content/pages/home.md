@@ -1,10 +1,10 @@
 ---
 template: HomePage
 slug: ''
-title: headless - the shopify + gatsby starter theme for digital commerce
+title: Home Page
 featuredImage: './images/headerImage.jpg'
 subtitle: >-
-  ## the shopify + gatsby starter theme for digital commerce
+  
 
 accordion:
   - content: >-
@@ -21,8 +21,8 @@ accordion:
     title: download theme for free (today!)
 meta:
   description: >-
-    the shopify + gatsby starter theme for digital commerce
-  title: headless
+    
+  title: Doug McNish
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 template: DefaultPage
 slug: about
-title: about us
+title: About Doug
 subtitle: Ecomloop helps uncommon businesses succeed in the digital economy
 featuredImage: '../images/ecomloop_ecommerce_development_notes.png'
 ---

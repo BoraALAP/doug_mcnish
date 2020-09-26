@@ -5,11 +5,12 @@ export const primaryTheme = {
       body: "'Open Sans', sans-serif"
     },
   },
-
+  boxShadow: "0 10px 28px hsla(0, 0%, 0%, 20%), 0 6px 10px hsla(0, 0%, 0%, 20%)",
   paddingW: "5vw",
   paddingH: "5vh",
-  pagePaddingM: "5vh 5vw",
-  pagePaddingD: "2.5vh 2.5vw",
+  pagePadding: "5vh 5vw",
+  pagePaddingH: "2.5vh 2.5vw",
+  transition: "all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)",
   color: {
     primary: "hsl(0, 0%, 0%)",
     secondary: "hsl(0, 0%, 35%)",

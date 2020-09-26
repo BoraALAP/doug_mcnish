@@ -3,17 +3,16 @@ import { graphql } from 'gatsby'
 import _ from 'lodash'
 import styled from 'styled-components'
 
-
 // import PageHeader from '../components/PageHeader'
-// import PostSection from '../components/PostSection'
+import PostSection from '../components/PostSection'
 // import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
 // import Accordion from '../components/UI/Accordion'
 import FullWidthImage from '../components/Component/FullWidthImage'
 import HomeAbout from '../components/Component/HomeAbout'
 import Partnership from '../components/Component/Partnership'
-
-
+import Hashtag from '../components/Component/Hashtag'
+import ContentLayout from '../components/Global/ContentLayout'
 
 export const convertProductsToPostFormat = products => {
   let formattedProducts = []
@@ -21,21 +20,22 @@ export const convertProductsToPostFormat = products => {
     let singleItem = {
       title: service.title,
       excerpt: _.truncate(service.description, {
-        length: 140,
-        omission: `…`,
+        length: 100,
+        omission: `…`
       }),
       featuredImage: service.images[0].originalSrc,
       slug: '/product/' + service.handle,
+      productType: service.productType,
+      price: service.variants[0].price
     }
     formattedProducts.push(singleItem)
   })
 
-  return formattedProducts;
-
+  return formattedProducts
 }
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ( {
+export const HomePageTemplate = ({
   title,
   subtitle,
   featuredImage,
@@ -46,19 +46,33 @@ export const HomePageTemplate = ( {
   headerImage,
   aboutImage,
   partner1,
-partner2,
-partner3
+  partner2,
+  partner3,
+  kaleImage
 }) => {
-  return(
-  <Main>
-    <FullWidthImage featuredImage={headerImage.fluid} />
-    <LayoutS>
-    <HomeAbout featuredImage={aboutImage.fluid}/>
-    <Partnership partner1={partner1.fixed} partner2={partner2.fixed} partner3={partner3.fixed}/>
-    </LayoutS>
-    
+  console.log(products)
+  return (
+    <Main>
+      <FullWidthImage featuredImage={headerImage.fluid} />
+      <ContentLayout>
+        <HomeAbout featuredImage={aboutImage.fluid} />
+        <Partnership
+          partner1={partner1.fixed}
+          partner2={partner2.fixed}
+          partner3={partner3.fixed}
+        />
+        <Hashtag featuredImage={kaleImage.fluid} />
+        {!!products.length && convertProductsToPostFormat(products) && (
+          <PostSection
+            title="Books"
+            posts={convertProductsToPostFormat(products)}
+            limit={4}
+            type="book"
+          />
+        )}
+      </ContentLayout>
 
-    {/* <PageHeader
+      {/* <PageHeader
       large
       title={title}
       subtitle={subtitle}
@@ -71,18 +85,7 @@ partner3
       </div>
     </section> */}
 
-    {/* {!!products.length && convertProductsToPostFormat(products) && (
-      <section className="section">
-        <div className="container">
-          <PostSection
-            title="demo shop"
-            posts={convertProductsToPostFormat(products)}
-          />
-        </div>
-      </section>
-    )} */}
-
-    {/* <section className="section">
+      {/* <section className="section">
       <div className="container">
         <PostSection title="features" />
         <Accordion title="features" items={accordion} />
@@ -96,34 +99,49 @@ partner3
         </div>
       </section>
     )} */}
-  </Main>
-)}
+    </Main>
+  )
+}
 
 // Export Default HomePage for front-end
-const HomePage = ({ data: { page, posts, products, projects, headerImage,aboutImage, partner1, partner2, partner3 } }) => {
-
+const HomePage = ({
+  data: {
+    page,
+    posts,
+    products,
+    projects,
+    headerImage,
+    aboutImage,
+    partner1,
+    partner2,
+    partner3,
+    kaleImage
+  }
+}) => {
   return (
-  <Layout meta={page.frontmatter.meta || false}>
-    <HomePageTemplate
-      {...page}
-      {...page.frontmatter}
-      body={page.html}
-      posts={posts.edges.map(post => ({
-        ...post.node,
-        ...post.node.frontmatter,
-        ...post.node.fields,
-      }))}
-      products={products.edges.map(service => ({
-        ...service.node,
-      }))}
-      headerImage={headerImage.childImageSharp}
-      aboutImage={aboutImage.childImageSharp}
-      partner1={partner1.childImageSharp}
-      partner2={partner2.childImageSharp}
-      partner3={partner3.childImageSharp}
-    />
-  </Layout>
-)}
+    <Layout meta={page.frontmatter.meta || false}>
+      <HomePageTemplate
+        {...page}
+        {...page.frontmatter}
+        body={page.html}
+        posts={posts.edges.map(post => ({
+          ...post.node,
+          ...post.node.frontmatter,
+          ...post.node.fields
+        }))}
+        products={products.edges.map(service => ({
+          ...service.node
+        }))}
+        headerImage={headerImage.childImageSharp}
+        aboutImage={aboutImage.childImageSharp}
+        partner1={partner1.childImageSharp}
+        partner2={partner2.childImageSharp}
+        partner3={partner3.childImageSharp}
+        kaleImage={kaleImage.childImageSharp}
+      />
+    </Layout>
+  )
+}
 
 export default HomePage
 
@@ -170,23 +188,23 @@ export const pageQuery = graphql`
       }
     }
 
-    products: allShopifyProduct(
-      sort: { fields: publishedAt, order: DESC }
-      limit: 3
-    ) {
+    products: allShopifyProduct(sort: { fields: publishedAt, order: DESC }) {
       edges {
         node {
           id
           title
           description
+          productType
           images {
             originalSrc
           }
           handle
+          variants {
+            price
+          }
         }
       }
     }
-  
 
     headerImage: file(relativePath: { eq: "headerImage.jpg" }) {
       childImageSharp {
@@ -233,21 +251,19 @@ export const pageQuery = graphql`
         }
       }
     }
+    kaleImage: file(relativePath: { eq: "kaleImage.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
-
-
-
 
 const Main = styled.main`
-
-`
-
-const LayoutS = styled.div`
+  grid-gap: 80px;
   display: grid;
-  padding: 0 ${({ theme }) => theme.pagePaddingM};
-  box-sizing: border-box;
-  @media screen and (min-width: 768px){
-  padding: 0 ${({ theme }) => theme.pagePaddingD};
-  }
 `

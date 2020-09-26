@@ -10,13 +10,13 @@ export default () => (
 )
 
 const Footer = styled.footer`
-  padding: ${({ theme }) => theme.pagePaddingM};
+  padding: ${({ theme }) => theme.pagePadding};
   background: ${({ theme }) => theme.color.goldGradient};
   display: grid;
 
   @media screen and (min-width: 768px) {
     justify-content: end;
-    padding: ${({ theme }) => theme.pagePaddingD};
+    padding: ${({ theme }) => theme.pagePaddingH};
   }
   span {
     font-size: 0.65em;

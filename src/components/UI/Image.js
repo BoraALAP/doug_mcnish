@@ -93,6 +93,7 @@ class Image extends React.Component {
           this.state.isIntersecting ? fullSrc : smallSrc
         })`,
         backgroundSize,
+        height: "25vw"
       }
     }
 
@@ -101,11 +102,12 @@ class Image extends React.Component {
         {isUploadcare && lazy && (
           <Observer onChange={this.handleIntersection}>
             <div
-              className="BackgroundImage"
+             
               ref={this.ref}
               style={{
                 backgroundImage: `url(${smallSrc})`,
                 backgroundSize: 'cover',
+                height: "25vw"
               }}
             >
               {!background && (
