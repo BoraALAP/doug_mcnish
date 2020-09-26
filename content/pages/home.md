@@ -1,7 +1,7 @@
 ---
 template: HomePage
 slug: ""
-title: headless - the shopify + gatsby starter theme for digital commerce
+title: Home - the shopify + gatsby starter theme for digital commerce
 featuredImage: https://ucarecdn.com/08628fae-c831-4e08-8074-2d51c9cbbc11/
 subtitle: "## the shopify + gatsby starter theme for digital commerce"
 accordion:
