@@ -1,15 +1,9 @@
 import React from 'react'
 import Layout from '../components/Global/Layout'
-import PageHeader from '../components/PageHeader'
-import ProductGrid from '../components/ProductGrid'
+import ProductGrid from '../components/Shop/ProductGrid'
 
 const ServicesPage = () => (
   <Layout>
-    <PageHeader
-      title="shop the demo store"
-      subtitle="check out the aweswome products"
-      backgroundImage="../UI/Images/headless_hero.jpg"
-    />
     <section className="section">
       <div className="container">
         <ProductGrid />

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Global/Layout'
 import PageHeader from '../components/PageHeader'
-import ProductGrid from '../components/ProductGrid'
+import ProductGrid from '../components/Shop/ProductGrid'
 
 const ServicesPage = () => (
   <Layout>

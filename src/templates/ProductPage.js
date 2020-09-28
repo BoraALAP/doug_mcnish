@@ -5,8 +5,8 @@ import { ChevronLeft } from 'react-feather'
 
 
 import Layout from '../components/Global/Layout'
-import ProductForm from '../components/ProductForm'
-import ProductGalleryThumbnails from '../components/ProductGalleryThumbnails'
+import ProductForm from '../components/Shop/ProductForm'
+import ProductGalleryThumbnails from '../components/Shop/ProductGalleryThumbnails'
 
 
 

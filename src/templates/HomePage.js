@@ -4,7 +4,7 @@ import _ from 'lodash'
 import styled from 'styled-components'
 
 // import PageHeader from '../components/PageHeader'
-import PostSection from '../components/PostSection'
+// import PostSection from '../components/PostSection'
 // import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
 // import Accordion from '../components/UI/Accordion'
@@ -13,6 +13,7 @@ import HomeAbout from '../components/Component/HomeAbout'
 import Partnership from '../components/Component/Partnership'
 import Hashtag from '../components/Component/Hashtag'
 import ContentLayout from '../components/Global/ContentLayout'
+import ProductGrid from '../components/Shop/ProductGrid'
 
 export const convertProductsToPostFormat = products => {
   let formattedProducts = []
@@ -36,13 +37,6 @@ export const convertProductsToPostFormat = products => {
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({
-  title,
-  subtitle,
-  featuredImage,
-  body,
-  accordion,
-  posts,
-  products,
   headerImage,
   aboutImage,
   partner1,
@@ -50,7 +44,7 @@ export const HomePageTemplate = ({
   partner3,
   kaleImage
 }) => {
-  console.log(products)
+  
   return (
     <Main>
       <FullWidthImage featuredImage={headerImage.fluid} />
@@ -62,14 +56,9 @@ export const HomePageTemplate = ({
           partner3={partner3.fixed}
         />
         <Hashtag featuredImage={kaleImage.fluid} />
-        {!!products.length && convertProductsToPostFormat(products) && (
-          <PostSection
-            title="Books"
-            posts={convertProductsToPostFormat(products)}
-            limit={4}
-            type="book"
-          />
-        )}
+        
+          <ProductGrid type="book"/>
+        
       </ContentLayout>
 
       {/* <PageHeader
@@ -84,6 +73,13 @@ export const HomePageTemplate = ({
         <Content source={body} />
       </div>
     </section> */}
+
+      {/* <PostSection
+          title="Books"
+          posts={convertProductsToPostFormat(products)}
+          limit={4}
+          type="book"
+        /> */}
 
       {/* <section className="section">
       <div className="container">

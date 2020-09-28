@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
 
   html, body{
     font-family: ${({ theme }) => theme.font.family.body};
@@ -20,6 +20,14 @@ const GlobalStyle = createGlobalStyle`
     text-transform: uppercase;
   }
 
+  h1,h2,h3{
+    font-weight: 800;
+  }
+
+  h4,h5,h6{
+    font-weight: 700;
+  }
+
   h1{
     font-size: 1.5em;
     @media screen and (min-width: 768px) {
@@ -31,6 +39,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.25em;
     @media screen and (min-width: 768px) {
       font-size: 2em;
+    }
+  }
+
+  h4{
+    font-size: 1em;
+    color: ${({ theme }) => theme.color.secondary};
+    @media screen and (min-width: 768px) {
+      font-size: 1.125em;
     }
   }
 

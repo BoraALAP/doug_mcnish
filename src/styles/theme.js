@@ -13,7 +13,7 @@ export const primaryTheme = {
   transition: "all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)",
   color: {
     primary: "hsl(0, 0%, 0%)",
-    secondary: "hsl(0, 0%, 35%)",
+    secondary: "hsl(0, 0%, 22%)",
     accent: "hsl(21, 99%, 31%)",
     grey: "hsl(0, 0%, 50%)",
     lightGrey: "hsl(0, 0%, 60%)",
