@@ -47,7 +47,7 @@ const RightImage = ({ featuredImage, title }) => {
 const Container = styled.div`
   display: grid;
   align-items: flex-end;
-  grid-gap: 32px;
+  grid-gap: 2em;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-gap: 64px;
@@ -65,7 +65,7 @@ const Left = styled.div`
 const Right = styled.div`
   max-width: 600px;
   display: grid;
-  grid-gap: 32px;
+  grid-gap: 2em;
   @media screen and (min-width: 768px) {
   }
 `

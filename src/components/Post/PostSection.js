@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import PostCard from '../components/PostCard'
-import Button from './UI/Button'
+import PostCard from './PostCard'
+import Button from '../UI/Button'
 
 const PostSection = props => {
   const { limit, title, posts, showMore, type } = props
@@ -16,9 +16,7 @@ const PostSection = props => {
   } else {
     visiblePosts = posts.slice(0, limit || posts.length)
   }
-
-  console.log(posts)
-
+  
   return (
     <Container>
       {title && <h2>{title}</h2>}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Image from './UI/Image'
-import Button from './UI/Button'
+import Image from '../UI/Image'
+import Button from '../UI/Button'
 
 const PostCard = ({
   featuredImage,
@@ -48,7 +48,7 @@ const Container = styled(Link)`
 `
 const Text = styled.div`
   display: grid;
-  padding: 16px;
+  padding: 1em;
   grid-gap: 8px;
   align-self: start;
   h3,

@@ -98,5 +98,5 @@ export default ({ children, meta, title }) => {
 
 const Fragment = styled.div`
   display: grid;
-  padding: 100px 0;
+  padding: 6em 0;
 `

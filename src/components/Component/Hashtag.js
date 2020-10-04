@@ -51,7 +51,7 @@ const Right = styled.div`
   background: ${({ theme }) => theme.color.goldGradient};
   padding: 2em;
   width: fit-content;
-  grid-gap: 16px;
+  grid-gap: 1em;
   z-index: 20;
   h2,
   p {
@@ -62,7 +62,7 @@ const Right = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: -64px;
     margin-bottom: 64px;
-    max-width: 500px;
+    max-width: 31em;
   }
 `
 

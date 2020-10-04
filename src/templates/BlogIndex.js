@@ -4,8 +4,8 @@ import { Location } from '@reach/router'
 import qs from 'qs'
 
 import PageHeader from '../components/PageHeader'
-import PostSection from '../components/PostSection'
-import PostCategoriesNav from '../components/PostCategoriesNav'
+import PostSection from '../components/Post/PostSection'
+import PostCategoriesNav from '../components/Post/PostCategoriesNav'
 import Layout from '../components/Global/Layout'
 
 /**

@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 
-import StoreContext from '../../context/StoreContext'
+// import StoreContext from '../../context/StoreContext'
 import ProductCard from './ProductCard'
 import Button from '../UI/Button'
 
-const ProductGrid = ({ limit, type="", showMore,title }) => {
+const ProductGrid = ({ limit, type="", showMore, title }) => {
   const [limitNum, setLimitNum] = useState(limit)
 
   // const {
@@ -30,7 +31,7 @@ const ProductGrid = ({ limit, type="", showMore,title }) => {
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 910) {
-                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                      ...GatsbyImageSharpFluid
                     }
                   }
                 }
@@ -44,6 +45,7 @@ const ProductGrid = ({ limit, type="", showMore,title }) => {
       }
     `
   )
+
 
   // const getPrice = price =>
   //   Intl.NumberFormat(undefined, {
@@ -64,7 +66,7 @@ const ProductGrid = ({ limit, type="", showMore,title }) => {
 
   return (
     <Container>
-      {title && <h2>{title}</h2>}
+      {products.length > 0 && title && <h2>{title}</h2>}
       {allShopifyProduct.edges ? (
         <>
         <Products>
@@ -88,6 +90,7 @@ export default ProductGrid
 const Container = styled.div`
   display: grid;
   justify-items: center;
+  grid-gap: 3em;
   @media screen and (min-width: 768px) {
   padding: 0 5vw;
     }
@@ -95,12 +98,20 @@ const Container = styled.div`
 
 const Products = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  grid-gap:5vh;
+  
+  grid-gap:4em;
   width: 100%;
-
+  justify-items: center;
   @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 3fr));
     grid-gap:5vw ;
     }
 `
+
+ProductGrid.propTypes = {
+  type: PropTypes.string,
+  title: PropTypes.string,
+  limit: PropTypes.number,
+  showMore: PropTypes.bool
+};
 

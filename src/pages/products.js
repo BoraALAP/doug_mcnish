@@ -1,15 +1,22 @@
 import React from 'react'
 import Layout from '../components/Global/Layout'
 import ProductGrid from '../components/Shop/ProductGrid'
+import styled from 'styled-components'
 
 const ServicesPage = () => (
   <Layout>
-    <section className="section">
-      <div className="container">
-        <ProductGrid />
-      </div>
-    </section>
+    <Container>
+      <ProductGrid type="book" title="Books" />
+      <ProductGrid type="tshirt" title="Tshirts" />
+      <ProductGrid type="e-book" title="E-Books" />
+    </Container>
   </Layout>
 )
+
+const Container = styled.section`
+  display: grid;
+  grid-gap: 5em;
+  padding: ${({ theme }) => theme.pagePadding};
+`
 
 export default ServicesPage

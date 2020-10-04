@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Image from './UI/Image'
+import Image from '../UI/Image'
 
 
 const PostCard = ({

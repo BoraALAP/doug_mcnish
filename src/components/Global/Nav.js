@@ -51,7 +51,7 @@ const Navigation = props => {
       
         <Nav active={active}>
           <NavLink to="/aboutme/">About Me</NavLink>
-          <NavLink to="/partnerships/">Partnerships</NavLink>
+          {/* <NavLink to="/partnerships/">Partnerships</NavLink> */}
           <NavLink to="/services/">Services</NavLink>
           <NavLink to="/youtube/">Youtube</NavLink>
           <NavLink to="/podcast/">Podcast</NavLink>
@@ -111,13 +111,13 @@ position: ${props => (props.active ? 'initial' : 'absolute')};
   opacity: ${props => (props.active ? '1' : '0')};
   height: ${props => (props.active ? 'auto' : '0')};
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), position 0.3s ease-in 0.6s;
-  padding: 24px 0;
+  padding: 1.5em 0;
 
   @media screen and (min-width: 768px) {
     transform: translateX(0vh);
     position: initial;
     padding: 0;
-    grid-gap: 16px;
+    grid-gap: 1em;
     grid-auto-flow: column;
     height: auto;
     opacity: 1;
@@ -130,7 +130,7 @@ const LinkS = styled(Link)`
   font-size: 0.875em;
   font-family: ${({ theme }) => theme.font.body};
   font-weight: 600;
-  padding: 16px 8px;
+  padding: 1em 8px;
   border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
   @media screen and (min-width: 768px) {
     border-bottom: none;
@@ -141,7 +141,7 @@ const Mobile = styled.button`
   display: grid;
   
   background-color: transparent;
-  padding: 8px 16px;
+  padding: 8px 1em;
   justify-content: end;
   box-shadow: none;
   @media screen and (min-width: 768px) {

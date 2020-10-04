@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import ArrowDown from '../../assets/icons/ArrowDown'
+
+import {ArrowDownCircle} from 'react-feather'
 import Img from 'gatsby-image'
 
 const FullWidthImage = ({ featuredImage }) => {
@@ -14,7 +15,7 @@ const FullWidthImage = ({ featuredImage }) => {
       />
       <Box>
         <span>Scroll Down</span>
-        <ArrowDown />
+        <ArrowDownCircle color="white" size={24} />
       </Box>
     </Container>
   )
@@ -26,7 +27,7 @@ const Container = styled.div`
   
   position: relative;
   .gatsby-image-wrapper{
-    height: 400px;
+    height: 25em;
     @media screen and (min-width: 768px){
    height: 600px;
     }
@@ -42,10 +43,10 @@ const Container = styled.div`
 const Box = styled.div`
   position: absolute;
   background-color: ${({ theme }) => theme.color.negative};
-  padding: 32px;
+  padding: 2em;
   display: grid;
   width: fit-content;
-  grid-gap: 16px;
+  grid-gap: 1em;
   grid-auto-flow: row;
   justify-items: center;
   left: calc(50% - 75px);

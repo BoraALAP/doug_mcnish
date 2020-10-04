@@ -6,55 +6,47 @@ import Img from 'gatsby-image'
 import Button from '../UI/Button'
 
 const ProductCard = ({
-
-  
   images,
-  
   title,
   description,
   handle,
   productType,
-  price
-}
-) => {
-
+  variants
+}) => {
   const excerpt = _.truncate(description, {
     length: 100,
     omission: `…`
   })
 
-return(
-  <Container to={`/product/${handle}`}>
-    { (
-      <div>
-        <Img fluid={ images[0].localFile.childImageSharp.fluid} />
-      </div>
-    )}
-    <Text>
-      {title && <h3>{title}</h3>}
-      {excerpt && <p>{excerpt}</p>}
-
-
+  return (
+    <Container to={`/product/${handle}`}>
+      {
+        <div>
+          {images[0] ? <Img fluid={images[0].localFile.childImageSharp.fluid} /> : <NoImage><p>No Image</p></NoImage>}
+        </div>
+      }
+      <Text>
+        {title && <h3>{title}</h3>}
+        {excerpt && <p>{excerpt}</p>}
       </Text>
-    <ButtonS>Buy Now - {price}</ButtonS>
-  </Container>
-)}
-
-
+      <ButtonS>Buy Now - {variants[0].price}</ButtonS>
+    </Container>
+  )
+}
 
 const Container = styled(Link)`
   display: grid;
   text-decoration: none;
   align-content: space-between;
+  max-width: 31em;
   transition: ${({ theme }) => theme.transition};
-  &:hover{
-  box-shadow: ${({ theme }) => theme.boxShadow};
-
+  &:hover {
+    box-shadow: ${({ theme }) => theme.boxShadow};
   }
 `
 const Text = styled.div`
   display: grid;
-  padding: 16px;
+  padding: 1em;
   grid-gap: 8px;
   align-self: start;
   h3,
@@ -66,5 +58,16 @@ const Text = styled.div`
 const ButtonS = styled(Button)`
   display: grid;
   align-self: end;
+`
+
+const NoImage = styled.div`
+  display: grid;
+  height: 300px;
+  background: ${({ theme }) => theme.color.goldGradient};
+  justify-content:center;
+  align-items:center;
+  p{
+  color: ${({ theme }) => theme.color.positive};
+}
 `
 export default ProductCard

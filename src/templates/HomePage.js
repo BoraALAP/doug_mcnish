@@ -44,7 +44,6 @@ export const HomePageTemplate = ({
   partner3,
   kaleImage
 }) => {
-  
   return (
     <Main>
       <FullWidthImage featuredImage={headerImage.fluid} />
@@ -56,9 +55,7 @@ export const HomePageTemplate = ({
           partner3={partner3.fixed}
         />
         <Hashtag featuredImage={kaleImage.fluid} />
-        
-          <ProductGrid type="book"/>
-        
+        <ProductGrid type="book" />
       </ContentLayout>
 
       {/* <PageHeader

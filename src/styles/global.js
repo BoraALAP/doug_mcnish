@@ -12,12 +12,14 @@ const GlobalStyle = createGlobalStyle`
 
   a{
     color: ${({ theme }) => theme.color.primary};
+    text-decoration: none;
   }
 
   h1,h2,h3,h4,h5,h6{
     font-family: ${({ theme }) => theme.font.family.main};
     color: ${({ theme }) => theme.color.primary};
     text-transform: uppercase;
+    margin: 0;
   }
 
   h1,h2,h3{

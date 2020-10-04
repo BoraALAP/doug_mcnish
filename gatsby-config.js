@@ -19,6 +19,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-yaml',
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-shopify`,
       options: {

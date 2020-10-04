@@ -2,28 +2,31 @@ import React, { useState, useContext, useEffect, useCallback } from 'react'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import StoreContext from '../../context/StoreContext'
+import { Minus, Plus } from 'react-feather'
+import Button from '../UI/Button'
 
 const ProductForm = ({ product }) => {
   const {
     options,
     variants,
     variants: [initialVariant],
-    priceRange: { minVariantPrice },
+    priceRange: { minVariantPrice }
   } = product
   const [variant, setVariant] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
     //store: { client, adding, checkout },
-    store: { client, adding },
+    store: { client }
   } = useContext(StoreContext)
 
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
   const [available, setAvailable] = useState(productVariant.availableForSale)
-/* eslint-disable react-hooks/exhaustive-deps */
+  /* eslint-disable react-hooks/exhaustive-deps */
   const checkAvailability = useCallback(
     productId => {
       client.product.fetch(productId).then(fetchedProduct => {
@@ -38,13 +41,18 @@ const ProductForm = ({ product }) => {
     },
     [client.product, productVariant.shopifyId, variants]
   )
-/* eslint-ensable react-hooks/exhaustive-deps */ 
+  /* eslint-ensable react-hooks/exhaustive-deps */
+
   useEffect(() => {
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-  const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
+  const handleQuantityIncrease = () => {
+    setQuantity(quantity + 1)
+  }
+
+  const handleQuantityDecrease = () => {
+    setQuantity(quantity - 1)
   }
 
   const handleOptionChange = (optionIndex, { target }) => {
@@ -53,7 +61,7 @@ const ProductForm = ({ product }) => {
 
     currentOptions[optionIndex] = {
       ...currentOptions[optionIndex],
-      value,
+      value
     }
 
     const selectedVariant = find(variants, ({ selectedOptions }) =>
@@ -85,9 +93,9 @@ const ProductForm = ({ product }) => {
       selectedOptions: [
         {
           name: name,
-          value: value,
-        },
-      ],
+          value: value
+        }
+      ]
     })
     if (match === undefined) return true
     if (match.availableForSale === true) return false
@@ -97,63 +105,18 @@ const ProductForm = ({ product }) => {
   const price = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,
     minimumFractionDigits: 2,
-    style: 'currency',
+    style: 'currency'
   }).format(variant.price)
 
   const compareAtPrice = Intl.NumberFormat(undefined, {
     currency: minVariantPrice.currencyCode,
     minimumFractionDigits: 2,
-    style: 'currency',
+    style: 'currency'
   }).format(variant.compareAtPrice)
 
   return (
-    <center>
-      {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label className="Form--Label" style={{ width: '33%' }}>
-            {name}
-          </label>
-          <label className="Form--Label has-arrow" style={{ width: '33%' }}>
-            <select
-              name={name}
-              className="Form--Input Form--Select"
-              key={id}
-              onBlur={event => handleOptionChange(index, event)}
-            >
-              {values.map(value => (
-                <option
-                  value={value}
-                  key={`${name}-${value}`}
-                  disabled={checkDisabled(name, value)}
-                >
-                  {value}
-                </option>
-              ))}
-            </select>
-          </label>
-        </React.Fragment>
-      ))}
-      <input
-        type="hidden"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
-      <br />
-      <button
-        type="submit"
-        className="Button"
-        style={{ background: 'var(--midGrey)', color: 'var(--secondary)' }}
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Get Started
-      </button>
-
-      <h3>
+    <Container>
+      <h4>
         {price}
         {`  `}
         {productVariant.compareAtPrice && compareAtPrice !== price && (
@@ -161,11 +124,72 @@ const ProductForm = ({ product }) => {
             {compareAtPrice}
           </span>
         )}
-      </h3>
+      </h4>
       {!available && <p>This Product is out of Stock!</p>}
-    </center>
+      {options > 1 &&
+        options.map(({ id, name, values }, index) => (
+          <React.Fragment key={id}>
+            <label>{name}</label>
+            <label>
+              <select
+                name={name}
+                key={id}
+                onBlur={event => handleOptionChange(index, event)}
+              >
+                {values.map(value => (
+                  <option
+                    value={value}
+                    key={`${name}-${value}`}
+                    disabled={checkDisabled(name, value)}
+                  >
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </React.Fragment>
+        ))}
+      <Quantity>
+        <Minus onClick={handleQuantityDecrease} />
+        <Input
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          value={quantity}
+        />
+        <Plus onClick={handleQuantityIncrease} />
+      </Quantity>
+      <Button onClick={handleAddToCart}>Buy</Button>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  display: grid;
+  grid-gap: 1.5em;
+  justify-content: start;
+  padding: 1em 1em;
+  h4{
+    color: ${({ theme }) => theme.color.secondary};
+  }
+`
+
+const Quantity = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+    grid-gap: 1em;
+    align-items: center;
+`
+
+const Input = styled.input`
+    width: 3em;
+    border: 1px solid ${({ theme }) => theme.color.primary};
+    border-radius: 0;
+    padding: 4px 8px;
+    text-align: center;
+`
 
 ProductForm.propTypes = {
   product: PropTypes.shape({
@@ -176,14 +200,14 @@ ProductForm.propTypes = {
     images: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
-        originalSrc: PropTypes.string,
+        originalSrc: PropTypes.string
       })
     ),
     options: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
         name: PropTypes.string,
-        values: PropTypes.arrayOf(PropTypes.string),
+        values: PropTypes.arrayOf(PropTypes.string)
       })
     ),
     productType: PropTypes.string,
@@ -199,13 +223,13 @@ ProductForm.propTypes = {
         selectedOptions: PropTypes.arrayOf(
           PropTypes.shape({
             name: PropTypes.string,
-            value: PropTypes.string,
+            value: PropTypes.string
           })
-        ),
+        )
       })
-    ),
+    )
   }),
-  addVariantToCart: PropTypes.func,
+  addVariantToCart: PropTypes.func
 }
 
 export default ProductForm

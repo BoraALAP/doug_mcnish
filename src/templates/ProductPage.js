@@ -1,14 +1,13 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import styled from 'styled-components'
 
-import { ChevronLeft } from 'react-feather'
-
+// import { ChevronLeft } from 'react-feather'
 
 import Layout from '../components/Global/Layout'
 import ProductForm from '../components/Shop/ProductForm'
 import ProductGalleryThumbnails from '../components/Shop/ProductGalleryThumbnails'
-
-
+import Button from '../components/UI/Button'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
@@ -18,57 +17,103 @@ const ProductPage = ({ data }) => {
 
   return (
     <Layout title={product.title || false}>
-      <article
-        className="SingleService section light"
-        itemScope
-        itemType="http://schema.org/BlogPosting"
-      >
-        <div className="container skinny">
-          <Link className="SingleService--BackButton" to="/solutions/">
+      <article itemScope itemType="http://schema.org/ProductPost">
+        <Container>
+          {/* <Link to="/solutions/">
             <ChevronLeft /> BACK
-          </Link>
-          <div className="SingleService--Content relative">
-            <ProductGalleryThumbnails productimages={product.images} />
-
-            {product.title && (
-              <h1 className="SingleService--Title" itemProp="title">
-                {product.title}
-              </h1>
-            )}
-
-            <div className="SingleService--InnerContent">
+          </Link> */}
+          <Top>
+            <Left>
+              <ProductGalleryThumbnails productimages={product.images} />
+            </Left>
+            <Right>
+              {product.title && <h1 itemProp="title">{product.title}</h1>}
               <ProductForm product={product} />
-              <div
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-              />
-            </div>
+            </Right>
+          </Top>
 
-            <div className="SingleService--Pagination">
-              {thisEdge && thisEdge.previous && thisEdge.previous.handle && (
-                <Link
-                  className="SingleService--Pagination--Link prev"
-                  to={`/service/${thisEdge.previous.handle}`}
-                >
-                  Previous Service
-                </Link>
-              )}
-              {thisEdge && thisEdge.next && thisEdge.next.handle && (
-                <Link
-                  className="SingleService--Pagination--Link next"
-                  to={`/solution/${thisEdge.next.handle}`}
-                >
-                  Next Service
-                </Link>
-              )}
-            </div>
-          </div>
-        </div>
+          <Body>
+            <div
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+          </Body>
+          {thisEdge && (
+            <Bottom>
+              {thisEdge.previous &&
+                thisEdge.previous.handle &&
+                thisEdge.previous.productType === product.productType && (
+                  <Link to={`/product/${thisEdge.previous.handle}`}>
+                    <Button secondary>Previous Product</Button>
+                  </Link>
+                )}
+              {thisEdge.next &&
+                thisEdge.next.handle &&
+                thisEdge.next.productType === product.productType && (
+                  <Link to={`/product/${thisEdge.next.handle}`}>
+                    <Button>Next Product</Button>
+                  </Link>
+                )}
+            </Bottom>
+          )}
+        </Container>
       </article>
     </Layout>
   )
 }
 
 export default ProductPage
+
+const Container = styled.div`
+  display: grid;
+  padding: ${({ theme }) => theme.pagePadding};
+  grid-gap: 2em;
+`
+
+const Top = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  
+  grid-gap: 2em;
+
+  @media screen and (min-width: 768px) {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+`
+const Left = styled.div`
+  display: grid;
+  justify-self: end;
+`
+const Right = styled.div`
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content:center;
+  justify-items:center;
+  text-align: center;
+  grid-gap: 2em;
+  padding: 1.5em 1em;
+  @media screen and (min-width: 768px) {
+    align-items: start;
+  align-content: start;
+  justify-content:start;
+  justify-items:start;
+  text-align: start;
+  }
+`
+
+const Body = styled.div`
+  text-align: center;
+  justify-self: center;
+`
+
+const Bottom = styled.div`
+  display: grid;
+  grid-gap: 1.5em;
+  justify-content: center;
+  grid-auto-flow: column;
+`
 
 export const pageQuery = graphql`
   query($handle: String!) {
@@ -113,7 +158,7 @@ export const pageQuery = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -124,13 +169,16 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          productType
         }
         next {
           title
+          productType
           handle
         }
         previous {
           title
+          productType
           handle
         }
       }

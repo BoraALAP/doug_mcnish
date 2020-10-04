@@ -18,7 +18,6 @@ export const AboutMePageTemplate = ({
   dougShow,
   openArms
 }) => {
-  console.log(dougShow);
   return (
     <Main>
       <ContentLayout>
