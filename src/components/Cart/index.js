@@ -49,7 +49,7 @@ const Cart = () => {
 const Container = styled.div`
   display: grid;
   padding: ${({ theme }) => theme.pagePadding};
-  grid-gap: 3em;
+  grid-gap: ${({ theme }) => theme.gridGap};
 `
 
 const Chart = styled.div`

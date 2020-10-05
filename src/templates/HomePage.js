@@ -55,7 +55,7 @@ export const HomePageTemplate = ({
           partner3={partner3.fixed}
         />
         <Hashtag featuredImage={kaleImage.fluid} />
-        <ProductGrid type="book" />
+        <ProductGrid type="book" title="Books"/>
       </ContentLayout>
 
       {/* <PageHeader

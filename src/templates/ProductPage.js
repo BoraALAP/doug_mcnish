@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from 'styled-components'
 
 // import { ChevronLeft } from 'react-feather'
@@ -19,9 +20,6 @@ const ProductPage = ({ data }) => {
     <Layout title={product.title || false}>
       <article itemScope itemType="http://schema.org/ProductPost">
         <Container>
-          {/* <Link to="/solutions/">
-            <ChevronLeft /> BACK
-          </Link> */}
           <Top>
             <Left>
               <ProductGalleryThumbnails productimages={product.images} />
@@ -42,16 +40,16 @@ const ProductPage = ({ data }) => {
               {thisEdge.previous &&
                 thisEdge.previous.handle &&
                 thisEdge.previous.productType === product.productType && (
-                  <Link to={`/product/${thisEdge.previous.handle}`}>
+                  <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to={`/product/${thisEdge.previous.handle}`}>
                     <Button secondary>Previous Product</Button>
-                  </Link>
+                  </AniLink>
                 )}
               {thisEdge.next &&
                 thisEdge.next.handle &&
                 thisEdge.next.productType === product.productType && (
-                  <Link to={`/product/${thisEdge.next.handle}`}>
+                  <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to={`/product/${thisEdge.next.handle}`}>
                     <Button>Next Product</Button>
-                  </Link>
+                  </AniLink>
                 )}
             </Bottom>
           )}

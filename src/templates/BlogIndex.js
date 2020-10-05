@@ -7,6 +7,7 @@ import PageHeader from '../components/PageHeader'
 import PostSection from '../components/Post/PostSection'
 import PostCategoriesNav from '../components/Post/PostCategoriesNav'
 import Layout from '../components/Global/Layout'
+import ContentLayout from '../components/Global/ContentLayout'
 
 /**
  * Filter posts by date. Feature dates will be fitered
@@ -62,7 +63,7 @@ export const BlogIndexTemplate = ({
       }
 
       return (
-        <main className="Blog">
+        <ContentLayout>
           <PageHeader
             title={title}
             subtitle={subtitle}
@@ -84,7 +85,7 @@ export const BlogIndexTemplate = ({
               </div>
             </section>
           )}
-        </main>
+        </ContentLayout>
       )
     }}
   </Location>

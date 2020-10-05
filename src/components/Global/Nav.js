@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Location } from '@reach/router'
 import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { Menu, X } from 'react-feather'
 import Logo from '../../assets/Logo'
 
@@ -32,7 +33,7 @@ const Navigation = props => {
   const { active } = pageState
 
   const NavLink = ({ to, className, children, ...props }) => (
-    <LinkS to={to} onClick={handleLinkClick} {...props}>
+    <LinkS to={to} cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick} {...props}>
       {children}
     </LinkS>
   )
@@ -40,9 +41,9 @@ const Navigation = props => {
   return (
     <Header active={active}>
       <Top>
-        <Link to="/" onClick={handleLinkClick}>
+        <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to="/" onClick={handleLinkClick}>
           <LogoS />
-        </Link>
+        </AniLink>
 
         <Mobile onClick={handleMenuToggle} to="/home">
           {active ? <X /> : <Menu />}
@@ -50,15 +51,15 @@ const Navigation = props => {
       </Top>
       
         <Nav active={active}>
-          <NavLink to="/aboutme/">About Me</NavLink>
-          {/* <NavLink to="/partnerships/">Partnerships</NavLink> */}
-          <NavLink to="/services/">Services</NavLink>
-          <NavLink to="/youtube/">Youtube</NavLink>
-          <NavLink to="/podcast/">Podcast</NavLink>
-          <NavLink to="/onlinecourses/">Online Courses</NavLink>
-          <NavLink to="/products/">Shop</NavLink>
-          <NavLink to="/contact/">Contact</NavLink>
-          <NavLink to="/cart/">Cart</NavLink>
+          <LinkS to="/aboutme/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>About Me</LinkS>
+          {/* <LinkS to="/partnerships/">Partnerships</LinkS> */}
+          <LinkS to="/service/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Services</LinkS>
+          <Alinks href="https://youtube.com" target="_blank">Youtube</Alinks>
+          <Alinks href="https://shopify.com" target="_blank">Podcast</Alinks>
+          {/* <LinkS to="/onlinecourses/">Online Courses</LinkS> */}
+          <LinkS to="/products/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Shop</LinkS>
+          <LinkS to="/contact/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Contact</LinkS>
+          <LinkS to="/cart/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Cart</LinkS>
         </Nav>
       
     </Header>
@@ -124,7 +125,20 @@ position: ${props => (props.active ? 'initial' : 'absolute')};
   }
 `
 
-const LinkS = styled(Link)`
+const LinkS = styled(AniLink)`
+  display: grid;
+  text-decoration: none;
+  font-size: 0.875em;
+  font-family: ${({ theme }) => theme.font.body};
+  font-weight: 600;
+  padding: 1em 8px;
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+  }
+`
+
+const Alinks = styled.a`
   display: grid;
   text-decoration: none;
   font-size: 0.875em;

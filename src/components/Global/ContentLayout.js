@@ -9,7 +9,7 @@ const ContentLayout = (props) => {
   );
 };
  
-const Container = styled.div`
+const Container = styled.main`
 display: grid;
   padding: ${(props) => props.noTop ? `0  ${props.theme.paddingW}` : props.theme.pagePadding  };
   box-sizing: border-box;

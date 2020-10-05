@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 import ContentLayout from '../components/Global/ContentLayout'
 import Layout from '../components/Global/Layout'
@@ -19,14 +19,14 @@ export const AboutMePageTemplate = ({
   openArms
 }) => {
   return (
-    <Main>
+    
       <ContentLayout>
         <LeftImage featuredImage={featuredImage.fluid} title={title}/>
         <CenterBigText />
         <RightImage featuredImage={dougShow.fluid} />
         <LargeImage featuredImage={openArms.fluid}/>
       </ContentLayout>
-    </Main>
+    
   )
 }
 
@@ -87,7 +87,3 @@ export const pageQuery = graphql`
   }
 `
 
-const Main = styled.main`
-  grid-gap: 80px;
-  display: grid;
-`

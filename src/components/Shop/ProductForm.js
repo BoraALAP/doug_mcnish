@@ -55,6 +55,10 @@ const ProductForm = ({ product }) => {
     setQuantity(quantity - 1)
   }
 
+  const handleQuantityChange = (e) => {
+    setQuantity(parseInt(e.target.value) )
+  }
+
   const handleOptionChange = (optionIndex, { target }) => {
     const { value } = target
     const currentOptions = [...variant.selectedOptions]
@@ -152,10 +156,12 @@ const ProductForm = ({ product }) => {
       <Quantity>
         <Minus onClick={handleQuantityDecrease} />
         <Input
+        type="text"
           id="quantity"
           name="quantity"
           min="1"
           step="1"
+          onChange={handleQuantityChange}
           value={quantity}
         />
         <Plus onClick={handleQuantityIncrease} />

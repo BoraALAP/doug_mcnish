@@ -1,13 +1,13 @@
 import React from 'react'
-import { MapPin, Smartphone, Mail } from 'react-feather'
+import { Smartphone, Mail } from 'react-feather'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import PageHeader from '../components/PageHeader'
-import FormSimpleAjax from '../components/FormSimpleAjax'
+// import FormSimpleAjax from '../components/FormSimpleAjax'
 import Content from '../components/Content'
-import GoogleMap from '../components/GoogleMap'
+// import GoogleMap from '../components/GoogleMap'
 import Layout from '../components/Global/Layout'
-
+import ContentLayout from '../components/Global/ContentLayout'
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({
@@ -18,52 +18,39 @@ export const ContactPageTemplate = ({
   address,
   phone,
   email,
-  locations,
+  locations
 }) => (
-  <main className="Contact">
-    <PageHeader
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
-    <section className="section Contact--Section1">
-      <div className="container Contact--Section1--Container">
-        <div>
-          <Content source={body} />
-          <div className="Contact--Details">
-            {address && (
-              <a
-                className="Contact--Details--Item"
-                href={`https://www.google.com/maps/search/${encodeURI(
-                  address
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MapPin /> {address}
-              </a>
-            )}
-            {phone && (
-              <a className="Contact--Details--Item" href={`tel:${phone}`}>
-                <Smartphone /> {phone}
-              </a>
-            )}
-            {email && (
-              <a className="Contact--Details--Item" href={`mailto:${email}`}>
-                <Mail /> {email}
-              </a>
-            )}
-          </div>
-        </div>
+  <ContentLayout>
+    <Content source={body} />
+    <Info>
+      {/* {address && (
+        <a
+          className="Contact--Details--Item"
+          href={`https://www.google.com/maps/search/${encodeURI(address)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {address}
+        </a>
+      )} */}
+      {phone && (
+        <Alink className="Contact--Details--Item" href={`tel:${phone}`}>
+          <Smartphone /> {phone}
+        </Alink>
+      )}
+      {email && (
+        <Alink className="Contact--Details--Item" href={`mailto:${email}`}>
+          <Mail /> {email}
+        </Alink>
+      )}
+    </Info>
 
-        <div>
-          <FormSimpleAjax name="contact_form" />
-        </div>
-      </div>
-    </section>
+    
+      {/* <FormSimpleAjax name="contact_form" /> */}
+    
 
-    <GoogleMap locations={locations} />
-  </main>
+    {/* <GoogleMap locations={locations} /> */}
+  </ContentLayout>
 )
 
 const ContactPage = ({ data: { page } }) => (
@@ -74,6 +61,20 @@ const ContactPage = ({ data: { page } }) => (
     <ContactPageTemplate {...page.frontmatter} body={page.html} />
   </Layout>
 )
+
+
+const Info = styled.div`
+  display: grid;
+  grid-gap: 2em;
+`
+
+const Alink = styled.a`
+  display: grid;
+  align-items:center;
+  grid-auto-flow:column;
+  grid-gap: 0.5em;
+  width: max-content;
+`
 
 export default ContactPage
 

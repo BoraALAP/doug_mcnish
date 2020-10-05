@@ -6,6 +6,7 @@ import { ChevronLeft } from 'react-feather'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
+import ContentLayout from '../components/Global/ContentLayout'
 
 export const SinglePostTemplate = ({
   title,
@@ -14,34 +15,27 @@ export const SinglePostTemplate = ({
   body,
   nextPostURL,
   prevPostURL,
-  categories = [],
+  categories = []
 }) => {
   const pageFeaturedImage = featuredImage.startsWith('http')
     ? featuredImage
     : '../' + featuredImage
   return (
-    <main>
+    <ContentLayout>
       <PageHeader backgroundImage={pageFeaturedImage} />
-      <article
-        className="SinglePost section light"
-        itemScope
-        itemType="http://schema.org/BlogPosting"
-      >
-        <div className="container skinny">
-          <Link className="SinglePost--BackButton" to="/blog/">
+      <article itemScope itemType="http://schema.org/BlogPosting">
+        <div>
+          <Link to="/blog/">
             <ChevronLeft /> BACK
           </Link>
-          <div className="SinglePost--Content relative">
-            <div className="SinglePost--Meta">
+          <div>
+            <div>
               {date}
               {categories && (
                 <Fragment>
                   <span> |</span>
                   {categories.map((cat, index) => (
-                    <span
-                      key={cat.category}
-                      className="SinglePost--Meta--Category"
-                    >
+                    <span key={cat.category}>
                       {cat.category}
                       {/* Add a comma on all but last category */}
                       {index !== categories.length - 1 ? ',' : ''}
@@ -51,38 +45,20 @@ export const SinglePostTemplate = ({
               )}
             </div>
 
-            {title && (
-              <h1 className="SinglePost--Title" itemProp="title">
-                {title}
-              </h1>
-            )}
+            {title && <h1 itemProp="title">{title}</h1>}
 
-            <div className="SinglePost--InnerContent">
+            <div>
               <Content source={body} />
             </div>
 
-            <div className="SinglePost--Pagination">
-              {prevPostURL && (
-                <Link
-                  className="SinglePost--Pagination--Link prev"
-                  to={prevPostURL}
-                >
-                  Previous Post
-                </Link>
-              )}
-              {nextPostURL && (
-                <Link
-                  className="SinglePost--Pagination--Link next"
-                  to={nextPostURL}
-                >
-                  Next Post
-                </Link>
-              )}
+            <div>
+              {prevPostURL && <Link to={prevPostURL}>Previous Post</Link>}
+              {nextPostURL && <Link to={nextPostURL}>Next Post</Link>}
             </div>
           </div>
         </div>
       </article>
-    </main>
+    </ContentLayout>
   )
 }
 

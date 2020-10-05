@@ -43,7 +43,7 @@ const LineItem = ({ line_item }) => {
         <Label>Price</Label>${line_item.variant.price}
       </Line>
       <Line>
-        <Label>Total</Label>${line_item.quantity * line_item.variant.price}
+        <Label>Total</Label>${(line_item.quantity * line_item.variant.price).toFixed(2)}
       </Line>
 
 <ButtonS>

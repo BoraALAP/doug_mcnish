@@ -6,6 +6,7 @@ import FormSignupAjax from '../components/FormSignupAjax'
 import Content from '../components/Content'
 
 import Layout from '../components/Global/Layout'
+import ContentLayout from '../components/Global/ContentLayout'
 
 
 // Export Template for use in CMS preview
@@ -19,7 +20,7 @@ export const FormPageTemplate = ({
   email,
   locations,
 }) => (
-  <main className="Contact">
+  <ContentLayout>
     <PageHeader
       title={title}
       subtitle={subtitle}
@@ -35,7 +36,7 @@ export const FormPageTemplate = ({
         </div>
       </div>
     </section>
-  </main>
+    </ContentLayout>
 )
 
 const FormPage = ({ data: { page } }) => (

@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { stringify } from 'qs'
 import { serialize } from 'dom-form-serializer'
 
-
 class Form extends React.Component {
   static defaultProps = {
     name: 'emailup_signup_form',
@@ -11,12 +10,12 @@ class Form extends React.Component {
     action: '/success.html',
     successMessage: 'Good to hear from you! We will get back to you soon.',
     errorMessage:
-      'There is a problem and your message has *not* been sent. Please send an email to hello@ecomloop.com',
+      'There is a problem and your message has *not* been sent. Please send an email to hello@ecomloop.com'
   }
 
   state = {
     alert: '',
-    disabled: false,
+    disabled: false
   }
 
   handleSubmit = e => {
@@ -27,7 +26,7 @@ class Form extends React.Component {
     const data = serialize(form)
     this.setState({ disabled: true })
     fetch(form.action + '?' + stringify(data), {
-      method: 'POST',
+      method: 'POST'
     })
       .then(res => {
         if (res.ok) {
@@ -40,14 +39,14 @@ class Form extends React.Component {
         form.reset()
         this.setState({
           alert: this.props.successMessage,
-          disabled: false,
+          disabled: false
         })
       })
       .catch(err => {
         console.error(err)
         this.setState({
           disabled: false,
-          alert: this.props.errorMessage,
+          alert: this.props.errorMessage
         })
       })
   }
@@ -61,7 +60,6 @@ class Form extends React.Component {
           <script src="https://www.google.com/recaptcha/api.js" />
         </Helmet>
         <form
-          className="Form"
           method="post"
           name={name}
           action={action}
@@ -69,12 +67,9 @@ class Form extends React.Component {
           data-netlify="true"
           netlify-recaptcha="true"
         >
-          {this.state.alert && (
-            <div className="Form--Alert">{this.state.alert}</div>
-          )}
-          <label className="Form--Label">
+          {this.state.alert && <div>{this.state.alert}</div>}
+          <label>
             <input
-              className="Form--Input Form--InputText"
               type="text"
               placeholder="Full name"
               name="fullname"
@@ -83,9 +78,8 @@ class Form extends React.Component {
             <span>Full name</span>
           </label>
 
-          <label className="Form--Label">
+          <label>
             <input
-              className="Form--Input Form--InputText"
               type="email"
               placeholder="Email"
               name="emailAddress"

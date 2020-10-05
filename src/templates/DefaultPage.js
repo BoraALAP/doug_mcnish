@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
+import ContentLayout from '../components/Global/ContentLayout'
 
 // Export Template for use in CMS preview
 export const DefaultPageTemplate = ({
@@ -12,7 +13,7 @@ export const DefaultPageTemplate = ({
   featuredImage,
   body,
 }) => (
-  <main className="DefaultPage">
+  <ContentLayout>
     <PageHeader
       title={title}
       subtitle={subtitle}
@@ -24,7 +25,7 @@ export const DefaultPageTemplate = ({
         <Content source={body} />
       </div>
     </section>
-  </main>
+    </ContentLayout>
 )
 
 const DefaultPage = ({ data: { page } }) => (
