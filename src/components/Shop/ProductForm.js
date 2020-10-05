@@ -173,9 +173,9 @@ const ProductForm = ({ product }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 1.5em;
+  grid-gap: 1.5rem;
   justify-content: start;
-  padding: 1em 1em;
+  padding: 1em 1rem;
   h4{
     color: ${({ theme }) => theme.color.secondary};
   }
@@ -185,12 +185,12 @@ const Quantity = styled.div`
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
-    grid-gap: 1em;
+    grid-gap: 1rem;
     align-items: center;
 `
 
 const Input = styled.input`
-    width: 3em;
+    width: 3rem;
     border: 1px solid ${({ theme }) => theme.color.primary};
     border-radius: 0;
     padding: 4px 8px;

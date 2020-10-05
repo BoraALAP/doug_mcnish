@@ -118,7 +118,7 @@ position: ${props => (props.active ? 'initial' : 'absolute')};
     transform: translateX(0vh);
     position: initial;
     padding: 0;
-    grid-gap: 1em;
+    grid-gap: 1rem;
     grid-auto-flow: column;
     height: auto;
     opacity: 1;
@@ -128,7 +128,7 @@ position: ${props => (props.active ? 'initial' : 'absolute')};
 const LinkS = styled(AniLink)`
   display: grid;
   text-decoration: none;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-family: ${({ theme }) => theme.font.body};
   font-weight: 600;
   padding: 1em 8px;
@@ -141,7 +141,7 @@ const LinkS = styled(AniLink)`
 const Alinks = styled.a`
   display: grid;
   text-decoration: none;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-family: ${({ theme }) => theme.font.body};
   font-weight: 600;
   padding: 1em 8px;
@@ -155,7 +155,7 @@ const Mobile = styled.button`
   display: grid;
   
   background-color: transparent;
-  padding: 8px 1em;
+  padding: 8px 1rem;
   justify-content: end;
   box-shadow: none;
   @media screen and (min-width: 768px) {

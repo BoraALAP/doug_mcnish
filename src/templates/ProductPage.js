@@ -64,7 +64,7 @@ export default ProductPage
 const Container = styled.div`
   display: grid;
   padding: ${({ theme }) => theme.pagePadding};
-  grid-gap: 2em;
+  grid-gap: 2rem;
 `
 
 const Top = styled.div`
@@ -72,7 +72,7 @@ const Top = styled.div`
   justify-content: center;
   grid-auto-flow: row;
   
-  grid-gap: 2em;
+  grid-gap: 2rem;
 
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
@@ -90,8 +90,8 @@ const Right = styled.div`
   justify-content:center;
   justify-items:center;
   text-align: center;
-  grid-gap: 2em;
-  padding: 1.5em 1em;
+  grid-gap: 2rem;
+  padding: 1.5em 1rem;
   @media screen and (min-width: 768px) {
     align-items: start;
   align-content: start;
@@ -108,7 +108,7 @@ const Body = styled.div`
 
 const Bottom = styled.div`
   display: grid;
-  grid-gap: 1.5em;
+  grid-gap: 1.5rem;
   justify-content: center;
   grid-auto-flow: column;
 `

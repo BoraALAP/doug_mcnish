@@ -19,7 +19,7 @@ const Footer = styled.footer`
     padding: ${({ theme }) => theme.pagePaddingH};
   }
   span {
-    font-size: 0.65em;
+    font-size: 0.65rem;
     color: white;
   }
 `

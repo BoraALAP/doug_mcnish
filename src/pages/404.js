@@ -23,7 +23,7 @@ export default ({ children }) => (
         <section className="section thick">
           <div className="container skinny taCenter">
             <p>
-              <AlertTriangle size="5rem" />
+              <AlertTriangle size="5rem;" />
             </p>
             <h1>404 - Page Not Found</h1>
             <p>

@@ -27,7 +27,7 @@ const Container = styled.div`
   
   position: relative;
   .gatsby-image-wrapper{
-    height: 25em;
+    height: 25rem;
     @media screen and (min-width: 768px){
    height: 600px;
     }
@@ -43,10 +43,10 @@ const Container = styled.div`
 const Box = styled.div`
   position: absolute;
   background-color: ${({ theme }) => theme.color.negative};
-  padding: 2em;
+  padding: 2rem;
   display: grid;
   width: fit-content;
-  grid-gap: 1em;
+  grid-gap: 1rem;
   grid-auto-flow: row;
   justify-items: center;
   left: calc(50% - 75px);

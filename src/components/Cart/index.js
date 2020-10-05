@@ -54,11 +54,11 @@ const Container = styled.div`
 
 const Chart = styled.div`
   display: grid;
-  grid-gap: 1.5em;
+  grid-gap: 1.5rem;
 `
 const Bottom = styled.div`
   display: grid;
-  grid-gap: 1.5em;
+  grid-gap: 1.5rem;
   
   @media screen and (min-width: 768px) {
     width: 40vw;
@@ -70,7 +70,7 @@ const InfoBox = styled.div`
   display: grid;
   grid-auto-flow: column;
   border:  ${({ theme }) => `1px solid ${theme.color.primary}`};
-  padding: 3em 2em;
+  padding: 3em 2rem;
   text-align: center;
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -79,7 +79,7 @@ const InfoBox = styled.div`
 
 const Info = styled.div`
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 1rem;
 `
 
 const Title = styled.div`

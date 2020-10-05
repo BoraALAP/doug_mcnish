@@ -62,8 +62,8 @@ const Container = styled(Link)`
   justify-content: center;
   justify-items: center;
   text-align: center;
-  padding: 2em;
-  grid-gap: 1em;
+  padding: 2rem;
+  grid-gap: 1rem;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
@@ -92,7 +92,10 @@ const Line = styled.div`
 `
 
 const ButtonS = styled.div`
-  justify-self:end;
+  @media screen and (min-width: 768px) {
+    justify-self:end;
+    
+  }
 `
 
 export default LineItem

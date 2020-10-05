@@ -15,7 +15,7 @@ const ServicesPage = () => (
 
 const Container = styled.section`
   display: grid;
-  grid-gap: 5em;
+  grid-gap: 5rem;
   padding: ${({ theme }) => theme.pagePadding};
 `
 

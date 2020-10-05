@@ -65,14 +65,14 @@ const ContactPage = ({ data: { page } }) => (
 
 const Info = styled.div`
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
 `
 
 const Alink = styled.a`
   display: grid;
   align-items:center;
   grid-auto-flow:column;
-  grid-gap: 0.5em;
+  grid-gap: 0.5rem;
   width: max-content;
 `
 

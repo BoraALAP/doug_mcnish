@@ -31,7 +31,6 @@ const ServicePage = ({
     dinner
   }
 }) => {
-  console.log(photo)
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <ServicePageTemplate

@@ -60,7 +60,7 @@ const ProductGalleryThumbnails = ({ productimages }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 1rem;
 `
 
 const ImgContainer = styled.div`

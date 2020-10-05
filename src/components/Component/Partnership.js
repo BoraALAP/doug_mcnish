@@ -33,7 +33,7 @@ const Partnership = ({ partner1, partner2, partner3 }) => {
 const Container = styled.div`
   display: grid;
   justify-items: center;
-  grid-gap: 2em;
+  grid-gap: 2rem;
   h2 {
     margin: 0;
   }
@@ -44,7 +44,7 @@ const Logos = styled.div`
   grid-auto-flow: row;
   justify-content: center;
   justify-items: center;
-  grid-gap: 2em;
+  grid-gap: 2rem;
 
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;

@@ -19,12 +19,12 @@ export const Ternary = ({ children, onClick }) => {
 }
 
 const Container = styled.button`
-  padding: 12px 1.5em;
+  padding: 12px 1.5rem;
   background-color: ${props =>
     props.secondary ? props.theme.color.positive : props.theme.color.negative};
   color: ${props =>
     props.secondary ? props.theme.color.negative : props.theme.color.positive};
-  font-size: 0.875em;
+  font-size: 0.875rem;
   border: ${props =>
     props.secondary ? `1px solid ${props.theme.color.negative}` : "none"};
   box-shadow: none;
@@ -33,23 +33,23 @@ const Container = styled.button`
     box-shadow: ${({ theme }) => theme.boxShadow};
   }
   @media screen and (min-width: 768px) {
-    /* max-width: 25em; */
+    /* max-width: 25rem; */
   }
 `
 
 const TernaryContainer = styled.button`
-  padding: 12px 1.5em;
+  padding: 12px 1.5rem;
   background-color: transparent;
   color: ${props =>
     props.secondary ? props.theme.color.negative : props.theme.color.primary};
-  font-size: 0.875em;
+  font-size: 0.875rem;
   box-shadow: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
   }
   @media screen and (min-width: 768px) {
-    /* max-width: 25em; */
+    /* max-width: 25rem; */
   }
 `
 

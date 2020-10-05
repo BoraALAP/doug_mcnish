@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Paragraph from './element/Paragraph'
+import Paragraph, {Title} from '../UI/Paragraph'
 
 const TwoColumn = props => { 
   return (
@@ -37,16 +37,18 @@ const TwoColumn = props => {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 1.5em;
-  
 `
 
 const Content = styled.div`
   display: grid;
-  grid-auto-flow:column;
-  grid-template-columns: 1fr 1fr;
+  grid-auto-flow:row;
+  align-items: start;
+  @media screen and (min-width: 768px) {
+    grid-auto-flow:column;
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
-const Title = styled.h1``
+
 
 export default TwoColumn

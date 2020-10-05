@@ -90,7 +90,7 @@ export default ProductGrid
 const Container = styled.div`
   display: grid;
   justify-items: center;
-  grid-gap: 3em;
+  grid-gap: 3rem;
   @media screen and (min-width: 768px) {
   padding: 0 5vw;
     }
@@ -99,7 +99,7 @@ const Container = styled.div`
 const Products = styled.div`
   display: grid;
   
-  grid-gap:4em;
+  grid-gap:4rem;
   width: 100%;
   justify-items: center;
   @media screen and (min-width: 768px) {

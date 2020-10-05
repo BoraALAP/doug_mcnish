@@ -38,7 +38,7 @@ const Container = styled(Link)`
   display: grid;
   text-decoration: none;
   align-content: space-between;
-  max-width: 31em;
+  max-width: 31rem;
   transition: ${({ theme }) => theme.transition};
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
@@ -46,7 +46,7 @@ const Container = styled(Link)`
 `
 const Text = styled.div`
   display: grid;
-  padding: 1em;
+  padding: 1rem;
   grid-gap: 8px;
   align-self: start;
   h3,

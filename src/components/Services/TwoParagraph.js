@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-import Paragraph from './element/Paragraph'
+import Paragraph from '../UI/Paragraph'
 
 const TwoParagraph = ({ featuredImage }) => {
   return (
@@ -61,14 +61,20 @@ const TwoParagraph = ({ featuredImage }) => {
 
 const Container = styled.div`
 display: grid;
-grid-auto-flow: column;
-grid-template-columns: 1fr 1fr;
-grid-gap: 2em;
+grid-gap: 2rem;
+grid-auto-flow: row;
+@media screen and (min-width: 768px) {
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+  
+  }
 `
 const Left = styled.div`
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
   grid-auto-flow: row;
+  align-items: start;
+  
 `
 const Right = styled.div`
 

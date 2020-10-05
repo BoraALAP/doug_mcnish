@@ -31,36 +31,46 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1{
-    font-size: 1.5em;
+    font-size: 1.5rem;
     @media screen and (min-width: 768px) {
-      font-size: 2em;
+      font-size: 2rem;
       }
   }
 
   h2{
-    font-size: 1.25em;
+    font-size: 1.25rem;
     @media screen and (min-width: 768px) {
-      font-size: 2em;
+      font-size: 2rem;
+    }
+  }
+
+  h3{
+    font-size: 1.125rem;
+    @media screen and (min-width: 768px) {
+      font-size: 1.75rem;
     }
   }
 
   h4{
-    font-size: 1em;
+    font-size: 1rem;
     color: ${({ theme }) => theme.color.secondary};
+    margin: 0;
     @media screen and (min-width: 768px) {
-      font-size: 1.125em;
+      font-size: 1.125rem;
     }
   }
 
   p{
-    font-size: 0.875em;
+    font-size: 0.875rem;
     max-width: 600px;
-    line-height: 2em;
+    line-height: 2rem;
     color: ${({ theme }) => theme.color.secondary};
+    margin-block-start:0px;
+    margin-block-end:0px;
   }
 
   button{
-    font-size: 0.875em;
+    font-size: 0.875rem;
     outline: none;
     border: none;
 

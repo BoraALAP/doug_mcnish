@@ -49,9 +49,9 @@ const Left = styled.div`
 const Right = styled.div`
   display: grid;
   background: ${({ theme }) => theme.color.goldGradient};
-  padding: 2em;
+  padding: 2rem;
   width: fit-content;
-  grid-gap: 1em;
+  grid-gap: 1rem;
   z-index: 20;
   h2,
   p {
@@ -62,7 +62,7 @@ const Right = styled.div`
   @media screen and (min-width: 768px) {
     margin-left: -64px;
     margin-bottom: 64px;
-    max-width: 31em;
+    max-width: 31rem;
   }
 `
 

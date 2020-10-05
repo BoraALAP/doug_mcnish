@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import Paragraph from '../UI/Paragraph'
 
 const RightImage = ({ featuredImage, title }) => {
   return (
     <Container>
       <Left>
-        <div>
-          {title && <h2>{title}</h2>}
+        <Paragraph title={title}>
           <p>
             Doug’s first cookbook, bestselling, Eat Raw, Eat Well was published
             internationally in Spring of 2012, and was awarded a Gourmand Award
@@ -30,7 +30,7 @@ const RightImage = ({ featuredImage, title }) => {
             him on Twitter, Instagram or on Facebook, where he routinely shares
             his current projects, and his love for everything Vegan!
           </p>
-        </div>
+        </Paragraph>
       </Left>
       <Right>
         <Img
@@ -47,7 +47,7 @@ const RightImage = ({ featuredImage, title }) => {
 const Container = styled.div`
   display: grid;
   align-items: flex-end;
-  grid-gap: 2em;
+  grid-gap: 2rem;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-gap: 64px;
@@ -58,14 +58,13 @@ const Container = styled.div`
 `
 
 const Left = styled.div`
-    display: grid;
-  
+  display: grid;
 `
 
 const Right = styled.div`
   max-width: 600px;
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
   @media screen and (min-width: 768px) {
   }
 `

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Button from '../UI/Button'
+import Paragraph from '../UI/Paragraph'
 
 const HomeAbout = ({ featuredImage }) => {
   return (
@@ -15,8 +16,7 @@ const HomeAbout = ({ featuredImage }) => {
         />
       </Left>
       <Right>
-        <div>
-          <h1> About Doug Mcnish </h1>
+        <Paragraph title="About Doug Mcnish" >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             vulputate mauris id euismod rutrum. Suspendisse interdum sapien sed
@@ -36,7 +36,7 @@ const HomeAbout = ({ featuredImage }) => {
             volutpat vitae orci non, vehicula egestas turpis. Etiam ut enim
             sapien.
           </p>
-        </div>
+          </Paragraph>
         <Button>Learn More</Button>
       </Right>
     </Container>
@@ -66,7 +66,7 @@ const Left = styled.div`
 const Right = styled.div`
   max-width: 600px;
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
   @media screen and (min-width: 768px) {
     padding-bottom: 40px;
   }

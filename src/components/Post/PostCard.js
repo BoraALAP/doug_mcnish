@@ -48,7 +48,7 @@ const Container = styled(Link)`
 `
 const Text = styled.div`
   display: grid;
-  padding: 1em;
+  padding: 1rem;
   grid-gap: 8px;
   align-self: start;
   h3,
