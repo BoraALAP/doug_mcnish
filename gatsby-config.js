@@ -156,7 +156,22 @@ module.exports = {
     // images
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            subsets: [`latin`],
+            variants: [`600`, `700`,`800`]
+          },
+          {
+            family: `Open Sans`,
+            variants: [`400`,`500`,`600`, `700`,`800`]
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -30,6 +30,8 @@ const LineItem = ({ line_item }) => {
 
   return (
     <Container to={`/product/${line_item.variant.product.handle}`}>
+      <Top>
+
       <span>{variantImage}</span>
       <Line>{line_item.title}</Line>
       {/* <Line>
@@ -45,6 +47,7 @@ const LineItem = ({ line_item }) => {
       <Line>
         <Label>Total</Label>${(line_item.quantity * line_item.variant.price).toFixed(2)}
       </Line>
+      </Top>
 
 <ButtonS>
       <Button secondary onClick={handleRemove}>
@@ -55,7 +58,7 @@ const LineItem = ({ line_item }) => {
   )
 }
 
-const Container = styled(Link)`
+const Container = styled.div`
   display: grid;
   background-color: ${({ theme }) => theme.color.lightGrey};
   grid-auto-flow: row;
@@ -66,7 +69,30 @@ const Container = styled(Link)`
   grid-gap: 1rem;
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 6fr 1fr;
+    align-items: center;
+    width: auto;
+    justify-content: start;
+    justify-items: inherit;
+    text-align: start;
+    padding: 0;
+    grid-gap: 0;
+    background-color: transparent;
+  }
+`
+
+const Top = styled(Link)`
+  display: grid;
+  background-color: ${({ theme }) => theme.color.lightGrey};
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 2rem;
+  grid-gap: 1rem;
+  @media screen and (min-width: 768px) {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     align-items: center;
     width: auto;
     justify-content: start;
@@ -92,6 +118,7 @@ const Line = styled.div`
 `
 
 const ButtonS = styled.div`
+z-index: 80;
   @media screen and (min-width: 768px) {
     justify-self:end;
     

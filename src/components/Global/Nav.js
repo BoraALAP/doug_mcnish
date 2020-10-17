@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Location } from '@reach/router'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { Menu, X } from 'react-feather'
 import Logo from '../../assets/Logo'
@@ -32,11 +32,11 @@ const Navigation = props => {
 
   const { active } = pageState
 
-  const NavLink = ({ to, className, children, ...props }) => (
-    <LinkS to={to} cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick} {...props}>
-      {children}
-    </LinkS>
-  )
+  // const NavLink = ({ to, className, children, ...props }) => (
+  //   <LinkS to={to} cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick} {...props}>
+  //     {children}
+  //   </LinkS>
+  // )
 
   return (
     <Header active={active}>

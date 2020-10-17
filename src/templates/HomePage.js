@@ -111,6 +111,7 @@ const HomePage = ({
     kaleImage
   }
 }) => {
+  console.log(page.frontmatter.meta);
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <HomePageTemplate

@@ -4,7 +4,8 @@ import ProductGrid from '../components/Shop/ProductGrid'
 import styled from 'styled-components'
 
 const ServicesPage = () => (
-  <Layout>
+  <Layout 
+    title="Shop">
     <Container>
       <ProductGrid type="book" title="Books" />
       <ProductGrid type="tshirt" title="Tshirts" />
