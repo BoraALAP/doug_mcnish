@@ -16,27 +16,19 @@ const HomeAbout = ({ featuredImage }) => {
         />
       </Left>
       <Right>
-        <Paragraph title="About Doug Mcnish" >
+        <Paragraph title="About Doug Mcnish">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            vulputate mauris id euismod rutrum. Suspendisse interdum sapien sed
-            elementum commodo. Phasellus eu varius arcu. Nunc vel vulputate
-            augue. Class aptent taciti sociosqu ad litora torquent per conubia
-            nostra, per inceptos himenaeos.
+            Doug McNish knew that he was destined for a career in the kitchen
+            when he began honing his skills at the age of 15, quickly learning
+            all the intricacies of the food service industry. Although adept in
+            his field, by the age of 20, Doug knew that he needed to make a
+            change after watching footage of a slaughterhouse. He went
+            vegetarian, and months later adopted a fully vegan lifestyle. It
+            wasn’t long before he positioned himself as a pioneer in the vegan
+            food movement, courageously aligning his career path with his morals
+            in a time when veganism was relatively unknown.
           </p>
-
-          <p>
-            Nam pulvinar erat nec lectus porttitor aliquet. Fusce hendrerit ante
-            et augue porta viverra. Maecenas nisi nisl, porta vitae augue ut,
-            accumsan cursus sapien. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Vivamus nec cursus enim. Morbi laoreet erat at
-            vestibulum tristique. Maecenas posuere vel eros tempor feugiat. Cras
-            sollicitudin enim sit amet odio ullamcorper euismod. Morbi et nisi
-            vehicula, pharetra erat id, porttitor nibh. Sed ligula tortor,
-            volutpat vitae orci non, vehicula egestas turpis. Etiam ut enim
-            sapien.
-          </p>
-          </Paragraph>
+        </Paragraph>
         <Button>Learn More</Button>
       </Right>
     </Container>
@@ -46,7 +38,7 @@ const HomeAbout = ({ featuredImage }) => {
 const Container = styled.div`
   display: grid;
   align-items: flex-end;
-  
+
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-gap: 64px;

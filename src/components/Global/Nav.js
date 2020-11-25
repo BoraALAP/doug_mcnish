@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Location } from '@reach/router'
 // import { Link } from 'gatsby'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Menu, X } from 'react-feather'
 import Logo from '../../assets/Logo'
 
@@ -41,7 +41,13 @@ const Navigation = props => {
   return (
     <Header active={active}>
       <Top>
-        <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to="/" onClick={handleLinkClick}>
+        <AniLink
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          to="/"
+          onClick={handleLinkClick}
+        >
           <LogoS />
         </AniLink>
 
@@ -49,19 +55,58 @@ const Navigation = props => {
           {active ? <X /> : <Menu />}
         </Mobile>
       </Top>
-      
-        <Nav active={active}>
-          <LinkS to="/aboutme/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>About Me</LinkS>
-          {/* <LinkS to="/partnerships/">Partnerships</LinkS> */}
-          <LinkS to="/service/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Services</LinkS>
-          <Alinks href="https://youtube.com" target="_blank">Youtube</Alinks>
-          <Alinks href="https://shopify.com" target="_blank">Podcast</Alinks>
-          {/* <LinkS to="/onlinecourses/">Online Courses</LinkS> */}
-          <LinkS to="/products/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Shop</LinkS>
-          <LinkS to="/contact/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Contact</LinkS>
-          <LinkS to="/cart/" cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" onClick={handleLinkClick}>Cart</LinkS>
-        </Nav>
-      
+
+      <Nav active={active}>
+        <LinkS
+          to="/aboutme/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          About Me
+        </LinkS>
+        {/* <LinkS to="/partnerships/">Partnerships</LinkS> */}
+        <LinkS
+          to="/service/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          Services
+        </LinkS>
+        {/* <Alinks href="https://youtube.com" target="_blank">Youtube</Alinks>
+          <Alinks href="https://shopify.com" target="_blank">Podcast</Alinks> */}
+        {/* <LinkS to="/onlinecourses/">Online Courses</LinkS> */}
+        <LinkS
+          to="/products/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          Shop
+        </LinkS>
+        <LinkS
+          to="/contact/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          Contact
+        </LinkS>
+        <LinkS
+          to="/cart/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          Cart
+        </LinkS>
+      </Nav>
     </Header>
   )
 }
@@ -100,18 +145,18 @@ const Top = styled.div`
 
 const LogoS = styled(Logo)`
   display: grid;
-  
 `
 
 const Nav = styled.nav`
   display: grid;
   grid-auto-flow: row;
-position: ${props => (props.active ? 'initial' : 'absolute')};
+  position: ${props => (props.active ? 'initial' : 'absolute')};
   transform: ${props =>
     props.active ? 'translateX(0vh)' : 'translateX(-100vh)'};
   opacity: ${props => (props.active ? '1' : '0')};
   height: ${props => (props.active ? 'auto' : '0')};
-  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1), position 0.3s ease-in 0.6s;
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
+    position 0.3s ease-in 0.6s;
   padding: 1.5em 0;
 
   @media screen and (min-width: 768px) {
@@ -138,22 +183,9 @@ const LinkS = styled(AniLink)`
   }
 `
 
-const Alinks = styled.a`
-  display: grid;
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-family: ${({ theme }) => theme.font.body};
-  font-weight: 600;
-  padding: 1em 8px;
-  border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
-  @media screen and (min-width: 768px) {
-    border-bottom: none;
-  }
-`
-
 const Mobile = styled.button`
   display: grid;
-  
+
   background-color: transparent;
   padding: 8px 1rem;
   justify-content: end;

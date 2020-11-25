@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Paragraph from '../UI/Paragraph'
 
-const LeftImage = ({ featuredImage, title }) => {
+const LeftImage = ({ featuredImage, title, children }) => {
   return (
     <Container>
       <Left>
@@ -15,17 +15,7 @@ const LeftImage = ({ featuredImage, title }) => {
         />
       </Left>
       <Right>
-        <Paragraph title={title}>
-          <p>
-            Starting his career at the age of 15, Doug McNish began to hone his
-            skills, and come to learn the intricacies of the food service
-            industry. At the age of 21, Doug was un-happy and un-healthy. It was
-            after watching an undercover video of animals in slaughter houses,
-            that he decided to make the change and try a vegetarian diet. Months
-            later, Doug would adopt a fully vegan lifestyle, which he continues
-            today.
-          </p>
-        </Paragraph>
+        <Paragraph title={title}>{children}</Paragraph>
       </Right>
     </Container>
   )

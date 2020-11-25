@@ -37,8 +37,10 @@ const ProductCard = ({
 const Container = styled(Link)`
   display: grid;
   text-decoration: none;
-  align-content: space-between;
+  align-content: stretch;
   max-width: 31rem;
+  width: inherit;
+  grid-template-rows: min-content auto min-content;
   transition: ${({ theme }) => theme.transition};
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
@@ -62,7 +64,8 @@ const ButtonS = styled(Button)`
 
 const NoImage = styled.div`
   display: grid;
-  height: 300px;
+  max-height: 300px;
+  min-height: 145px;
   background: ${({ theme }) => theme.color.goldGradient};
   justify-content:center;
   align-items:center;

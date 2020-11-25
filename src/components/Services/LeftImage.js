@@ -1,40 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import Paragraph from '../UI/Paragraph'
+import { Title } from '../UI/Paragraph'
 
-const LeftImage = ({ featuredImage }) => {
+const LeftImage = ({ featuredImage, children, title }) => {
   return (
     <Container>
-      
       <Left>
-      <Img
+        <Img
           fluid={featuredImage}
           objectFit="cover"
           objectPosition="50% 50%"
           alt=""
-        /></Left>
+        />
+      </Left>
       <Right>
-      <Paragraph title="Food Photography">
-            <p>
-            Missing Details
-            </p>
-          </Paragraph>
+        {title && <Title>{title}</Title>}
+        <Content>{children}</Content>
       </Right>
     </Container>
   )
 }
 
 const Container = styled.div`
- display: grid;
- grid-gap: 2rem;
- grid-auto-flow:row;
- @media screen and (min-width: 768px) {
-   grid-auto-flow:column;
-   grid-template-columns: 1fr 1fr;
-   
+  display: grid;
+  grid-gap: 2rem;
+  grid-auto-flow: row;
+  @media screen and (min-width: 768px) {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
   }
-  `
+`
 
 const Left = styled.div`
   display: grid;
@@ -42,7 +38,17 @@ const Left = styled.div`
 
 const Right = styled.div`
   display: grid;
-  align-self:flex-end;
+  align-self: flex-end;
+`
+
+const Content = styled.div`
+  display: grid;
+  grid-auto-flow: row;
+  align-items: start;
+  @media screen and (min-width: 768px) {
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 1fr;
+  }
 `
 
 export default LeftImage

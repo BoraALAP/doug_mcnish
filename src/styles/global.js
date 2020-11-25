@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+@font-face {
+  font-family: "Poppins, Open Sans";
+}
 
   html, body{
     font-family: ${({ theme }) => theme.font.family.body};
@@ -47,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   h3{
     font-size: 1.125rem;
     @media screen and (min-width: 768px) {
-      font-size: 1.75rem;
+      font-size: 1.35rem;
     }
   }
 

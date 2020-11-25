@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider } from "styled-components"
-import GlobalStyle from "../../styles/global"
-import { primaryTheme, secondaryTheme } from "../../styles/theme"
+import styled, { ThemeProvider } from 'styled-components'
+import GlobalStyle from '../../styles/global'
+import { primaryTheme, secondaryTheme } from '../../styles/theme'
+import favicon from '../../assets/favicon.ico'
 import Meta from './Meta'
 import Nav from './Nav'
 import Footer from './Footer'
 import ContextProvider from '../../provider/ContextProvider'
-
-
 
 export default ({ children, meta, title }) => {
   // eslint-disable-next-line
@@ -68,6 +67,7 @@ export default ({ children, meta, title }) => {
                   rel="preconnect"
                   crossorigin
                 />
+                <link rel="icon" href={favicon} />
                 <link rel="dns-prefetch" href="https://ucarecdn.com" />
                 {/* Add font link tags here */}
               </Helmet>

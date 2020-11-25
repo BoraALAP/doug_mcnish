@@ -133,7 +133,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: `${__dirname}/static/images/logo.svg`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/assets/images/logo.svg`, // This path is relative to the root of the site.
       },
     },
 
@@ -141,7 +141,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/images`,
+        path: `${__dirname}/src/assets/images`,
         name: 'images',
       },
     },
@@ -157,20 +157,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            subsets: [`latin`],
-            variants: [`600`, `700`,`800`]
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`,`500`,`600`, `700`,`800`]
-          },
-        ],
-      },
+        google: {
+          families: ['Poppins:600,700,800','Open Sans:400,500,600,700,800' ]
+        }
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
