@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from 'styled-components'
 
 // import { ChevronLeft } from 'react-feather'
@@ -40,14 +40,24 @@ const ProductPage = ({ data }) => {
               {thisEdge.previous &&
                 thisEdge.previous.handle &&
                 thisEdge.previous.productType === product.productType && (
-                  <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to={`/product/${thisEdge.previous.handle}`}>
+                  <AniLink
+                    cover
+                    direction="down"
+                    bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+                    to={`/product/${thisEdge.previous.handle}`}
+                  >
                     <Button secondary>Previous Product</Button>
                   </AniLink>
                 )}
               {thisEdge.next &&
                 thisEdge.next.handle &&
                 thisEdge.next.productType === product.productType && (
-                  <AniLink cover direction="down" bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)" to={`/product/${thisEdge.next.handle}`}>
+                  <AniLink
+                    cover
+                    direction="down"
+                    bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+                    to={`/product/${thisEdge.next.handle}`}
+                  >
                     <Button>Next Product</Button>
                   </AniLink>
                 )}
@@ -71,7 +81,7 @@ const Top = styled.div`
   display: grid;
   justify-content: center;
   grid-auto-flow: row;
-  
+
   grid-gap: 2rem;
 
   @media screen and (min-width: 768px) {
@@ -87,23 +97,24 @@ const Right = styled.div`
   display: grid;
   align-items: center;
   align-content: center;
-  justify-content:center;
-  justify-items:center;
+  justify-content: center;
+  justify-items: center;
   text-align: center;
   grid-gap: 2rem;
   padding: 1.5em 1rem;
   @media screen and (min-width: 768px) {
     align-items: start;
-  align-content: start;
-  justify-content:start;
-  justify-items:start;
-  text-align: start;
+    align-content: start;
+    justify-content: start;
+    justify-items: start;
+    text-align: start;
   }
 `
 
 const Body = styled.div`
   text-align: center;
   justify-self: center;
+  max-width: 650px;
 `
 
 const Bottom = styled.div`

@@ -45,10 +45,6 @@ const Content = styled.div`
   display: grid;
   grid-auto-flow: row;
   align-items: start;
-  @media screen and (min-width: 768px) {
-    grid-auto-flow: row;
-    grid-template-rows: 1fr 1fr;
-  }
 `
 
 export default LeftImage

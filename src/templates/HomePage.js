@@ -49,13 +49,13 @@ export const HomePageTemplate = ({
       <FullWidthImage featuredImage={headerImage.fluid} />
       <ContentLayout>
         <HomeAbout featuredImage={aboutImage.fluid} />
-        <Partnership
+        {/* <Partnership
           partner1={partner1.fixed}
           partner2={partner2.fixed}
           partner3={partner3.fixed}
-        />
+        /> */}
         <Hashtag featuredImage={kaleImage.fluid} />
-        <ProductGrid type="book" title="Books"/>
+        <ProductGrid type="book" title="Books" />
       </ContentLayout>
 
       {/* <PageHeader
@@ -111,7 +111,7 @@ const HomePage = ({
     kaleImage
   }
 }) => {
-  console.log(page.frontmatter.meta);
+  console.log(page.frontmatter.meta)
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <HomePageTemplate

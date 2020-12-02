@@ -15,11 +15,7 @@ const Hashtag = ({ featuredImage }) => {
       </Left>
       <Right>
         <h2>#kaleisthenewbeef</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          vulputate mauris id euismod rutrum. Suspendisse interdum sapien sed
-          elementum commodo.
-        </p>
+        <p>V2 COMING SOON!</p>
       </Right>
     </Container>
   )
