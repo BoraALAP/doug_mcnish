@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import styled from 'styled-components'
+import Feed from 'react-instagram-authless-feed'
 
 // import PageHeader from '../components/PageHeader'
 // import PostSection from '../components/PostSection'
@@ -56,6 +57,7 @@ export const HomePageTemplate = ({
         /> */}
         <Hashtag featuredImage={kaleImage.fluid} />
         <ProductGrid type="book" title="Books" />
+        <Insta userName="dougmcnish" limit="9" />
       </ContentLayout>
 
       {/* <PageHeader
@@ -138,6 +140,26 @@ const HomePage = ({
 }
 
 export default HomePage
+
+const Main = styled.main`
+  grid-gap: 80px;
+  display: grid;
+`
+
+const Insta = styled(Feed)`
+  display: grid;
+
+  grid-gap: 32px;
+
+  @media screen and (min-width: 470px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  img {
+    display: grid;
+    width: 100%;
+  }
+`
 
 export const pageQuery = graphql`
   ## Query for HomePage data
@@ -255,9 +277,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-
-const Main = styled.main`
-  grid-gap: 80px;
-  display: grid;
 `
