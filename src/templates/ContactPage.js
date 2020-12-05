@@ -33,11 +33,11 @@ export const ContactPageTemplate = ({
           {address}
         </a>
       )} */}
-      {phone && (
+      {/* {phone && (
         <Alink className="Contact--Details--Item" href={`tel:${phone}`}>
           <Smartphone /> {phone}
         </Alink>
-      )}
+      )} */}
       {email && (
         <Alink className="Contact--Details--Item" href={`mailto:${email}`}>
           <Mail /> {email}
@@ -45,9 +45,7 @@ export const ContactPageTemplate = ({
       )}
     </Info>
 
-    
-      {/* <FormSimpleAjax name="contact_form" /> */}
-    
+    {/* <FormSimpleAjax name="contact_form" /> */}
 
     {/* <GoogleMap locations={locations} /> */}
   </ContentLayout>
@@ -62,7 +60,6 @@ const ContactPage = ({ data: { page } }) => (
   </Layout>
 )
 
-
 const Info = styled.div`
   display: grid;
   grid-gap: 2rem;
@@ -70,8 +67,8 @@ const Info = styled.div`
 
 const Alink = styled.a`
   display: grid;
-  align-items:center;
-  grid-auto-flow:column;
+  align-items: center;
+  grid-auto-flow: column;
   grid-gap: 0.5rem;
   width: max-content;
 `
