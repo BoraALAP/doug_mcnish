@@ -85,15 +85,48 @@ const ProductPage = ({ data }) => {
     },
     {
       handle: 'eat-raw-eat-well-400-raw-vegan-and-gluten-free-recipes',
-      body: `3`
+      body: [
+        {
+          country: 'Canada',
+          buttons: [
+            {
+              company: 'Amazon',
+              link:
+                'https://www.amazon.ca/Eat-Raw-Well-Gluten-Free-Recipes/dp/0778802957/ref=sr_1_1?crid=1DCG6MTVHF0M5&dchild=1&keywords=eat+raw+eat+well&qid=1607538585&sprefix=eat+raw%2Cstripbooks%2C181&sr=8-1'
+            }
+          ]
+        }
+      ]
     },
     {
       handle: 'raw-quick-and-delicious-5-ingredient-recipes-in-just-15-minutes',
-      body: `4`
+      body: [
+        {
+          country: 'Canada',
+          buttons: [
+            {
+              company: 'Amazon',
+              link:
+                'https://www.amazon.ca/Raw-Quick-Delicious-5-Ingredient-Recipes/dp/0778804550'
+            }
+          ]
+        }
+      ]
     },
     {
       handle: 'vegan-everyday-500-delicious-recipes',
-      body: `5`
+      body: [
+        {
+          country: 'Canada',
+          buttons: [
+            {
+              company: 'Amazon',
+              link:
+                'https://www.amazon.ca/Vegan-Everyday-500-Delicious-Recipes/dp/0778804992/ref=sr_1_1?dchild=1&keywords=vegan+everyday&qid=1607538562&s=books&sr=1-1'
+            }
+          ]
+        }
+      ]
     }
   ]
 
@@ -109,13 +142,13 @@ const ProductPage = ({ data }) => {
   )
 
   const Form = () => {
-    if (product.productType === 'Book') {
+    if (product.productType === 'Book' && item && item.body) {
       return item.body.map(country => (
         <PurchaseBox>
           <h3>{country.country}</h3>
           <Buttons>
             {country.buttons.map(button => (
-              <a href={button.link}>
+              <a href={button.link} target="_blank" rel="nofollow">
                 <Button>{button.company}</Button>
               </a>
             ))}
@@ -126,6 +159,8 @@ const ProductPage = ({ data }) => {
       return <ProductForm product={product} />
     }
   }
+
+  console.log(thisEdge)
 
   return (
     <Layout title={product.title || false}>
