@@ -3,16 +3,18 @@ import Layout from '../components/Global/Layout'
 import ProductGrid from '../components/Shop/ProductGrid'
 import styled from 'styled-components'
 
-const ServicesPage = () => (
-  <Layout 
-    title="Shop">
-    <Container>
-      <ProductGrid type="book" title="Books" />
-      <ProductGrid type="tshirt" title="Tshirts" />
-      <ProductGrid type="e-book" title="E-Books" />
-    </Container>
-  </Layout>
-)
+const ServicesPage = () => {
+  console.log(process.env.SHOP_NAME)
+  return (
+    <Layout title="Shop">
+      <Container>
+        <ProductGrid type="book" title="Books" />
+        <ProductGrid type="tshirt" title="Tshirts" />
+        <ProductGrid type="e-book" title="E-Books" />
+      </Container>
+    </Layout>
+  )
+}
 
 const Container = styled.section`
   display: grid;
