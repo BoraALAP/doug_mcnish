@@ -11,7 +11,7 @@ import Layout from '../components/Global/Layout'
 // import Accordion from '../components/UI/Accordion'
 import FullWidthImage from '../components/Component/FullWidthImage'
 import HomeAbout from '../components/Component/HomeAbout'
-import Partnership from '../components/Component/Partnership'
+
 import Hashtag from '../components/Component/Hashtag'
 import ContentLayout from '../components/Global/ContentLayout'
 import ProductGrid from '../components/Shop/ProductGrid'

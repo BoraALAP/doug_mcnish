@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Paragraph, { Title } from '../UI/Paragraph'
+import { Title } from '../UI/Paragraph'
 
 const FourColumn = ({ children, title }) => {
   return (

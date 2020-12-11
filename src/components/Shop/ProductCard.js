@@ -18,18 +18,28 @@ const ProductCard = ({
     omission: `…`
   })
 
+  console.log(productType === 'Book')
+
   return (
     <Container to={`/product/${handle}`}>
       {
         <div>
-          {images[0] ? <Img fluid={images[0].localFile.childImageSharp.fluid} /> : <NoImage><p>No Image</p></NoImage>}
+          {images[0] ? (
+            <Img fluid={images[0].localFile.childImageSharp.fluid} />
+          ) : (
+            <NoImage>
+              <p>No Image</p>
+            </NoImage>
+          )}
         </div>
       }
       <Text>
         {title && <h3>{title}</h3>}
         {excerpt && <p>{excerpt}</p>}
       </Text>
-      <ButtonS>Buy Now - {variants[0].price}</ButtonS>
+      <ButtonS>
+        Buy Now{productType !== 'Book' && ` - ${variants[0].price}`}
+      </ButtonS>
     </Container>
   )
 }
@@ -67,10 +77,10 @@ const NoImage = styled.div`
   max-height: 300px;
   min-height: 145px;
   background: ${({ theme }) => theme.color.goldGradient};
-  justify-content:center;
-  align-items:center;
-  p{
-  color: ${({ theme }) => theme.color.positive};
-}
+  justify-content: center;
+  align-items: center;
+  p {
+    color: ${({ theme }) => theme.color.positive};
+  }
 `
 export default ProductCard

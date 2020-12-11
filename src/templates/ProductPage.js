@@ -148,7 +148,7 @@ const ProductPage = ({ data }) => {
           <h3>{country.country}</h3>
           <Buttons>
             {country.buttons.map(button => (
-              <a href={button.link} target="_blank" rel="nofollow">
+              <a href={button.link} target="_blank" rel="noreferrer">
                 <Button>{button.company}</Button>
               </a>
             ))}
@@ -238,8 +238,6 @@ const Buttons = styled.div`
     justify-content: start;
   }
 `
-
-const H4 = styled.h4``
 
 const Top = styled.div`
   display: grid;

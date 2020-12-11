@@ -1,5 +1,5 @@
 import React from 'react'
-import { Smartphone, Mail } from 'react-feather'
+import { Mail } from 'react-feather'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
