@@ -4,8 +4,8 @@ import Client from 'shopify-buy'
 import Context from '../context/StoreContext'
 
 const client = Client.buildClient({
-  storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-  domain: `${process.env.SHOP_NAME}.myshopify.com`,
+  storefrontAccessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+  domain: `${process.env.GATSBY_SHOP_NAME}.myshopify.com`
 })
 
 const ContextProvider = ({ children }) => {
@@ -14,7 +14,7 @@ const ContextProvider = ({ children }) => {
     adding: false,
     checkout: { lineItems: [] },
     products: [],
-    shop: {},
+    shop: {}
   }
 
   const [store, updateStore] = useState(initialStoreState)
@@ -78,7 +78,7 @@ const ContextProvider = ({ children }) => {
 
           const checkoutId = checkout.id
           const lineItemsToUpdate = [
-            { variantId, quantity: parseInt(quantity, 10) },
+            { variantId, quantity: parseInt(quantity, 10) }
           ]
 
           return client.checkout
@@ -100,7 +100,7 @@ const ContextProvider = ({ children }) => {
         },
         updateLineItem: (client, checkoutID, lineItemID, quantity) => {
           const lineItemsToUpdate = [
-            { id: lineItemID, quantity: parseInt(quantity, 10) },
+            { id: lineItemID, quantity: parseInt(quantity, 10) }
           ]
 
           return client.checkout
@@ -110,7 +110,7 @@ const ContextProvider = ({ children }) => {
                 return { ...prevState, checkout: res }
               })
             })
-        },
+        }
       }}
     >
       {children}
