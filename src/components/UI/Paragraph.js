@@ -57,8 +57,15 @@ const SubTitle = styled.h3`
 
 const ParagraphS = styled.div`
   display: grid;
-  padding: 0 1.5rem;
   max-width: 600px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
 `
 
 export default Paragraph

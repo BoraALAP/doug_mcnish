@@ -4,7 +4,6 @@ import ProductGrid from '../components/Shop/ProductGrid'
 import styled from 'styled-components'
 
 const ServicesPage = () => {
-  console.log(process.env.SHOP_NAME)
   return (
     <Layout title="Shop">
       <Container>

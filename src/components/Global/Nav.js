@@ -77,8 +77,8 @@ const Navigation = props => {
           Services
         </LinkS>
         {/* <Alinks href="https://youtube.com" target="_blank">Youtube</Alinks>
-          <Alinks href="https://shopify.com" target="_blank">Podcast</Alinks> */}
-        {/* <LinkS to="/onlinecourses/">Online Courses</LinkS> */}
+         
+        <LinkS to="/onlinecourses/">Online Courses</LinkS> */}
         <LinkS
           to="/products/"
           cover
@@ -88,6 +88,12 @@ const Navigation = props => {
         >
           Shop
         </LinkS>
+        <Alinks
+          href="https://open.spotify.com/show/2JOBycFphNZf8ROBqEfr3X?si=hSMDnhCDTeWSorPzV6cpgA"
+          target="_blank"
+        >
+          Podcast
+        </Alinks>
         <LinkS
           to="/contact/"
           cover
@@ -171,6 +177,19 @@ const Nav = styled.nav`
 `
 
 const LinkS = styled(AniLink)`
+  display: grid;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-family: ${({ theme }) => theme.font.body};
+  font-weight: 600;
+  padding: 1em 8px;
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+  }
+`
+
+const Alinks = styled.a`
   display: grid;
   text-decoration: none;
   font-size: 0.875rem;

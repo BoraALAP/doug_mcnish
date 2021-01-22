@@ -18,8 +18,6 @@ const ProductCard = ({
     omission: `…`
   })
 
-  console.log(productType === 'Book')
-
   return (
     <Container to={`/product/${handle}`}>
       {

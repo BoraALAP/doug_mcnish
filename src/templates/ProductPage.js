@@ -134,9 +134,6 @@ const ProductPage = ({ data }) => {
     it => product.productType === 'Book' && it.handle === product.handle
   )
 
-  console.log(item)
-
-  console.log(product)
   const thisEdge = data.allServices.edges.find(
     edge => edge.node.id === product.id
   )
@@ -159,8 +156,6 @@ const ProductPage = ({ data }) => {
       return <ProductForm product={product} />
     }
   }
-
-  console.log(thisEdge)
 
   return (
     <Layout title={product.title || false}>

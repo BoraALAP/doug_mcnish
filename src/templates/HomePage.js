@@ -55,9 +55,9 @@ export const HomePageTemplate = ({
           partner2={partner2.fixed}
           partner3={partner3.fixed}
         /> */}
-        <Hashtag featuredImage={kaleImage.fluid} />
+        {/* <Hashtag featuredImage={kaleImage.fluid} /> */}
         <ProductGrid type="book" title="Books" />
-        <Insta userName="dougmcnish" limit="9" />
+        {/* <Insta userName="dougmcnish" limit="9" /> */}
       </ContentLayout>
 
       {/* <PageHeader
@@ -113,7 +113,6 @@ const HomePage = ({
     kaleImage
   }
 }) => {
-  console.log(page.frontmatter.meta)
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <HomePageTemplate
@@ -141,7 +140,7 @@ const HomePage = ({
 
 export default HomePage
 
-const Main = styled.main`
+const Main = styled.div`
   grid-gap: 80px;
   display: grid;
 `
