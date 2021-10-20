@@ -93,7 +93,7 @@ export const HomePageTemplate = ({
               your business will prosper by offering more plant based and vegan
               options to your customers. When you decide to harness the power of
               plants and partner with Chef McNish, the transition will be as
-              simple, strategic and profitable as possible.{' '}
+              simple, strategic and profitable as possible.
             </p>
 
             <p>
@@ -121,7 +121,7 @@ export const HomePageTemplate = ({
               including best-selling publications Eat Raw, Eat Well and The
               Classics Veganized, are internationally recognized as among the
               Best Vegetarian Cookbooks in the world, having been awarded the
-              Gourmand Award in 2012 and 2021, respectively.{' '}
+              Gourmand Award in 2012 and 2021, respectively.
             </p>
 
             <p>
@@ -133,19 +133,19 @@ export const HomePageTemplate = ({
               Vegan Chef, Restaurant Consultant and Educator, Doug McNish has
               partnered with renowned, elite brands and trailblazing businesses
               around the globe in his mission to make plant based cuisine
-              beloved by the masses.{' '}
+              beloved by the masses.
             </p>
 
             <p>
               Alongside his colleagues and collaborators, Chef McNish is leading
               the charge into a new era for our global community, creating a
               world where we no longer have to choose between convenience,
-              indulgence and our conscience.{' '}
+              indulgence and our conscience.
             </p>
 
             <p>
               Join the movement. Choose evolution, and be a Vegan leader with
-              Chef Doug McNish.{' '}
+              Chef Doug McNish.
             </p>
           </Paragraph>
         </Center>
