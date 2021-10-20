@@ -184,6 +184,9 @@ const LinkS = styled(AniLink)`
   font-weight: 600;
   padding: 1em 8px;
   border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
+  &[aria-current='page'] {
+    text-decoration: underline;
+  }
   @media screen and (min-width: 768px) {
     border-bottom: none;
   }

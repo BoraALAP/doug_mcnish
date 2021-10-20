@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../../styles/global'
 import { primaryTheme, secondaryTheme } from '../../styles/theme'
-import favicon from '../../assets/favicon.ico'
+// import favicon from '../../assets/favicon.ico'
 import Meta from './Meta'
 import Nav from './Nav'
 import Footer from './Footer'
 import ContextProvider from '../../provider/ContextProvider'
 
-export default ({ children, meta, title }) => {
+export default ({ children, meta }) => {
   // eslint-disable-next-line
   const [mode, setMode] = useState(true)
   return (
@@ -44,8 +44,7 @@ export default ({ children, meta, title }) => {
           }
         `}
         render={data => {
-          const { siteTitle, socialMediaCard, googleTrackingId } =
-              data.settingsYaml || {},
+          const { socialMediaCard, googleTrackingId } = data.settingsYaml || {},
             subNav = {
               posts: data.allPosts.hasOwnProperty('edges')
                 ? data.allPosts.edges.map(post => {
@@ -57,7 +56,7 @@ export default ({ children, meta, title }) => {
           return (
             <ThemeProvider theme={mode ? primaryTheme : secondaryTheme}>
               <GlobalStyle />
-              <Helmet
+              {/* <Helmet
                 defaultTitle={`${title} | ${siteTitle}`}
                 titleTemplate={`%s | ${siteTitle}`}
               >
@@ -69,8 +68,8 @@ export default ({ children, meta, title }) => {
                 />
                 <link rel="icon" href={favicon} />
                 <link rel="dns-prefetch" href="https://ucarecdn.com" />
-                {/* Add font link tags here */}
-              </Helmet>
+               
+              </Helmet> */}
 
               <Meta
                 googleTrackingId={googleTrackingId}

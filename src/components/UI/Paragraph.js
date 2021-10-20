@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Paragraph = ({ title, subtitle, children }) => {
+const Paragraph = ({ title, subtitle, children, twoColumn }) => {
   return (
     <Container>
       {title && <TitleS>{title}</TitleS>}
       {subtitle && <SubTitle>{subtitle}</SubTitle>}
-      <Content>
+      <Content twoColumn={twoColumn}>
         {Array.isArray(children) && children.length > 1 ? (
           children.map((child, index) => (
             <ParagraphS key={index}>{child}</ParagraphS>
@@ -38,11 +38,13 @@ const Container = styled.div`
   display: grid;
   grid-gap: 0.75rem;
   margin-top: 1.5rem;
+  max-width: 700px;
 `
 
 const Content = styled.div`
   display: grid;
   grid-gap: 0.75rem;
+  grid-template-columns: ${props => (props.twoColumn ? '1fr 1fr' : 'auto')};
 `
 
 const TitleS = styled.h1`
@@ -57,7 +59,6 @@ const SubTitle = styled.h3`
 
 const ParagraphS = styled.div`
   display: grid;
-  max-width: 600px;
 
   @media screen and (min-width: 768px) {
     padding: 0 1.5rem;

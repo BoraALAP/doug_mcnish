@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import styled from 'styled-components'
-import Feed from 'react-instagram-authless-feed'
 
 // import PageHeader from '../components/PageHeader'
 // import PostSection from '../components/PostSection'
@@ -12,9 +11,12 @@ import Layout from '../components/Global/Layout'
 import FullWidthImage from '../components/Component/FullWidthImage'
 import HomeAbout from '../components/Component/HomeAbout'
 
-import Hashtag from '../components/Component/Hashtag'
+// import Hashtag from '../components/Component/Hashtag'
 import ContentLayout from '../components/Global/ContentLayout'
 import ProductGrid from '../components/Shop/ProductGrid'
+import Paragraph from '../components/UI/Paragraph'
+// import Meta from '../components/Global/Meta'
+// import { InstagramFeed } from '../components/InstagramFeed'
 
 export const convertProductsToPostFormat = products => {
   let formattedProducts = []
@@ -43,8 +45,10 @@ export const HomePageTemplate = ({
   partner1,
   partner2,
   partner3,
-  kaleImage
+  kaleImage,
+  body
 }) => {
+  console.log(body)
   return (
     <Main>
       <FullWidthImage featuredImage={headerImage.fluid} />
@@ -55,45 +59,98 @@ export const HomePageTemplate = ({
           partner2={partner2.fixed}
           partner3={partner3.fixed}
         /> */}
-        {/* <Hashtag featuredImage={kaleImage.fluid} /> */}
+        <Center>
+          <h2>Be A Vegan Leader With Executive Chef Doug Mcnish</h2>
+          <Paragraph>
+            <p>
+              The world is evolving, and so should your business. Every day,
+              more people are choosing to open their minds and lead more ethical
+              and sustainable lifestyles by voting with their dollars. The
+              message that plant based diets are better for the planet, our
+              fellow earthlings and our overall health has reached the
+              international stage, and public support is mounting as science
+              proves it to be true, again and again. And no, it’s not just a
+              trend.
+            </p>
+
+            <p>
+              Society’s movement towards embracing plant based diets, holistic
+              healing and conscious consumerism has only just begun. Our
+              collective evolution is officially underway, and the impact is
+              reverberating through markets and industries around the world.
+              Brands that choose to adapt their business models now can take
+              advantage of this seismic shift in social thought and consumer
+              behaviour, cementing themselves as leaders in the global movement
+              towards compassionate and conscious living.
+            </p>
+
+            <p>
+              Internationally award-winning Executive Vegan Chef Doug McNish
+              will help your emerging or established business evolve it’s
+              products, services and operations so you can capitalize on this
+              revolutionary opportunity. Whether you are already a bonafide
+              plant addict or are personally a born-and-raised plant sceptic,
+              your business will prosper by offering more plant based and vegan
+              options to your customers. When you decide to harness the power of
+              plants and partner with Chef McNish, the transition will be as
+              simple, strategic and profitable as possible.{' '}
+            </p>
+
+            <p>
+              Ultimately, Chef Doug’s mission is to make Veganism and Plant
+              Based Cuisine more accessible to the public on a global scale by
+              using his skills, knowledge and passion to help forward-thinking
+              brands bring gourmet, healthful plant based options and products
+              to their customers. As an Executive Chef and Restaurant and Food
+              Business Consultant, Chef McNish offers his expertise and talents
+              as a gastronomer, menu developer, business consultant,
+              restaurateur, public speaker and educator to collaborators across
+              continents, bringing their business models into the modern world
+              and maximizing their profitability and popularity, in turn.
+            </p>
+
+            <p>
+              Chef Doug McNish has a demonstrable history of launching
+              award-winning restaurants as well as wildly popular plant based
+              menus and events, consulting on every aspect of business
+              operations, kitchen staff training and recipe development. Among
+              his most recent successes, Chef McNish was at the helm of
+              launching Neon Tiger, Charleston’s first plant based restaurant
+              which was awarded Best New Restaurant in Charleston 2021, beating
+              out its conventional counterparts. Three of his four cookbooks,
+              including best-selling publications Eat Raw, Eat Well and The
+              Classics Veganized, are internationally recognized as among the
+              Best Vegetarian Cookbooks in the world, having been awarded the
+              Gourmand Award in 2012 and 2021, respectively.{' '}
+            </p>
+
+            <p>
+              In 2017, he was granted the title of Best Chef in Toronto by local
+              media outlets, and has appeared on national and international
+              media networks as a culinary expert, giving food demonstrations as
+              well as motivational and educational lectures related to holistic
+              health and his entrepreneurialism. As a world-class Executive
+              Vegan Chef, Restaurant Consultant and Educator, Doug McNish has
+              partnered with renowned, elite brands and trailblazing businesses
+              around the globe in his mission to make plant based cuisine
+              beloved by the masses.{' '}
+            </p>
+
+            <p>
+              Alongside his colleagues and collaborators, Chef McNish is leading
+              the charge into a new era for our global community, creating a
+              world where we no longer have to choose between convenience,
+              indulgence and our conscience.{' '}
+            </p>
+
+            <p>
+              Join the movement. Choose evolution, and be a Vegan leader with
+              Chef Doug McNish.{' '}
+            </p>
+          </Paragraph>
+        </Center>
         <ProductGrid type="book" title="Books" />
-        {/* <Insta userName="dougmcnish" limit="9" /> */}
       </ContentLayout>
-
-      {/* <PageHeader
-      large
-      title={title}
-      subtitle={subtitle}
-      backgroundImage={featuredImage}
-    />
-
-    <section className="section">
-      <div className="container">
-        <Content source={body} />
-      </div>
-    </section> */}
-
-      {/* <PostSection
-          title="Books"
-          posts={convertProductsToPostFormat(products)}
-          limit={4}
-          type="book"
-        /> */}
-
-      {/* <section className="section">
-      <div className="container">
-        <PostSection title="features" />
-        <Accordion title="features" items={accordion} />
-      </div>
-    </section>
-
-    {!!posts.length && (
-      <section className="section">
-        <div className="container">
-          <PostSection title="Recent Blog Posts" posts={posts} />
-        </div>
-      </section>
-    )} */}
     </Main>
   )
 }
@@ -119,11 +176,6 @@ const HomePage = ({
         {...page}
         {...page.frontmatter}
         body={page.html}
-        posts={posts.edges.map(post => ({
-          ...post.node,
-          ...post.node.frontmatter,
-          ...post.node.fields
-        }))}
         products={products.edges.map(service => ({
           ...service.node
         }))}
@@ -145,19 +197,11 @@ const Main = styled.div`
   display: grid;
 `
 
-const Insta = styled(Feed)`
+const Center = styled.div`
   display: grid;
-
-  grid-gap: 32px;
-
-  @media screen and (min-width: 470px) {
-    grid-template-columns: repeat(3, auto);
-  }
-
-  img {
-    display: grid;
-    width: 100%;
-  }
+  justify-content: center;
+  justify-self: center;
+  max-width: 700px;
 `
 
 export const pageQuery = graphql`
@@ -173,33 +217,6 @@ export const pageQuery = graphql`
         title
         subtitle
         featuredImage
-        accordion {
-          title
-          content
-        }
-      }
-    }
-
-    posts: allMarkdownRemark(
-      limit: 3
-      filter: { fields: { contentType: { eq: "posts" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "dddd MMMM DD, YYYY")
-            categories {
-              category
-            }
-            featuredImage
-          }
-        }
       }
     }
 
@@ -223,8 +240,6 @@ export const pageQuery = graphql`
 
     headerImage: file(relativePath: { eq: "headerImage.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
@@ -232,8 +247,6 @@ export const pageQuery = graphql`
     }
     aboutImage: file(relativePath: { eq: "doug.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
@@ -241,8 +254,6 @@ export const pageQuery = graphql`
     }
     partner1: file(relativePath: { eq: "evviva.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed(height: 70) {
           ...GatsbyImageSharpFixed
         }
@@ -250,8 +261,6 @@ export const pageQuery = graphql`
     }
     partner2: file(relativePath: { eq: "neontiger.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed(height: 70) {
           ...GatsbyImageSharpFixed
         }
@@ -259,8 +268,6 @@ export const pageQuery = graphql`
     }
     partner3: file(relativePath: { eq: "sweden.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed(height: 70) {
           ...GatsbyImageSharpFixed
         }
@@ -268,8 +275,6 @@ export const pageQuery = graphql`
     }
     kaleImage: file(relativePath: { eq: "kaleImage.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         }

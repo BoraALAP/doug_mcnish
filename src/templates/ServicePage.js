@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 import TwoParagraph from '../components/Services/TwoParagraph'
-import TwoColumn from '../components/Services/TwoColumn'
+// import TwoColumn from '../components/Services/TwoColumn'
 import LeftImage from '../components/Services/LeftImage'
 import RightImage from '../components/Services/RightImage'
 import FourColumn from '../components/Services/FourColumn'
@@ -16,120 +16,172 @@ import Paragraph from '../components/UI/Paragraph'
 export const ServicePageTemplate = ({ photo, dinner, social }) => {
   return (
     <ContentLayout>
+      <Paragraph title="Services">
+        <p>
+          The world is evolving, and so should your business. Every day, more
+          people are choosing to lead more ethical and sustainable lifestyles by
+          adopting new habits and voting with their dollars. People are
+          beginning to understand that plant based diets are not just better for
+          farm animals and other earthlings, but also for our planet and our
+          overall health. And no, it’s not just a trend.
+        </p>
+
+        <p>
+          Society is finally embracing plant based diets, holistic healing and
+          conscious consumerism and the impact is echoing through markets around
+          the world. Brands that choose to evolve their business models now can
+          capitalize on this seismic shift in social thought and consumer
+          behaviour, centering themselves as leaders in the movement towards
+          eco-conscious living.
+        </p>
+
+        <p>
+          Globally acclaimed Executive Vegan Chef Doug McNish will help your
+          emerging or established business evolve it’s products, services and
+          operations so you can take advantage of this revolutionary opportunity
+          to develop or diversify your revenue stream. Whether you are a
+          self-proclaimed plant addict or plant skeptic, your business will
+          benefit from offering more plant based and vegan options to your
+          customers. When you decide to harness the power of plants and partner
+          with Chef McNish, the growth of your business will be as simple,
+          strategic and profitable as possible.
+        </p>
+      </Paragraph>
+
       <FourColumn title="Food Services">
         <Paragraph subtitle="Menu Design and Development">
           <p>
-            Whether you are just opening, or you would like to revitalize your
-            existing menu, Doug can execute on time and on budget.
+            Whether you’re launching a new business and need a comprehensive
+            menu designed from scratch or you’d like to diversify your existing
+            menu to cater to a wider audience, Doug can execute your vision with
+            his expert touch, on time and within budget.
           </p>
           <p>
-            Utilizing current technique, and on trend industry recipes, he will
-            deliver a fully executable menu based on your specific needs.
+            After an in-depth consultation to discuss your specific needs, goals
+            and vision, Chef McNish will craft a customized menu full of his own
+            unique and undeniably delicious recipes. What’s more, he will ensure
+            that all the ingredients, time and preparation required to make your
+            new menu a reality are fully accounted for through comprehensive
+            food costing and sourcing within your budget.
           </p>
           <p>
-            In addition to development, he can assist in instructing you and
-            your team on proper execution daily, ensuring your customers receive
-            the same final product each and every time they visit your business!
+            In addition to menu design and development, Chef Doug is an
+            experienced food educator and can assist in any training that your
+            BOH or FOH teams need to ensure that it will be executed properly on
+            a daily basis, so your customers can come to expect the same
+            tantalizing quality with every visit.
           </p>
           <p>
-            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>{' '}
-            a time to discuss your menu needs with Doug's team
+            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>a
+            time to discuss your menu needs with Doug's team
           </p>
         </Paragraph>
         <Paragraph subtitle="Kitchen Design and Functionality">
           <p>
-            One of the most complicated and difficult to manage aspects of any
-            food service business is the kitchen. Just as important (if not
-            more) as the food you cook, is the functionality of it.
+            An often overlooked but absolutely crucial aspect of any food
+            service business is understanding and organizing its kitchen
+            operations. The functionality of the food you cook is just as
+            important (if not more) as its quality. If you have an amazing
+            recipe, but your kitchen isn’t equipped to handle the processes
+            involved in consistently creating it en masse, then your recipe and
+            the skills of your kitchen staff are useless.
           </p>
           <p>
-            By hiring Doug, you are bringing on board a dedicated and hands on
-            Executive Chef with working methods to help you save time, money and
-            hassle.
+            By partnering with Doug, you are teaming up with a dedicated and
+            hands-on Executive Chef with tried and true methods and strategies
+            that will save you time, money and hassle. Chef McNish is skilled in
+            the art of kitchen set up, so your operations will be as efficient
+            and profitable as possible. He has a passion for helping launch new
+            food businesses, so even if you’re in the early stages of restaurant
+            development, reach out for a consultation.
           </p>
+
           <p>
-            By bringing Doug on board from day one, he can help make the ease of
-            designing a kitchen space more efficient and profitable.
-          </p>
-          <p>
-            Finally, Doug can take a hands on approach and help show each member
-            of your staff how (and where) to store all kitchen items such as
-            pots and pans, bottles and all other kitchen equipment.
-          </p>
-          <p>
-            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>{' '}
-            a time to discuss your kitchen functionality needs with Doug's team{' '}
+            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>a
+            time to discuss your kitchen functionality needs with Doug's team
           </p>
         </Paragraph>
         <Paragraph subtitle="Supply Chain and Food Costing">
           <p>
-            One of the most important, and time consuming aspects of any food
-            service business, are the sourcing of products, setting up the
-            supply chain and properly costing the final product(s).
-          </p>
-          <p>
-            Through Doug's years of experience, he can support your business
-            with a menu of cost controlled systems and guidelines, helping to
-            ensure the guesswork is taken out of margins and hard costs.
-          </p>
-          <p>
-            His deliverables can include a breakdown of fully executed turn key
-            supplier ordering sheets, inventory sheets and more. This step is
-            necessary for success in any food service business and often
-            neglected.
+            One of the most complicated and time-consuming demands related to
+            any profitable food service business is the sourcing of products,
+            setting up the supply chain and properly costing the final
+            product(s).
           </p>
 
           <p>
-            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>{' '}
-            a time to discuss your supply chain and food costing needs with
-            Doug's team.
+            Through Doug's years of experience, he can support your business
+            with a menu of cost-controlled systems and guidelines, ensuring that
+            all the guesswork is taken out of the margins so you can always stay
+            within your budget.
+          </p>
+
+          <p>
+            His deliverables include a breakdown of fully executed turn-key
+            supplier ordering sheets, inventory sheets and more. While this step
+            is often neglected in the hubbub of launching a new business, every
+            successful restaurant knows that it can not be ignored, and should
+            be considered right from the start.
+          </p>
+
+          <p>
+            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>a
+            time to discuss your supply chain and food costing needs with Doug's
+            team.
           </p>
         </Paragraph>
         <Paragraph subtitle="Equipment Ordering and Layout ">
           <p>
             Have you ever wanted to know what type of kitchen equipment is the
             best suited for your business, or even your home? What about the
-            best way to lay it out in your existing, new, old, or soon to be new
+            best way to lay it out in your existing, new, old, or soon-to-be new
             kitchen?
-          </p>
-          <p>
-            Doug will take the time to make it function in the most efficient
-            and profitable manner, helping you on your way to success.
-          </p>
-          <p>
-            With Doug’s years of professional food service experience, he will
-            work to help you purchase and fit the best equipment for you and
-            your business or home.
           </p>
 
           <p>
-            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>{' '}
-            a time to discuss your kitchen equipment and layout needs with
-            Doug's team.{' '}
+            Chef Doug knows how important the kitchen is to any dwelling, and he
+            knows exactly how to ensure that it functions in the most efficient
+            and profitable manner. Kitchen design should be considered an
+            important and foundational building block for your business as you
+            build your way to success.
+          </p>
+
+          <p>
+            With Doug’s decades of professional food service experience, he will
+            help you choose, purchase and implement the best equipment for your
+            needs, goals and vision.
+          </p>
+
+          <p>
+            Please <a href="mailto: chef@dougmcnish.com">click here to book</a>a
+            time to discuss your kitchen equipment and layout needs with Doug's
+            team.
           </p>
         </Paragraph>
       </FourColumn>
       <RightImage featuredImage={social.fluid}>
         <Paragraph title="Hotel and Institutional Training">
           <p>
-            With Doug's 20+ years in the food service industry, he has immersed
-            himself into hotel brands and chains both locally and globally.
+            Throughout Doug’s many years as a professional chef in the food
+            service industry, he has immersed himself into the world of
+            hospitality, partnering with boutique hotels and renowned chains
+            both locally and globally.
           </p>
+
           <p>
-            From small 5 star boutique hotels, to large industrial hotels, Doug
-            has been a vital partner in implementing plant based menus in
-            international destinations across the world.
+            Doug has been a vital partner in implementing plant based menus
+            across international hospitality destinations of every size and
+            caliber. In addition to hotels, Doug is available for large-scale,
+            institutional plant based consulting and training. Colleges,
+            universities and other large food service operators have all
+            benefited from Doug’s knowledge, passion and the skills that he
+            passes down to his students and food service colleagues.
           </p>
-          <p>
-            In addition to hotels, Doug is available for large scale
-            institutional plant based consulting. Colleges, universities and
-            other large food service operators have all benefited from Doug’s
-            knowledge and dedication to plant based cuisine.
-          </p>
+
           <p>
             <a href="mailto: chef@dougmcnish.com">
               Reach out to Doug and his team here
-            </a>{' '}
+            </a>
             to book a consultation.
           </p>
         </Paragraph>
@@ -138,26 +190,29 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
         <Paragraph title="Industrial and Large Scale Plant Based Recipe Development">
           <p>
             Looking to enter the fast-growing and ever-changing Plant Based
-            marketplace but not sure where to start? Have an idea for a product
-            but need some further guidance and recipe creation?
+            Marketplace but not sure where to start? Or, do you have a promising
+            idea for a product and need further guidance to turn it into a
+            reality?
           </p>
 
           <p>
-            Doug is skilled in creation and design of recipes for all types of
-            plant based products, ranging from meats and cheeses, to sauces,
-            dips, spreads, desserts and more. Areas of expertise include (but
-            are not limited to) texturized vegetable protein based applications,
-            various protein concentrates, hydrocolloid applications and other
-            hybrid style recipes. Doug is experienced in everything from early
-            stage prototypes to large scale up and production, as well as a
-            moderate amount of food science.
+            Doug is a skilled gastronomer, creating and designing recipes for
+            all types of plant based products ranging from vegan meats and
+            dairy-free cheeses, to sauces, dips, spreads, desserts and more.
+            Areas of expertise include (but are not limited to) texturized
+            vegetable protein based applications, various protein concentrates,
+            hydrocolloid applications and other hybrid recipe concoctions. Doug
+            is experienced in everything from early stage prototypes to large,
+            scaled-up production, with a foundational understanding of food
+            science.
           </p>
 
           <p>
-            In addition, Doug can lend his expertise in clean label and allergen
-            free recipe development and organic whole foods. Doug is also able
-            to lend his expertise to ingredient sourcing and make
-            recommendations on label, nutrition panels and functional foods.
+            In addition, Chef McNish can lead clean-label and allergen-free
+            recipe development, working with raw and organic whole foods. Doug
+            is also a valuable resource to consult for all things ingredient
+            sourcing, and can make recommendations on labels, nutrition panels
+            and the functionality of foods.
           </p>
 
           <p>
@@ -184,8 +239,8 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
             other dietary needs.
           </p>
           <p>
-            Whether every day, every other day, weekly or, even monthly,{' '}
-            <a href="mailto: chef@dougmcnish.com">contact Doug and his team</a>{' '}
+            Whether every day, every other day, weekly or, even monthly,
+            <a href="mailto: chef@dougmcnish.com">contact Doug and his team</a>
             now to see if there is a plan and schedule that best suits your busy
             lifestyle.
           </p>
@@ -207,8 +262,8 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
           <p>
             <a href="mailto: chef@dougmcnish.com">
               Contact Doug and his team now
-            </a>{' '}
-            for in home private dining events!{' '}
+            </a>
+            for in home private dining events!
           </p>
         </Paragraph>
         <Paragraph subtitle="Private Menu Consultation">
@@ -226,7 +281,7 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
           <p>
             <a href="mailto: chef@dougmcnish.com">
               Contact Doug and his team now
-            </a>{' '}
+            </a>
             for private at home or at office consultation
           </p>
         </Paragraph>
@@ -253,7 +308,7 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
           <p>
             Please note that during COVID-19 Doug is still travelling abroad and
             able to work with you or your team in virtually any country in the
-            world. To book a meeting with his team please{' '}
+            world. To book a meeting with his team please
             <a href="mailto: chef@dougmcnish.com">click here</a>
           </p>
         </Paragraph>
@@ -343,7 +398,7 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
           <p>
             <a href="mailto: chef@dougmcnish.com">Click here</a> to schedule a
             time to speak to the Doug McNish team about having Doug help you
-            grow further with your business now!{' '}
+            grow further with your business now!
           </p>
         </Paragraph>
       </Single>
@@ -368,7 +423,7 @@ export const ServicePageTemplate = ({ photo, dinner, social }) => {
 
           <p>
             To schedule a time to speak with Doug's team about having him
-            represent your brand{' '}
+            represent your brand
             <a href="mailto: chef@dougmcnish.com">click here</a>
           </p>
         </Paragraph>

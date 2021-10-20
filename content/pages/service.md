@@ -8,9 +8,9 @@ subtitle: >-
 
 
 meta:
-  description: >-
+  description: Chef Doug McNish is passionate about helping ethical brands and plant based businesses show the world how amazing vegan food and an ethical lifestyle can be. 
     
-  title: Services
+  title: Work with one of the Best Vegan Chefs in the world!
 ---
 
 

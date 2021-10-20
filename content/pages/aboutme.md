@@ -1,14 +1,14 @@
 ---
 template: AboutMePage
 slug: 'aboutme'
-title: About Doug
+title: 'About Douglas McNish: World Class Chef, Consultant, Author, Activist'
 featuredImage: './images/headerImage.jpg'
 subtitle: >-
   
 meta:
-  description: >-
-   
-  title: About Doug
+  description: "Doug McNish may be a world class vegan chef, award-winning author and serial entrepreneur, but above all he is a passionate animal advocate and loving father."
+
+  title: Award Winning Vegan Chef Doug McNish
 ---
 
 

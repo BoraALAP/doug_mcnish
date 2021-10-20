@@ -27,14 +27,10 @@ accordion:
       netlify](https://app.netlify.com/start/deploy?repository=https://github.com/ecomloop/headless)
     title: download theme for free (today!)
 meta:
-  description: >-
+  description: "Chef Doug McNish is a world class vegan chef, best-selling author, podcast host, restaurateur, gastronomer, public speaker, vegan brand builder, passionate animal advocate and father."
     
-  title: Doug McNish
+  title: Executive Vegan Chef Doug McNish | Best Vegan Cookbook
 ---
 
 
-##Headless commerce for Shopify with GatsbyJS
 
-<a href="https://github.com/ecomloop/headless/" target="_blank" aria-label="Fork ecomloop/headless on GitHub" class="Nav--CTA">download on Github</a>
-
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/ecomloop/headless" target="_blank" aria-label="Fork ecomloop/headless on GitHub" class="Nav--CTA">Deploy to Netlify</a>

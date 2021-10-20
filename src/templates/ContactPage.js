@@ -51,14 +51,16 @@ export const ContactPageTemplate = ({
   </ContentLayout>
 )
 
-const ContactPage = ({ data: { page } }) => (
-  <Layout
-    meta={page.frontmatter.meta || false}
-    title={page.frontmatter.title || false}
-  >
-    <ContactPageTemplate {...page.frontmatter} body={page.html} />
-  </Layout>
-)
+const ContactPage = ({ data: { page } }) => {
+  return (
+    <Layout
+      meta={page.frontmatter.meta || false}
+      title={page.frontmatter.title || false}
+    >
+      <ContactPageTemplate {...page.frontmatter} body={page.html} />
+    </Layout>
+  )
+}
 
 const Info = styled.div`
   display: grid;

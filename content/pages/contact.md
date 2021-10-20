@@ -15,8 +15,8 @@ locations:
     mapLink: ''
 meta:
   description: >-
-    Have an interesting project? Let's talk!
-  title: Contact Page
+    I’d love to hear about your vegan businesses, brands and project ideas. Contact me to collaborate on all things plant based cooking and vegan restaurant related.
+  title: Got a Vegan Business Idea? Let’s Connect.
 ---
 # Get in touch
 

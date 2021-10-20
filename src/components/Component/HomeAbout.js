@@ -16,7 +16,7 @@ const HomeAbout = ({ featuredImage }) => {
         />
       </Left>
       <Right>
-        <Paragraph title="About Doug Mcnish">
+        <Paragraph title="Be A Vegan Leader With Executive Chef Doug Mcnish">
           <p>
             Doug McNish knew that he was destined for a career in the kitchen
             when he began honing his skills at the age of 15, quickly learning
