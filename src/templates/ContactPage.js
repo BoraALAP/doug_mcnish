@@ -3,61 +3,87 @@ import { Mail } from 'react-feather'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-// import FormSimpleAjax from '../components/FormSimpleAjax'
-import Content from '../components/Content'
-// import GoogleMap from '../components/GoogleMap'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import LeftImage from '../components/General/LeftImage'
+
 // Export Template for use in CMS preview
-export const ContactPageTemplate = ({
-  body,
-  title,
-  subtitle,
-  featuredImage,
-  address,
-  phone,
-  email,
-  locations
-}) => (
-  <ContentLayout>
-    <Content source={body} />
-    <Info>
-      {/* {address && (
-        <a
-          className="Contact--Details--Item"
-          href={`https://www.google.com/maps/search/${encodeURI(address)}`}
-          target="_blank"
-          rel="noopener noreferrer"
+export const ContactPageTemplate = ({ photo, email }) => {
+  console.log(photo)
+  return (
+    <ContentLayout>
+      <Info>
+        <LeftImage
+          title="Plant Powered Business Inquiries"
+          featuredImage={photo.fluid}
         >
-          {address}
-        </a>
-      )} */}
-      {/* {phone && (
-        <Alink className="Contact--Details--Item" href={`tel:${phone}`}>
-          <Smartphone /> {phone}
-        </Alink>
-      )} */}
-      {email && (
-        <Alink className="Contact--Details--Item" href={`mailto:${email}`}>
-          <Mail /> {email}
-        </Alink>
-      )}
-    </Info>
+          <p>
+            Do you need help launching your plant based food or veggie-friendly
+            business? Do you have a great vegan product that needs developing or
+            marketing? Are you looking for a personalized plant based menu,
+            informative and inspiring food demonstration or kitchen staff
+            training for your event?
+          </p>
 
-    {/* <FormSimpleAjax name="contact_form" /> */}
+          <p>
+            If you think Chef Doug has the skills and expertise required to get
+            your vegan food or business-related goals accomplished, let him
+            know! He is passionate about helping others achieve their dreams,
+            especially when it pertains to plant based cuisine and promoting
+            veganism around the world.
+          </p>
 
-    {/* <GoogleMap locations={locations} /> */}
-  </ContentLayout>
-)
+          <p>
+            Send a brief email introducing yourself as well as your needs and
+            expectations, and Chef McNish will get back to you as soon as he
+            can.
+          </p>
 
-const ContactPage = ({ data: { page } }) => {
+          <p>
+            For more information about Doug’s extensive range of services and
+            potential{' '}
+            <AniLink
+              to="/partnership/"
+              cover
+              direction="down"
+              bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+            >
+              strategic partnership collaborations
+            </AniLink>
+            , you can learn more{' '}
+            <AniLink
+              to="/service/"
+              cover
+              direction="down"
+              bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+            >
+              here.
+            </AniLink>
+          </p>
+          {email && (
+            <Alink className="Contact--Details--Item" href={`mailto:${email}`}>
+              <Mail /> {email}
+            </Alink>
+          )}
+        </LeftImage>
+      </Info>
+    </ContentLayout>
+  )
+}
+
+const ContactPage = ({ data: { page, photo } }) => {
   return (
     <Layout
       meta={page.frontmatter.meta || false}
       title={page.frontmatter.title || false}
     >
-      <ContactPageTemplate {...page.frontmatter} body={page.html} />
+      <ContactPageTemplate
+        {...page.frontmatter}
+        body={page.html}
+        photo={photo.childImageSharp}
+      />
     </Layout>
   )
 }
@@ -85,15 +111,16 @@ export const pageQuery = graphql`
       frontmatter {
         title
         template
-        subtitle
-        featuredImage
-        address
-        phone
         email
-        locations {
-          mapLink
-          lat
-          lng
+      }
+    }
+
+    photo: file(relativePath: { eq: "Doug-Mcnish-Contact.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

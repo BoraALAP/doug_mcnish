@@ -27,7 +27,7 @@ export const PartnershipPageTemplate = ({
   subtitle,
   featuredImage
 }) => (
-  <ContentLayout>
+  <ContentLayout noTop>
     <Content />
     <Paragraph title={title}>
       <p>
