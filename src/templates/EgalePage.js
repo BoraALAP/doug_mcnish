@@ -2,20 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-// import FormSimpleAjax from '../components/FormSimpleAjax'
-// import Content from '../components/Content'
-// import GoogleMap from '../components/GoogleMap'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 import Paragraph from '../components/UI/Paragraph'
 import Button from '../components/UI/Button'
+import { Egale } from '../assets/logos/egale'
 
 // Export Template for use in CMS preview
 export const EgalePageTemplate = ({ body }) => (
   <ContentLayout>
-    {/* <Content source={body} /> */}
-
     <Info>
+      <Egale />
       <Paragraph title="The Importance of Inclusivity in the Kitchen: In Support of Egale Canada">
         <p>
           Since his early youth, Doug was raised in the kitchens of various bars
@@ -75,7 +72,7 @@ const EgalePage = ({ data: { page } }) => {
 
 const Info = styled.div`
   display: grid;
-  grid-gap: 2rem;
+
   justify-content: center;
 `
 

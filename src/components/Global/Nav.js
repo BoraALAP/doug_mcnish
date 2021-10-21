@@ -95,6 +95,15 @@ const Navigation = props => {
           Podcast
         </Alinks>
         <LinkS
+          to="/partnership/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+          onClick={handleLinkClick}
+        >
+          Partnership
+        </LinkS>
+        <LinkS
           to="/contact/"
           cover
           direction="down"
