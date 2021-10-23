@@ -7,6 +7,7 @@ import ContentLayout from '../components/Global/ContentLayout'
 import Paragraph from '../components/UI/Paragraph'
 import Button from '../components/UI/Button'
 import { Egale } from '../assets/logos/egale'
+import Youtube from '../components/UI/Youtube'
 
 // Export Template for use in CMS preview
 export const EgalePageTemplate = ({ body }) => (
@@ -20,13 +21,16 @@ export const EgalePageTemplate = ({ body }) => (
           line cook and ultimately to head chef. Unfortunately, there came a
           time in his career when he realized that growing up in this aggressive
           environment had taught him more than just cooking skills. Today, Doug
-          is a supporter of Egale Canada and their work advocating for the
-          rights of 2SLGBTQI people across the country by informing public
-          policy and inspiring cultural change through education, research,
-          awareness and more. Inspired by Egale’s important work, Chef Doug is
-          doing his best to aid their mission of promoting human rights and
-          equality by spreading the message of the importance of inclusivity
-          throughout Canada’s restaurant industry.
+          is a huge supporter and fan of Egale Canada and their work advocating
+          for the rights of 2SLGBTQI people across the country by informing
+          public policy and inspiring cultural change through education,
+          research, awareness and more.{' '}
+          <a href="https://egale.ca/about/" target="_blank" rel="noreferrer">
+            Inspired by Egale’s important work
+          </a>
+          , Chef Doug is doing his best to aid their mission of promoting human
+          rights and equality by spreading the message of the importance of
+          inclusivity throughout Canada’s restaurant industry.
         </p>
 
         <p>
@@ -37,23 +41,29 @@ export const EgalePageTemplate = ({ body }) => (
           environments which can be extremely sexist, bigoted or otherwise
           hateful towards marginalized groups at times. Now, Chef McNish aims to
           work with industry organizations in an effort to change this toxic,
-          oppressive culture by bringing Egale’s workplace inclusion for gender
-          and sexual diversity program to kitchens and businesses across Canada.{' '}
+          oppressive culture by bringing Egale’s workplace sensitivity programs
+          to kitchens and businesses across Canada.
         </p>
 
         <p>
           According to Doug, “We are living in a time where inclusivity is
           paramount. As a society, we need to understand and respect that
           everyone’s lived experiences are different. We need to come together
-          now more than ever, instead of feeling divided.” If you want to
-          support Egale’s life-saving work, click the link below to learn more
-          about their initiatives and donate to their crucially important cause.
+          now more than ever, instead of feeling divided.”
+        </p>
+
+        <p>
+          To support Egale’s life-saving work, click the button below and learn
+          more about their initiatives and donate to their crucially important
+          work.
         </p>
 
         <a href="https://egale.ca/donate/" target="_blank" rel="noreferrer">
-          <Button>Donate</Button>
+          <Button>Support LGBTQ+ Advocacy</Button>
         </a>
       </Paragraph>
+
+      <Youtube id="ISBkEDXP_CA" />
     </Info>
   </ContentLayout>
 )

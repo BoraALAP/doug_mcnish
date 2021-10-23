@@ -36,7 +36,10 @@ const ShopPage = () => {
           </p>
         </Paragraph>
 
-        <ProductGrid type="book" title="Books" />
+        <ProductGrid
+          type="book"
+          title="CHEF DOUG MCNISH’S AWARD-WINNING COOKBOOKS"
+        />
         <ProductGrid type="tshirt" title="Tshirts" />
         <ProductGrid type="e-book" title="E-Books" />
       </Container>

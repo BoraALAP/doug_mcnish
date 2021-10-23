@@ -1,7 +1,7 @@
 ---
 template: PartnershipPage
 slug: 'partnership'
-title: 'Strategic Partnerships'
+title: 'Chef Doug Is Grateful To His Strategic Partners'
 featuredImage: './images/headerImage.jpg'
 subtitle: >-
 

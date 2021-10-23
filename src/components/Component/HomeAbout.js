@@ -1,38 +1,46 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import Button from '../UI/Button'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import LargeImage from '../General/LargeImage'
 import Paragraph from '../UI/Paragraph'
 
 const HomeAbout = ({ featuredImage }) => {
   return (
     <Container>
-      <Left>
-        <Img
-          fluid={featuredImage}
-          objectFit="cover"
-          objectPosition="50% 50%"
-          alt=""
-        />
-      </Left>
-      <Right>
-        <Paragraph title="Be A Vegan Leader With Executive Chef Doug Mcnish">
-          <p>
-            Doug McNish knew that he was destined for a career in the kitchen
-            when he began honing his skills at the age of 15, quickly learning
-            all the intricacies of the food service industry. Although adept in
-            his field, by the age of 20, Doug knew that he needed to make a
-            change after watching footage of a slaughterhouse.
-          </p>
-          <p>
-            He went vegetarian, and months later adopted a fully vegan
-            lifestyle. It wasn’t long before he positioned himself as a pioneer
-            in the vegan food movement, courageously aligning his career path
-            with his morals in a time when veganism was relatively unknown.
-          </p>
-        </Paragraph>
-        <Button>Learn More</Button>
-      </Right>
+      <LargeImage
+        featuredImage={featuredImage}
+        alt="Chef Doug McNish smiles in a black and gold kitchen."
+      />
+      <Paragraph title="Be A Vegan Leader With Executive Chef Doug Mcnish">
+        <p>
+          The world is evolving, and so should your business. Every day, more
+          people are choosing to open their minds and lead more ethical and
+          sustainable lifestyles by voting with their dollars. The message that
+          plant based diets are better for the planet, our fellow earthlings and
+          our overall health has reached the international stage, and public
+          support is mounting as science proves it to be true, again and again.
+          And no, it’s not just a trend.
+        </p>
+        <p>
+          Society’s movement towards embracing plant based diets, holistic
+          healing and conscious consumerism has only just begun. Our collective
+          evolution is officially underway, and the impact is reverberating
+          through markets and industries around the world. Brands that choose to
+          adapt their business models now can take advantage of this seismic
+          shift in social thought and consumer behaviour, cementing themselves
+          as leaders in the global movement towards compassionate and conscious
+          living.
+        </p>
+        <AniLink
+          to="/partnership/"
+          cover
+          direction="down"
+          bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
+        >
+          <Button>Strategic Partnerships</Button>
+        </AniLink>
+      </Paragraph>
     </Container>
   )
 }
@@ -40,31 +48,14 @@ const HomeAbout = ({ featuredImage }) => {
 const Container = styled.div`
   display: grid;
   align-items: center;
-  
+  padding: 1.5rem 1.5rem;
+
   @media screen and (min-width: 768px) {
-  border: 12px solid ${({ theme }) => theme.color.accent};
-    padding: 0 5rem;
-    grid-auto-flow: column;
-    grid-gap: 64px;
-    grid-template-columns: 2fr 3fr;
-    /* border-bottom: 1px solid ${({ theme }) => theme.color.accent}; */
+    border: 12px solid ${({ theme }) => theme.color.accent};
+    padding: 5rem 5rem;
+    grid-auto-flow: row;
+
     justify-self: center;
-  }
-`
-
-const Left = styled.div`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: grid;
-  }
-`
-
-const Right = styled.div`
-  max-width: 600px;
-  display: grid;
-  grid-gap: 2rem;
-  @media screen and (min-width: 768px) {
-    padding-bottom: 40px;
   }
 `
 

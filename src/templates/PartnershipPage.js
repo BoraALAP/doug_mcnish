@@ -2,7 +2,6 @@ import React from 'react'
 
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-
 import Content from '../components/Content'
 
 import Layout from '../components/Global/Layout'
@@ -11,21 +10,34 @@ import Paragraph from '../components/UI/Paragraph'
 
 const ImageText = ({ src, alt, title, children }) => {
   return (
-    <div>
-      <img src={src} alt={alt} />
-      <h3>{title}</h3>
-      <div>{children}</div>
-    </div>
+    <Container>
+      <Image src={src.src} alt={alt} objectFit="contain" />
+
+      <Paragraph subtitle={title}>{children}</Paragraph>
+    </Container>
   )
 }
 
+const Container = styled.div`
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+`
+
+const Image = styled.img`
+  display: grid;
+  width: auto;
+
+  height: 100px;
+`
+
 // Export Template for use in CMS preview
 export const PartnershipPageTemplate = ({
-  body,
   title,
-  html,
-  subtitle,
-  featuredImage
+  evviva,
+  gunnar,
+  vegg,
+  neonTiger
 }) => (
   <ContentLayout noTop>
     <Content />
@@ -46,72 +58,7 @@ export const PartnershipPageTemplate = ({
     </Paragraph>
     <Info>
       <ImageText
-        src="./images/partners/evvia.jpg"
-        alt="evvia logo"
-        title="Evviva: Bringing Vegan
-      Brunch and Classic Breakfast Foods to the Masses"
-      >
-        <p>
-          As an experienced restaurateur and menu developer, Chef McNish was
-          thrilled to partner with Evviva Breakfast and Lunch, an established
-          restaurant chain with locations in Toronto and Vaughan, Ontario, (with
-          more locations soon to launch!) to expand their brunch menu to include
-          several tantalizing vegan takes on some of their most popular menu
-          items in order to meet the needs of their customers. Evviva’s owners
-          reached out to Chef McNish for his expertise in vegan recipe
-          development and restaurant consulting in response to the growing
-          requests by their customers to offer more plant based breakfast and
-          lunch options.
-        </p>
-        <p>
-          Ever since Evviva made the smart decision to listen to their
-          customers, the brand’s local reputation has rapidly increased thanks
-          to the massive popularity of their new vegan menu. On the morning of
-          the vegan menu’s highly anticipated launch, dozens of people lined the
-          streets waiting for their turn to order veganized versions of their
-          favourite classic brunch and lunch dishes. Now, Chef Doug McNish’s
-          plant powered recipes have become a staple in the Toronto brunch
-          scene, putting Evviva on the map. Now, hundreds of people per day can
-          experience such gastronomic masterpieces as his famous vegan Eggs
-          Benedict, complete with runny yoke, and his mouth watering Reuban
-          sandwich.
-        </p>
-        <p>
-          Doug greatly appreciates Evviva for giving him the opportunity to
-          adapt their business model, making vegan breakfast and brunch food
-          more accessible to their customers across the Greater Toronto Area.
-          Last but not least, he is very excited about their recent plans for
-          expansion and the future collaborations it will bring as they continue
-          to give more vegan comfort food options to the public.
-        </p>
-      </ImageText>
-      <ImageText
-        src="./images/partners/gunnar.jpg"
-        alt="gunnar logo"
-        title="GunnarMade, Health and
-      Fitness Coach"
-      >
-        <p>
-          Executive Vegan Chef Doug McNish has worked in the world of plant
-          based whole foods for decades, so he’s proud to partner with Gunnar
-          Made in his mission to nourish as many people as possible with healthy
-          vegan meals. Based in Charleston, South Carolina, Gunnar Made is a
-          health and fitness coach who specializes in creating nutritional and
-          exercise programs that cater to each of his client's individual needs
-          and strengths.
-        </p>
-        <p>
-          Chef McNish has teamed up with Gunnar Made to offer a Whole Food Plant
-          Based Meal Prep delivery service that utilizes Doug’s extensive
-          knowledge of plant based whole foods and the limitless benefits they
-          can offer our mind and bodies. With their combined expertise and
-          talents, Chef McNish and Gunnar Made aim to teach as many people as
-          possible about how they can improve their energy, gut health, immune
-          system and more by following a whole foods plant based diet.
-        </p>
-      </ImageText>
-      <ImageText
-        src="./images/partners/neonTiger.jpg"
+        src={neonTiger.fluid}
         alt="neon tiger logo"
         title="Neon Tiger:
       Charleston’s Best New Restaurant Is Also It’s First Vegan Cocktail Bar"
@@ -154,7 +101,73 @@ export const PartnershipPageTemplate = ({
         </p>
       </ImageText>
       <ImageText
-        src="./images/partners/vegg.jpg"
+        src={evviva.fluid}
+        alt="evvia logo"
+        title="Evviva: Bringing Vegan
+      Brunch and Classic Breakfast Foods to the Masses"
+      >
+        <p>
+          As an experienced restaurateur and menu developer, Chef McNish was
+          thrilled to partner with Evviva Breakfast and Lunch, an established
+          restaurant chain with locations in Toronto and Vaughan, Ontario, (with
+          more locations soon to launch!) to expand their brunch menu to include
+          several tantalizing vegan takes on some of their most popular menu
+          items in order to meet the needs of their customers. Evviva’s owners
+          reached out to Chef McNish for his expertise in vegan recipe
+          development and restaurant consulting in response to the growing
+          requests by their customers to offer more plant based breakfast and
+          lunch options.
+        </p>
+        <p>
+          Ever since Evviva made the smart decision to listen to their
+          customers, the brand’s local reputation has rapidly increased thanks
+          to the massive popularity of their new vegan menu. On the morning of
+          the vegan menu’s highly anticipated launch, dozens of people lined the
+          streets waiting for their turn to order veganized versions of their
+          favourite classic brunch and lunch dishes. Now, Chef Doug McNish’s
+          plant powered recipes have become a staple in the Toronto brunch
+          scene, putting Evviva on the map. Now, hundreds of people per day can
+          experience such gastronomic masterpieces as his famous vegan Eggs
+          Benedict, complete with runny yoke, and his mouth watering Reuban
+          sandwich.
+        </p>
+        <p>
+          Doug greatly appreciates Evviva for giving him the opportunity to
+          adapt their business model, making vegan breakfast and brunch food
+          more accessible to their customers across the Greater Toronto Area.
+          Last but not least, he is very excited about their recent plans for
+          expansion and the future collaborations it will bring as they continue
+          to give more vegan comfort food options to the public.
+        </p>
+      </ImageText>
+      <ImageText
+        src={gunnar.fluid}
+        alt="gunnar logo"
+        title="GunnarMade, Health and
+      Fitness Coach"
+      >
+        <p>
+          Executive Vegan Chef Doug McNish has worked in the world of plant
+          based whole foods for decades, so he’s proud to partner with Gunnar
+          Made in his mission to nourish as many people as possible with healthy
+          vegan meals. Based in Charleston, South Carolina, Gunnar Made is a
+          health and fitness coach who specializes in creating nutritional and
+          exercise programs that cater to each of his client's individual needs
+          and strengths.
+        </p>
+        <p>
+          Chef McNish has teamed up with Gunnar Made to offer a Whole Food Plant
+          Based Meal Prep delivery service that utilizes Doug’s extensive
+          knowledge of plant based whole foods and the limitless benefits they
+          can offer our mind and bodies. With their combined expertise and
+          talents, Chef McNish and Gunnar Made aim to teach as many people as
+          possible about how they can improve their energy, gut health, immune
+          system and more by following a whole foods plant based diet.
+        </p>
+      </ImageText>
+
+      <ImageText
+        src={vegg.fluid}
         alt="vegg logo"
         title="Vegg: Making Veganism Go
       Global"
@@ -192,21 +205,29 @@ export const PartnershipPageTemplate = ({
   </ContentLayout>
 )
 
-const PartnershipPage = ({ data: { page } }) => {
-  console.log(page)
+const PartnershipPage = ({
+  data: { page, vegg, gunnar, evviva, neonTiger }
+}) => {
   return (
     <Layout
       meta={page.frontmatter.meta || false}
       title={page.frontmatter.title || false}
     >
-      <PartnershipPageTemplate {...page.frontmatter} body={page.html} />
+      <PartnershipPageTemplate
+        {...page.frontmatter}
+        body={page.html}
+        vegg={vegg.childImageSharp}
+        gunnar={gunnar.childImageSharp}
+        evviva={evviva.childImageSharp}
+        neonTiger={neonTiger.childImageSharp}
+      />
     </Layout>
   )
 }
 
 const Info = styled.div`
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 4rem;
 
   @media screen and (min-width: 991px) {
     grid-template-columns: 1fr 1fr;
@@ -226,6 +247,34 @@ export const pageQuery = graphql`
         template
         subtitle
         featuredImage
+      }
+    }
+    neonTiger: file(relativePath: { eq: "neontiger.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    evviva: file(relativePath: { eq: "evviva.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    gunnar: file(relativePath: { eq: "gunnar.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    vegg: file(relativePath: { eq: "vegg.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

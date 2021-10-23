@@ -8,16 +8,17 @@ import ContentLayout from '../components/Global/ContentLayout'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import LeftImage from '../components/General/LeftImage'
+import { PageLink } from '../components/UI/PageLink'
 
 // Export Template for use in CMS preview
 export const ContactPageTemplate = ({ photo, email }) => {
-  console.log(photo)
   return (
     <ContentLayout>
       <Info>
         <LeftImage
           title="Plant Powered Business Inquiries"
           featuredImage={photo.fluid}
+          alt="Chef Doug McNish laughs in a kitchen decorated with a black countertop and walls, with gold appliances."
         >
           <p>
             Do you need help launching your plant based food or veggie-friendly
@@ -52,15 +53,7 @@ export const ContactPageTemplate = ({ photo, email }) => {
             >
               strategic partnership collaborations
             </AniLink>
-            , you can learn more{' '}
-            <AniLink
-              to="/service/"
-              cover
-              direction="down"
-              bg="linear-gradient(139deg, rgba(158,55,1,1) 25%, rgba(148,16,0,1) 100%)"
-            >
-              here.
-            </AniLink>
+            , you can learn more <PageLink to="service">here.</PageLink>
           </p>
           {email && (
             <Alink className="Contact--Details--Item" href={`mailto:${email}`}>

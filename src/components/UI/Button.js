@@ -11,11 +11,7 @@ const Button = ({ children, secondary, onClick }) => {
 }
 
 export const Ternary = ({ children, onClick }) => {
-  return (
-    <TernaryContainer onClick={onClick}>
-      {children}
-    </TernaryContainer>
-  )
+  return <TernaryContainer onClick={onClick}>{children}</TernaryContainer>
 }
 
 const Container = styled.button`
@@ -26,9 +22,11 @@ const Container = styled.button`
     props.secondary ? props.theme.color.negative : props.theme.color.positive};
   font-size: 0.875rem;
   border: ${props =>
-    props.secondary ? `1px solid ${props.theme.color.negative}` : "none"};
+    props.secondary ? `1px solid ${props.theme.color.negative}` : 'none'};
   box-shadow: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-transform: uppercase;
+  font-weight: 600;
   &:hover {
     box-shadow: ${({ theme }) => theme.boxShadow};
   }

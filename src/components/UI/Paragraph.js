@@ -38,7 +38,7 @@ const Container = styled.div`
   display: grid;
   grid-gap: 0.75rem;
   margin-top: 1.5rem;
-  max-width: 700px;
+  max-width: 800px;
 `
 
 const Content = styled.div`
@@ -51,7 +51,7 @@ const TitleS = styled.h1`
   display: grid;
 `
 
-const SubTitle = styled.h3`
+const SubTitle = styled.h2`
   display: grid;
   padding: 0 1.5rem;
   color: ${({ theme }) => theme.color.grey};

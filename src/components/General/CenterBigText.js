@@ -2,22 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const CenterBigText = ({ children }) => {
-  return (
-    <Container>
-      <H4>{children}</H4>
-    </Container>
-  )
+  return <Container>{children}</Container>
 }
 
 const Container = styled.div`
   display: grid;
   justify-items: center;
   text-align: center;
-`
-
-const H4 = styled.h4`
-  display: grid;
-  width: 75%;
+  padding: 4rem 2rem;
+  background-color: ${({ theme }) => theme.color.lightbg};
 `
 
 export default CenterBigText

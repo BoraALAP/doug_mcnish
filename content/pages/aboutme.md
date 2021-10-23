@@ -2,7 +2,7 @@
 template: AboutMePage
 slug: 'aboutme'
 title: 'About Douglas McNish: World Class Chef, Consultant, Author, Activist'
-featuredImage: './images/headerImage.jpg'
+featuredImage: './images/Doug-Mcnish-About-featureImage.jpg'
 subtitle: >-
   
 meta:

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -36,14 +36,14 @@ const GlobalStyle = createGlobalStyle`
   h1{
     font-size: 1.5rem;
     @media screen and (min-width: 768px) {
-      font-size: 2rem;
+      font-size: 2.5rem;
       }
   }
 
   h2{
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     @media screen and (min-width: 768px) {
-      font-size: 2rem;
+      font-size: 1.875rem;
     }
   }
 
@@ -65,7 +65,7 @@ const GlobalStyle = createGlobalStyle`
 
   p{
     font-size: 0.875rem;
-    max-width: 600px;
+    max-width: 800px;
     line-height: 2rem;
     color: ${({ theme }) => theme.color.secondary};
     margin-block-start:0px;

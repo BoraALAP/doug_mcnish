@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Paragraph from '../UI/Paragraph'
 
-const RightImage = ({ featuredImage, title, children }) => {
+const RightImage = ({ featuredImage, title, children, alt }) => {
   return (
     <Container>
       <Left>
@@ -14,7 +14,7 @@ const RightImage = ({ featuredImage, title, children }) => {
           fluid={featuredImage}
           objectFit="cover"
           objectPosition="50% 50%"
-          alt=""
+          alt={alt}
         />
       </Right>
     </Container>
@@ -28,7 +28,7 @@ const Container = styled.div`
   @media screen and (min-width: 768px) {
     grid-auto-flow: column;
     grid-gap: 64px;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 3fr;
 
     justify-self: center;
   }
@@ -39,7 +39,7 @@ const Left = styled.div`
 `
 
 const Right = styled.div`
-  max-width: 600px;
+  /* max-width: 600px; */
   display: grid;
   grid-gap: 2rem;
   @media screen and (min-width: 768px) {
