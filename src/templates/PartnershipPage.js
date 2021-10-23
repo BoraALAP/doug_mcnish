@@ -7,11 +7,14 @@ import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 import Paragraph from '../components/UI/Paragraph'
+import { Egale } from '../assets/logos/egale'
+import { ExternalLink, PageLink } from '../components/UI/PageLink'
+import Button from '../components/UI/Button'
 
 const ImageText = ({ src, alt, title, children }) => {
   return (
     <Container>
-      <Image src={src.src} alt={alt} objectFit="contain" />
+      {src && <Image src={src.src} alt={alt} objectFit="contain" />}
 
       <Paragraph subtitle={title}>{children}</Paragraph>
     </Container>
@@ -202,6 +205,35 @@ export const PartnershipPageTemplate = ({
         </p>
       </ImageText>
     </Info>
+    <ImageText title="Eagle Canada: The Importance of Inclusivity and Human Rights Advocacy">
+      <Egale />
+      <p>
+        Since he was 15 years old, Doug was raised in the kitchens of various
+        bars and restaurants across Toronto, working his way from dishwasher to
+        line cook and ultimately to head chef. Unfortunately, there came a time
+        in his career when he realized that growing up in this aggressive
+        environment had taught him more than just cooking skills.{' '}
+      </p>
+
+      <p>
+        Today, Doug is a huge supporter and fan of{' '}
+        <ExternalLink to="https://egale.ca/action/">Egale Canada</ExternalLink>{' '}
+        and their work advocating for the rights of 2SLGBTQI people across the
+        country by informing public policy and inspiring cultural change through
+        education, research, awareness and more.
+      </p>
+
+      <p>
+        Inspired by Egale’s important work, Chef Doug is doing his best to aid
+        their mission of promoting human rights and equality by spreading the
+        message of the importance of inclusivity throughout Canada’s restaurant
+        industry. Read more about Egale Canada and how you can join Doug in
+        supporting this life-saving cause by clicking the button below.
+      </p>
+      <PageLink to="egale">
+        <Button>Eagle</Button>
+      </PageLink>
+    </ImageText>
   </ContentLayout>
 )
 
