@@ -50,7 +50,10 @@ export const HomePageTemplate = ({
       <ContentLayout>
         <HomeAbout featuredImage={aboutImage.fluid} />
 
-        <LeftImage featuredImage={cauliflowerImage.fluid} alt="">
+        <LeftImage
+          featuredImage={cauliflowerImage.fluid}
+          alt="Chef Doug’s mission is to make Veganism more accessible"
+        >
           <h2>Doug’s Mission: Vegan World Takeover</h2>
           <p>
             Internationally award-winning Executive Vegan Chef Doug McNish will
@@ -123,11 +126,12 @@ export const HomePageTemplate = ({
               <Button>Learn More About Doug</Button>
             </PageLink>
           </Paragraph>
-          <LargeImage
-            featuredImage={pepper.fluid}
-            alt="Doug McNish juggling three raw red peppers."
-          />
+
           <Paragraph>
+            <LargeImage
+              featuredImage={pepper.fluid}
+              alt="Doug McNish juggling three raw red peppers."
+            />
             <p>
               As a world-class Executive Vegan Chef, Restaurant Consultant and
               Educator, Doug McNish has partnered with renowned, elite brands
@@ -158,7 +162,11 @@ export const HomePageTemplate = ({
             Doug McNish.
           </h4>
         </CenterBigText>
-        <LargeImage featuredImage={join.fluid} alt="" />
+        <LargeImage
+          featuredImage={join.fluid}
+          alt="Join the movement. Choose evolution, and be a Vegan leader with Chef
+            Doug McNish."
+        />
 
         <ProductGrid type="book" title="Books" />
       </ContentLayout>

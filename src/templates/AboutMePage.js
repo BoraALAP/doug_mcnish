@@ -11,6 +11,7 @@ import LargeImage from '../components/General/LargeImage'
 import Paragraph from '../components/UI/Paragraph'
 
 import { ExternalLink, PageLink } from '../components/UI/PageLink'
+import Youtube from '../components/UI/Youtube'
 
 // Export Template for use in CMS preview
 export const AboutMePageTemplate = ({
@@ -73,6 +74,7 @@ export const AboutMePageTemplate = ({
       </RightImage>
       <Center>
         <Paragraph>
+          <Youtube id="52nBlo4rxjg" />
           <h2>Making Veganism And Plant Based Cuisine Go Global</h2>
 
           <p>

@@ -14,7 +14,7 @@ import { PageLink } from '../components/UI/PageLink'
 import Button from '../components/UI/Button'
 
 // Export Template for use in CMS preview
-export const ServicePageTemplate = ({ photo, dinner, knife, panise }) => {
+export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
   console.log(panise)
   return (
     <ContentLayout>
@@ -162,7 +162,7 @@ export const ServicePageTemplate = ({ photo, dinner, knife, panise }) => {
           </PageLink>
         </Paragraph>
       </FourColumn>
-      <RightImage featuredImage={knife.fluid}>
+      <RightImage featuredImage={radisson.fluid}>
         <Paragraph title="Hotel and Institutional Training">
           <p>
             Throughout Doug’s many years as a professional chef in the food
@@ -446,7 +446,7 @@ const Single = styled.div`
 `
 
 // Export Default ServicePage for front-end
-const ServicePage = ({ data: { page, photo, dinner, knife, panise } }) => {
+const ServicePage = ({ data: { page, photo, dinner, radisson, panise } }) => {
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <ServicePageTemplate
@@ -455,7 +455,7 @@ const ServicePage = ({ data: { page, photo, dinner, knife, panise } }) => {
         body={page.html}
         photo={photo.childImageSharp}
         dinner={dinner.childImageSharp}
-        knife={knife.childImageSharp}
+        radisson={radisson.childImageSharp}
         panise={panise.childImageSharp}
       />
     </Layout>
@@ -503,7 +503,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    knife: file(relativePath: { eq: "knife.jpg" }) {
+    radisson: file(relativePath: { eq: "radisson.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
