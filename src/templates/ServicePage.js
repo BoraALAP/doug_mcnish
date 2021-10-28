@@ -603,7 +603,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger1: file(relativePath: { eq: "NeonTIger_2108_003.jpg" }) {
+    neonTiger1: file(relativePath: { eq: "NeonTiger_2108_003.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -612,7 +612,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger2: file(relativePath: { eq: "NeonTIger_2108_025.jpg" }) {
+    neonTiger2: file(relativePath: { eq: "NeonTiger_2108_025.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -621,7 +621,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger3: file(relativePath: { eq: "NeonTIger_2108_242.jpg" }) {
+    neonTiger3: file(relativePath: { eq: "NeonTiger_2108_242.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -630,7 +630,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger4: file(relativePath: { eq: "NeonTIger_2108_243.jpg" }) {
+    neonTiger4: file(relativePath: { eq: "NeonTiger_2108_243.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -639,7 +639,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger5: file(relativePath: { eq: "NeonTIger_2108_247.jpg" }) {
+    neonTiger5: file(relativePath: { eq: "NeonTiger_2108_247.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -648,7 +648,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger6: file(relativePath: { eq: "NeonTIger_2108_291.jpg" }) {
+    neonTiger6: file(relativePath: { eq: "NeonTiger_2108_291.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -657,7 +657,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    neonTiger7: file(relativePath: { eq: "NeonTIger_2108_298.jpg" }) {
+    neonTiger7: file(relativePath: { eq: "NeonTiger_2108_298.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
