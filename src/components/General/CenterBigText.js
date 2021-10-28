@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-items: center;
   text-align: center;
   padding: 4rem 2rem;
+  gap: 2rem;
   background-color: ${({ theme }) => theme.color.lightbg};
 `
 

@@ -76,9 +76,13 @@ export const HomePageTemplate = ({
             passion to help forward-thinking brands bring gourmet, healthful
             plant based options and products to their customers.
           </p>
+          <PageLink to="service">
+            <Button>How Doug Can Help You</Button>
+          </PageLink>
         </LeftImage>
         <Center>
           <Paragraph>
+            <h2>Bringing The World The Power Of Plants</h2>
             <p>
               As an Executive Chef and Restaurant Consultant, Chef McNish offers
               his expertise and talents as a gastronomer, menu developer,
@@ -87,12 +91,6 @@ export const HomePageTemplate = ({
               into the modern world and maximizing their profitability and
               popularity, in turn.
             </p>
-            <PageLink to="service">
-              <Button>How Doug Can Help You</Button>
-            </PageLink>
-          </Paragraph>
-          <Paragraph>
-            <h2>Bringing The World The Power Of Plants</h2>
             <p>
               Chef Doug McNish has a demonstrable history of launching
               award-winning restaurants as well as wildly popular plant based
@@ -104,19 +102,22 @@ export const HomePageTemplate = ({
               New Restaurant in Charleston 2021, beating out its conventional
               counterparts.
             </p>
+            <LargeImage
+              featuredImage={onCounter.fluid}
+              alt="Doug McNish and his latest cookbook, The Classics Veganized."
+            />
 
             <p>
               Three of his four cookbooks, including best-selling publications
               Eat Raw, Eat Well and The Classics Veganized, are internationally
               recognized as among the Best Vegetarian Cookbooks in the world,
               having been awarded the Gourmand Award in 2012 and 2021,
-              respectively. Shop Doug’s award-winning cookbooks and ebook recipe
-              collections here.
+              respectively.{' '}
+              <PageLink to="products">
+                Shop Doug’s award-winning cookbooks and ebook recipe collections
+                here.{' '}
+              </PageLink>
             </p>
-            <LargeImage
-              featuredImage={onCounter.fluid}
-              alt="Doug McNish and his latest cookbook, The Classics Veganized."
-            />
 
             <p>
               In 2017, Doug was granted the title of Best Chef in Toronto by
@@ -135,6 +136,7 @@ export const HomePageTemplate = ({
               featuredImage={pepper.fluid}
               alt="Doug McNish juggling three raw red peppers."
             />
+            <h2>Revolutionize Your Business With Doug Mcnish</h2>
             <p>
               As a world-class Executive Vegan Chef, Restaurant Consultant and
               Educator, Doug McNish has partnered with renowned, elite brands
@@ -160,10 +162,13 @@ export const HomePageTemplate = ({
           </Paragraph>
         </Center>
         <CenterBigText>
-          <h4>
+          <h3>
             Join the movement. Choose evolution, and be a Vegan leader with Chef
             Doug McNish.
-          </h4>
+          </h3>
+          <a href="mailto: chef@dougmcnish.com">
+            <Button>Contact Doug</Button>
+          </a>
         </CenterBigText>
         <LargeImage
           featuredImage={join.fluid}
@@ -171,7 +176,22 @@ export const HomePageTemplate = ({
             Doug McNish."
         />
 
-        <ProductGrid type="book" title="Books" />
+        <ProductGrid
+          type="book"
+          title="Shop Chef Doug’s Award-Winning Cookbooks"
+        />
+        <Paragraph>
+          <p>
+            You can harness the power of plants at home with Chef Doug McNish’s
+            best-selling raw, gourmet and whole food Vegan recipes. His
+            award-winning cookbooks Eat Raw, Eat Well, Vegan Everyday and The
+            Classics Veganized have been recognized as “The Best Vegan
+            Cookbooks” in the world, each earning a Gourmand Award. These iconic
+            culinary masterpieces are a staple in every dedicated, diehard
+            Vegan’s recipe repertoire, and make great gifts for all the plant
+            addict and plant-curious loved ones in your life.
+          </p>
+        </Paragraph>
       </ContentLayout>
     </Main>
   )
