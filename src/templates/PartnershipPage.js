@@ -11,10 +11,14 @@ import { Egale } from '../assets/logos/egale'
 import { ExternalLink, PageLink } from '../components/UI/PageLink'
 import Button from '../components/UI/Button'
 
-const ImageText = ({ src, alt, title, children }) => {
+const ImageText = ({ src, alt, title, to, children }) => {
   return (
     <Container>
-      {src && <Image src={src.src} alt={alt} objectFit="contain" />}
+      {src && (
+        <ExternalLink to={to}>
+          <Image src={src.src} alt={alt} objectFit="contain" />
+        </ExternalLink>
+      )}
 
       <Paragraph subtitle={title}>{children}</Paragraph>
     </Container>
@@ -61,6 +65,8 @@ export const PartnershipPageTemplate = ({
     </Paragraph>
     <Info>
       <ImageText
+        to="https://neontiger.com/"
+        t
         src={neonTiger.fluid}
         alt="neon tiger logo"
         title="Neon Tiger:
@@ -77,7 +83,7 @@ export const PartnershipPageTemplate = ({
           </a>
           , a futuristic cocktail bar called Neon Tiger, set in the dystopian
           year 2048. With their shared passion for veganism, Doug and John’s
-          close collaboration quickly proved to be a successful match as
+          close collaboration quickly proved to be a successful match as{' '}
           <a href="https://neontiger.com/" target="_blank" rel="noreferrer">
             Neon Tiger
           </a>
@@ -103,7 +109,10 @@ export const PartnershipPageTemplate = ({
           kindness, generosity and support.
         </p>
       </ImageText>
+
       <ImageText
+        to="https://evviva.ca/"
+        t
         src={evviva.fluid}
         alt="evvia logo"
         title="Evviva: Bringing Vegan
@@ -143,7 +152,9 @@ export const PartnershipPageTemplate = ({
           to give more vegan comfort food options to the public.
         </p>
       </ImageText>
+
       <ImageText
+        to="https://gunnarmademealprep.com/"
         src={gunnar.fluid}
         alt="gunnar logo"
         title="GunnarMade, Health and
@@ -171,6 +182,7 @@ export const PartnershipPageTemplate = ({
 
       <ImageText
         src={vegg.fluid}
+        to="https://thevegg.com/"
         alt="vegg logo"
         title="Vegg: Making Veganism Go
       Global"
@@ -205,8 +217,11 @@ export const PartnershipPageTemplate = ({
         </p>
       </ImageText>
     </Info>
+
     <ImageText title="Eagle Canada: The Importance of Inclusivity and Human Rights Advocacy">
-      <Egale />
+      <ExternalLink to="https://egale.ca/">
+        <Egale />
+      </ExternalLink>
       <p>
         Since he was 15 years old, Doug was raised in the kitchens of various
         bars and restaurants across Toronto, working his way from dishwasher to

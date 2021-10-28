@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { Title } from '../UI/Paragraph'
 
-const RightImage = ({ featuredImage, children, title }) => {
+const RightImage = ({ featuredImage, children, title, to }) => {
   return (
     <Container>
       <Left>
@@ -15,7 +15,7 @@ const RightImage = ({ featuredImage, children, title }) => {
           fluid={featuredImage}
           objectFit="cover"
           objectPosition="50% 50%"
-          alt=""
+          alt={to}
         />
       </Right>
     </Container>

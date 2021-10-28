@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
+import LargeImage from '../components/General/LargeImage'
 import TwoParagraph from '../components/Services/TwoParagraph'
 import LeftImage from '../components/Services/LeftImage'
 import RightImage from '../components/Services/RightImage'
@@ -14,7 +15,20 @@ import { PageLink } from '../components/UI/PageLink'
 import Button from '../components/UI/Button'
 
 // Export Template for use in CMS preview
-export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
+export const ServicePageTemplate = ({
+  photo,
+  dinner,
+  radisson,
+  panise,
+  neonTiger1,
+  neonTiger2,
+  neonTiger3,
+  neonTiger4,
+  neonTiger5,
+  neonTiger6,
+  neonTiger7,
+  ravioli
+}) => {
   console.log(panise)
   return (
     <ContentLayout>
@@ -59,6 +73,9 @@ export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
           </PageLink>
         </p>
       </Paragraph>
+      <Single>
+        <LargeImage featuredImage={ravioli.fluid} alt="Doug McNish" />
+      </Single>
       <FourColumn title="Food Services">
         <Paragraph subtitle="Menu Design and Development">
           <p>
@@ -162,7 +179,10 @@ export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
           </PageLink>
         </Paragraph>
       </FourColumn>
-      <RightImage featuredImage={radisson.fluid}>
+      <RightImage
+        featuredImage={radisson.fluid}
+        alt="Door at Raddison with Doug"
+      >
         <Paragraph title="Hotel and Institutional Training">
           <p>
             Throughout Doug’s many years as a professional chef in the food
@@ -186,7 +206,26 @@ export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
           </PageLink>
         </Paragraph>
       </RightImage>
-      <Single>
+
+      <TwoColumnS>
+        <Left>
+          <LargeImage
+            featuredImage={neonTiger1.fluid}
+            alt="Raw vegan pad thai on a table served in a bowl"
+          />
+          <LargeImage
+            featuredImage={neonTiger2.fluid}
+            alt="Raw vegan pad thai on a table served in a bowl with a cocktail next to it served with a lime garnish"
+          />
+          <LargeImage
+            featuredImage={neonTiger3.fluid}
+            alt="Sesame glazed tempeh in a bowl on table with baby bok choy and hoisin glazed sweet potato"
+          />
+          <LargeImage
+            featuredImage={neonTiger5.fluid}
+            alt="Sesame glazed tempeh in a bowl on table with baby bok choy and hoisin glazed sweet potato"
+          />
+        </Left>
         <Paragraph title="Industrial and Large Scale Plant Based Recipe Development">
           <p>
             Doug is a skilled gastronomer, creating and designing recipes for
@@ -211,7 +250,8 @@ export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-      </Single>
+      </TwoColumnS>
+
       <FourColumn title="Private Services">
         <Paragraph subtitle="HIRE DOUG AS YOUR PRIVATE CHEF">
           <p>
@@ -439,14 +479,48 @@ export const ServicePageTemplate = ({ photo, dinner, radisson, panise }) => {
 }
 
 const Single = styled.div`
-  max-width: 600px;
+  width: 100%;
   display: grid;
   align-self: center;
   margin: auto;
 `
+const TwoColumnS = styled.div`
+  display: grid;
+  align-self: center;
+  margin: auto;
+  grid-gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+const Left = styled.div`
+  width: 100%;
+  grid-gap: 2rem;
+  display: grid;
+  align-self: center;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+`
 
 // Export Default ServicePage for front-end
-const ServicePage = ({ data: { page, photo, dinner, radisson, panise } }) => {
+const ServicePage = ({
+  data: {
+    page,
+    photo,
+    dinner,
+    radisson,
+    panise,
+    neonTiger1,
+    neonTiger2,
+    neonTiger3,
+    neonTiger4,
+    neonTiger5,
+    neonTiger6,
+    neonTiger7,
+    ravioli
+  }
+}) => {
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <ServicePageTemplate
@@ -457,6 +531,14 @@ const ServicePage = ({ data: { page, photo, dinner, radisson, panise } }) => {
         dinner={dinner.childImageSharp}
         radisson={radisson.childImageSharp}
         panise={panise.childImageSharp}
+        neonTiger1={neonTiger1.childImageSharp}
+        neonTiger2={neonTiger2.childImageSharp}
+        neonTiger3={neonTiger3.childImageSharp}
+        neonTiger4={neonTiger4.childImageSharp}
+        neonTiger5={neonTiger5.childImageSharp}
+        neonTiger6={neonTiger6.childImageSharp}
+        neonTiger7={neonTiger7.childImageSharp}
+        ravioli={ravioli.childImageSharp}
       />
     </Layout>
   )
@@ -513,6 +595,78 @@ export const pageQuery = graphql`
       }
     }
     panise: file(relativePath: { eq: "panise.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger1: file(relativePath: { eq: "NeonTIger_2108_003.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger2: file(relativePath: { eq: "NeonTIger_2108_025.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger3: file(relativePath: { eq: "NeonTIger_2108_242.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger4: file(relativePath: { eq: "NeonTIger_2108_243.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger5: file(relativePath: { eq: "NeonTIger_2108_247.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger6: file(relativePath: { eq: "NeonTIger_2108_291.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    neonTiger7: file(relativePath: { eq: "NeonTIger_2108_298.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ravioli: file(relativePath: { eq: "Ravioli2.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

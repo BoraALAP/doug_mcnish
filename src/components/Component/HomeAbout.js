@@ -2,16 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../UI/Button'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import LargeImage from '../General/LargeImage'
+// import LargeImage from '../General/LargeImage'
 import Paragraph from '../UI/Paragraph'
+import Youtube from '../UI/Youtube'
 
 const HomeAbout = ({ featuredImage }) => {
   return (
     <Container>
-      <LargeImage
+      {/* <LargeImage
         featuredImage={featuredImage}
         alt="Chef Doug McNish smiles in a black and gold kitchen."
-      />
+      /> */}
+      <Youtube id="BtQZhXXBD_Q" />
       <Paragraph title="Be A Vegan Leader With Executive Chef Doug Mcnish">
         <p>
           The world is evolving, and so should your business. Every day, more

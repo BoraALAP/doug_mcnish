@@ -46,9 +46,12 @@ export const HomePageTemplate = ({
 }) => {
   return (
     <Main>
-      <FullWidthImage featuredImage={headerImage.fluid} />
+      <FullWidthImage
+        featuredImage={aboutImage.fluid}
+        alt="Chef Doug McNish smiles in a black and gold kitchen."
+      />
       <ContentLayout>
-        <HomeAbout featuredImage={aboutImage.fluid} />
+        <HomeAbout />
 
         <LeftImage
           featuredImage={cauliflowerImage.fluid}
@@ -89,7 +92,7 @@ export const HomePageTemplate = ({
             </PageLink>
           </Paragraph>
           <Paragraph>
-            <h1>Bringing The World The Power Of Plants</h1>
+            <h2>Bringing The World The Power Of Plants</h2>
             <p>
               Chef Doug McNish has a demonstrable history of launching
               award-winning restaurants as well as wildly popular plant based
