@@ -246,7 +246,7 @@ export const PartnershipPageTemplate = ({
         supporting this life-saving cause by clicking the button below.
       </p>
       <PageLink to="egale">
-        <Button>Eagle</Button>
+        <Button>Egale</Button>
       </PageLink>
     </ImageText>
   </ContentLayout>

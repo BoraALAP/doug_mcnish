@@ -29,7 +29,6 @@ export const ServicePageTemplate = ({
   neonTiger7,
   ravioli
 }) => {
-  console.log(panise)
   return (
     <ContentLayout>
       <Paragraph title="PARTNER WITH CHEF DOUG MCNISH">
@@ -74,7 +73,10 @@ export const ServicePageTemplate = ({
         </p>
       </Paragraph>
       <Single>
-        <LargeImage featuredImage={ravioli.fluid} alt="Doug McNish" />
+        <LargeImage
+          featuredImage={neonTiger2.fluid}
+          alt="Raw vegan pad thai on a table served in a bowl with a cocktail next to it served with a lime garnish"
+        />
       </Single>
       <FourColumn title="Food Services">
         <Paragraph subtitle="Menu Design and Development">
@@ -214,16 +216,16 @@ export const ServicePageTemplate = ({
             alt="Raw vegan pad thai on a table served in a bowl"
           />
           <LargeImage
-            featuredImage={neonTiger2.fluid}
-            alt="Raw vegan pad thai on a table served in a bowl with a cocktail next to it served with a lime garnish"
+            featuredImage={neonTiger6.fluid}
+            alt="Chef doug McNish in a chef coat, smiling and holding his hands at his waist"
           />
           <LargeImage
             featuredImage={neonTiger3.fluid}
             alt="Sesame glazed tempeh in a bowl on table with baby bok choy and hoisin glazed sweet potato"
           />
           <LargeImage
-            featuredImage={neonTiger5.fluid}
-            alt="Sesame glazed tempeh in a bowl on table with baby bok choy and hoisin glazed sweet potato"
+            featuredImage={ravioli.fluid}
+            alt="Vegan mushroom ravioli on a black plate with garlic chips and pea shoots"
           />
         </Left>
         <Paragraph title="Industrial and Large Scale Plant Based Recipe Development">
@@ -253,7 +255,7 @@ export const ServicePageTemplate = ({
       </TwoColumnS>
 
       <FourColumn title="Private Services">
-        <Paragraph subtitle="HIRE DOUG AS YOUR PRIVATE CHEF">
+        <Paragraph subtitle="Hire Doug As Your Private Chef">
           <p>
             Have a special occasion coming up? Chef Doug and his team love
             providing personalized, memorable experiences for all occasions,
@@ -278,7 +280,7 @@ export const ServicePageTemplate = ({
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-        <Paragraph subtitle="HIRE EXECUTIVE CHEF MCNISH FOR YOUR PRIVATE EVENTS">
+        <Paragraph subtitle="Hire Executive Chef Mcnish For Your Private Events">
           <p>
             Doug and his team are available to come to your home and entertain
             your guests for any type of event.
@@ -300,7 +302,7 @@ export const ServicePageTemplate = ({
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-        <Paragraph subtitle="PRIVATE MENU CONSULTATION AND RECIPE DEVELOPMENT">
+        <Paragraph subtitle="Private Menu Consultation And Recipe Development">
           <p>
             Whether you already have staff in your kitchen, or you are looking
             to hire someone, Doug and his team are available to work with your
@@ -324,7 +326,7 @@ export const ServicePageTemplate = ({
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-        <Paragraph subtitle="PRIVATE COOKING LESSONS AND DEMONSTRATIONS">
+        <Paragraph subtitle="Private Cooking Lessons And Demonstrations">
           <p>
             Doug is an experienced educator, and can come to your home to teach
             you or your staff all the proper skills, techniques and secrets of
@@ -350,7 +352,7 @@ export const ServicePageTemplate = ({
         </Paragraph>
       </FourColumn>
       <LeftImage featuredImage={photo.fluid}>
-        <Paragraph title="PROFESSIONAL FOOD PHOTOGRAPHY AND PRESENTATION">
+        <Paragraph title="Professional Food Photography And Presentation">
           <p>
             Throughout his decades of food business experience, Doug has
             received hands-on training with countless food photography projects,
@@ -375,8 +377,8 @@ export const ServicePageTemplate = ({
           </PageLink>
         </Paragraph>
       </LeftImage>
-      <TwoColumn title="STRATEGIC PARTNERSHIP OPPORTUNITIES">
-        <Paragraph subtitle="PUBLIC COOKING DEMONSTRATIONS">
+      <TwoColumn title="Strategic Partnership Opportunities">
+        <Paragraph subtitle="Public Cooking Demonstrations">
           <p>
             Entertain, educate and inspire your audience by hiring Executive
             Chef Doug McNish to instruct a public cooking demonstration, passing
@@ -402,7 +404,7 @@ export const ServicePageTemplate = ({
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-        <Paragraph subtitle="VIRTUAL COOKING CLASSES AND DEMONSTRATIONS">
+        <Paragraph subtitle="Virtual Cooking Classes And Demonstrations">
           <p>
             Doug is available to travel internationally, but virtual cooking
             classes and vegan cuisine demonstrations can be just as educational!
@@ -426,7 +428,7 @@ export const ServicePageTemplate = ({
       </TwoColumn>
 
       <TwoParagraph featuredImage={panise.fluid}>
-        <Paragraph subtitle="STRATEGIC PARTNERSHIP AND AND CO-BRANDING">
+        <Paragraph subtitle="Strategic Partnership And And Co-Branding">
           <p>
             Do you have an exciting new plant based product that is about to
             launch? Or, do you already have an existing product but are looking
@@ -449,7 +451,7 @@ export const ServicePageTemplate = ({
             <Button>Contact Doug</Button>
           </PageLink>
         </Paragraph>
-        <Paragraph subtitle="BRAND REPRESENTATION">
+        <Paragraph subtitle="Brand Representation">
           <p>
             Whether you are looking for representation at a trade show, online,
             television or more, Chef Doug can elevate your brand and cement it’s

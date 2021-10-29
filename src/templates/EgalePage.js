@@ -59,7 +59,7 @@ export const EgalePageTemplate = ({ body }) => (
         </p>
 
         <a href="https://egale.ca/donate/" target="_blank" rel="noreferrer">
-          <Button>Support LGBTQ+ Advocacy</Button>
+          <Button>Support LGBTQ2S+ Advocacy</Button>
         </a>
       </Paragraph>
 
@@ -69,7 +69,6 @@ export const EgalePageTemplate = ({ body }) => (
 )
 
 const EgalePage = ({ data: { page } }) => {
-  console.log(page)
   return (
     <Layout
       meta={page.frontmatter.meta || false}
