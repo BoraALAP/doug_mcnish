@@ -2,14 +2,14 @@
 template: SinglePost
 title: the shopify + gatsby starter theme for digital commerce
 status: Published
-date: '2020-05-22T14:15:12'
+date: 2021-11-25 14:51
 tags:
   - Shopify
   - GatsbyJS
   - ecomloop
-featuredImage: ''
-excerpt: >-
-  this theme is now available on github for free. it's a shopify + gatsby starter theme for digital commerce
+featuredImage: ""
+excerpt: this theme is now available on github for free. it's a shopify + gatsby
+  starter theme for digital commerce
 categories:
   - category: News
 ---
