@@ -267,7 +267,6 @@ const Center = styled.div`
 const AboutMePage = ({
   data: { page, aboutFeature, mission, dougShow, neonTiger, dougBook, book }
 }) => {
-  console.log(aboutFeature)
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <AboutMePageTemplate

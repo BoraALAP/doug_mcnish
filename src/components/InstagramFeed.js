@@ -7,18 +7,17 @@ import React, { Component } from 'react'
 // https://instagram.pixelunion.net/
 
 export const InstagramFeed = ({ userName }) => {
-  const access = '418194879928985|BctrbVY7UabgVL0fwn2HRDeAWXs'
-  const res = fetch(
-    `https://www.instagram.com/graphql/query/?query_hash=dbdfd83895d23a4a0b0f68a85486e91c`
-  )
-    .then(function(response) {
-      console.log(response.body)
-    })
-    .catch(function(error) {
-      console.log('Request failed', error)
-    })
+  // const res = fetch(
 
-  console.log(res.body)
+  // )
+  //   .then(function(response) {
+
+  //   })
+  //   .catch(function(error) {
+  //     console.log('Request failed', error)
+  //   })
+
+  // console.log(res.body)
 
   return <div>test</div>
 }

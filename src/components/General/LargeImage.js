@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const LargeImage = ({ featuredImage, to }) => {
   const image = getImage(featuredImage)
-  console.log(image)
+
   return (
     <Container>
       <GatsbyImage

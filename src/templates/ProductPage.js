@@ -145,7 +145,7 @@ const ProductPage = ({ data }) => {
       return <ProductForm product={product} />
     }
   }
-  console.log(product)
+
   return (
     <Layout title={product.title || false}>
       <article itemScope itemType="http://schema.org/ProductPost">
