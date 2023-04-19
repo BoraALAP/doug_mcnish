@@ -6,7 +6,7 @@ import AlertTriangle from 'react-feather/dist/icons/alert-triangle'
 
 import Layout from '../components/Global/Layout'
 
-export default ({ children }) => (
+const NotFound = ({ children }) => (
   <StaticQuery
     query={graphql`
       query NotFoundPageQuery {
@@ -15,7 +15,7 @@ export default ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Layout>
         <Helmet>
           <title>404 – Page Not Found</title>
@@ -38,3 +38,5 @@ export default ({ children }) => (
     )}
   />
 )
+
+export default NotFound

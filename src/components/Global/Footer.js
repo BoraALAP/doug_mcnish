@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Instagram, Twitter, Linkedin } from 'react-feather'
 
-export default () => (
-  <Footer>
+const Footer = () => (
+  <FooterS>
     <Top>
       <Icons>
         <a href="https://www.instagram.com/dougmcnish/?hl=en" rel="nofollow">
@@ -27,10 +27,12 @@ export default () => (
       Contact Doug Mcnish:{' '}
       <a href="mailto: chef@dougmcnish.com">chef@dougmcnish.com</a>
     </Bottom>
-  </Footer>
+  </FooterS>
 )
 
-const Footer = styled.footer`
+export default Footer
+
+const FooterS = styled.footer`
   padding: ${({ theme }) => theme.pagePadding};
   background: ${({ theme }) => theme.color.goldGradient};
   display: grid;

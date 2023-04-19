@@ -6,7 +6,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Menu, X } from 'react-feather'
 import Logo from '../../assets/Logo'
 
-const Navigation = props => {
+const Navigation = (props) => {
   const [pageState, setPageState] = useState({
     active: false,
     activeSubNav: false,
@@ -56,7 +56,7 @@ const Navigation = props => {
         </Mobile>
       </Top>
 
-      <Nav active={active}>
+      <NavS active={active}>
         <LinkS
           to="/aboutme/"
           cover
@@ -121,7 +121,7 @@ const Navigation = props => {
         >
           Cart
         </LinkS>
-      </Nav>
+      </NavS>
     </Header>
   )
 }
@@ -134,7 +134,7 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.color.bg};
   padding: ${({ theme }) => theme.pagePadding};
   position: fixed;
-  height: ${props => (props.active ? '100%' : 'auto')};
+  height: ${(props) => (props.active ? '100%' : 'auto')};
   align-content: start;
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
   left: 0px;
@@ -162,14 +162,14 @@ const LogoS = styled(Logo)`
   display: grid;
 `
 
-const Nav = styled.nav`
+const NavS = styled.nav`
   display: grid;
   grid-auto-flow: row;
-  position: ${props => (props.active ? 'initial' : 'absolute')};
-  transform: ${props =>
+  position: ${(props) => (props.active ? 'initial' : 'absolute')};
+  transform: ${(props) =>
     props.active ? 'translateX(0vh)' : 'translateX(-100vh)'};
-  opacity: ${props => (props.active ? '1' : '0')};
-  height: ${props => (props.active ? 'auto' : '0')};
+  opacity: ${(props) => (props.active ? '1' : '0')};
+  height: ${(props) => (props.active ? 'auto' : '0')};
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
     position 0.3s ease-in 0.6s;
   padding: 1.5em 0;
@@ -226,6 +226,8 @@ const Mobile = styled.button`
   }
 `
 
-export default ({ subNav }) => (
-  <Location>{route => <Navigation subNav={subNav} {...route} />}</Location>
+const Nav = ({ subNav }) => (
+  <Location>{(route) => <Navigation subNav={subNav} {...route} />}</Location>
 )
+
+export default Nav

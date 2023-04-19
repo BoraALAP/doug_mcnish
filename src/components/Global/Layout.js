@@ -10,7 +10,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import ContextProvider from '../../provider/ContextProvider'
 
-export default ({ children, meta }) => {
+const Layout = ({ children, meta }) => {
   // eslint-disable-next-line
   const [mode, setMode] = useState(true)
   return (
@@ -28,7 +28,7 @@ export default ({ children, meta }) => {
             }
             allPosts: allMarkdownRemark(
               filter: { fields: { contentType: { eq: "postCategories" } } }
-              sort: { order: DESC, fields: [frontmatter___date] }
+              sort: { frontmatter: { date: DESC } }
             ) {
               edges {
                 node {
@@ -43,11 +43,11 @@ export default ({ children, meta }) => {
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const { socialMediaCard, googleTrackingId } = data.settingsYaml || {},
             subNav = {
               posts: data.allPosts.hasOwnProperty('edges')
-                ? data.allPosts.edges.map(post => {
+                ? data.allPosts.edges.map((post) => {
                     return { ...post.node.fields, ...post.node.frontmatter }
                   })
                 : false
@@ -94,6 +94,8 @@ export default ({ children, meta }) => {
     </ContextProvider>
   )
 }
+
+export default Layout
 
 const Fragment = styled.div`
   display: grid;

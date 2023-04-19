@@ -16,7 +16,7 @@ const ProductGrid = ({ limit, type = '', showMore, title }) => {
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query allProductsQuery {
-        allShopifyProduct(sort: { fields: [createdAt], order: DESC }) {
+        allShopifyProduct(sort: { createdAt: DESC }) {
           edges {
             node {
               id
@@ -25,16 +25,8 @@ const ProductGrid = ({ limit, type = '', showMore, title }) => {
               createdAt
               description
               productType
-              images {
-                id
-                originalSrc
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 910) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+              featuredImage {
+                gatsbyImageData
               }
               variants {
                 price

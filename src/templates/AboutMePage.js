@@ -14,7 +14,7 @@ import { ExternalLink, PageLink } from '../components/UI/PageLink'
 import Youtube from '../components/UI/Youtube'
 
 // Export Template for use in CMS preview
-export const AboutMePageTemplate = ({
+const AboutMePageTemplate = ({
   title,
   subtitle,
   featuredImage,
@@ -28,7 +28,7 @@ export const AboutMePageTemplate = ({
   return (
     <ContentLayout>
       <LeftImage
-        featuredImage={featuredImage.fluid}
+        featuredImage={featuredImage}
         title={title}
         alt="Doug McNish smiles and leans on a black kitchen counter."
       >
@@ -41,7 +41,7 @@ export const AboutMePageTemplate = ({
         </p>
       </LeftImage>
       <RightImage
-        featuredImage={mission.fluid}
+        featuredImage={mission}
         alt="Doug McNish juggling three raw red peppers."
       >
         <h2>Doug’s Mission</h2>
@@ -99,7 +99,7 @@ export const AboutMePageTemplate = ({
           </p>
 
           <LargeImage
-            featuredImage={neonTiger.fluid}
+            featuredImage={neonTiger}
             alt="Chef McNish standing and smiling against the backdrop of Neon Tiger’s black and white, art-covered wall."
           />
 
@@ -127,7 +127,7 @@ export const AboutMePageTemplate = ({
       </Center>
 
       <LeftImage
-        featuredImage={dougShow.fluid}
+        featuredImage={dougShow}
         alt="Doug McNish doing a cooking demonstration on Breakfast Television, 2017."
       >
         <h2>Grateful And Growing: Chef Doug’s Career So Far</h2>
@@ -164,7 +164,7 @@ export const AboutMePageTemplate = ({
       </LeftImage>
 
       <RightImage
-        featuredImage={dougBook.fluid}
+        featuredImage={dougBook}
         alt="Doug smiles and points to his most recent cookbook, The Classics Veganized, which won the 2021 Gourmand Award for Best Vegan Cookbook in the world. 
 "
       >
@@ -249,7 +249,7 @@ export const AboutMePageTemplate = ({
             </PageLink>
           </p>
           <LargeImage
-            featuredImage={book.fluid}
+            featuredImage={book}
             alt="Chef Doug McNish’s three latest cookbook, The Classics Veganized."
           />
         </Paragraph>
@@ -267,6 +267,7 @@ const Center = styled.div`
 const AboutMePage = ({
   data: { page, aboutFeature, mission, dougShow, neonTiger, dougBook, book }
 }) => {
+  console.log(aboutFeature)
   return (
     <Layout meta={page.frontmatter.meta || false}>
       <AboutMePageTemplate
@@ -308,54 +309,42 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     mission: file(relativePath: { eq: "Doug-Mcnish-About-Mission.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     neonTiger: file(relativePath: { eq: "Doug-Mcnish-About-neonTiger.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     dougShow: file(relativePath: { eq: "dougShow.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     dougBook: file(relativePath: { eq: "Doug-Mcnish-About-Book.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     book: file(relativePath: { eq: "Doug-Mcnish-About-Book2.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
   }

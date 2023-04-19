@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Title } from '../UI/Paragraph'
 
 const RightImage = ({ featuredImage, children, title, to }) => {
+  const image = getImage(featuredImage)
   return (
     <Container>
       <Left>
@@ -11,8 +12,8 @@ const RightImage = ({ featuredImage, children, title, to }) => {
         <Content>{children}</Content>
       </Left>
       <Right>
-        <Img
-          fluid={featuredImage}
+        <GatsbyImage
+          image={image}
           objectFit="cover"
           objectPosition="50% 50%"
           alt={to}

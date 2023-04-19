@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 import _ from 'lodash'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Button from '../UI/Button'
 
 const ProductCard = ({
-  images,
+  featuredImage,
   title,
   description,
   handle,
@@ -17,13 +17,14 @@ const ProductCard = ({
     length: 100,
     omission: `…`
   })
+  const image = getImage(featuredImage)
 
   return (
     <Container to={`/product/${handle}`}>
       {
         <div>
-          {images[0] ? (
-            <Img fluid={images[0].localFile.childImageSharp.fluid} />
+          {image ? (
+            <GatsbyImage image={image} />
           ) : (
             <NoImage>
               <p>No Image</p>

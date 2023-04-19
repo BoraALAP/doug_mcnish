@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import _ from 'lodash'
+
 import styled from 'styled-components'
 
 import Layout from '../components/Global/Layout'
@@ -15,28 +15,28 @@ import Button from '../components/UI/Button'
 import LargeImage from '../components/General/LargeImage'
 import CenterBigText from '../components/General/CenterBigText'
 
-export const convertProductsToPostFormat = products => {
-  let formattedProducts = []
-  products.forEach(service => {
-    let singleItem = {
-      title: service.title,
-      excerpt: _.truncate(service.description, {
-        length: 100,
-        omission: `…`
-      }),
-      featuredImage: service.images[0].originalSrc,
-      slug: '/product/' + service.handle,
-      productType: service.productType,
-      price: service.variants[0].price
-    }
-    formattedProducts.push(singleItem)
-  })
+// const convertProductsToPostFormat = (products) => {
+//   let formattedProducts = []
+//   products.forEach((service) => {
+//     let singleItem = {
+//       title: service.title,
+//       excerpt: _.truncate(service.description, {
+//         length: 100,
+//         omission: `…`
+//       }),
+//       featuredImage: service.images[0].originalSrc,
+//       slug: '/product/' + service.handle,
+//       productType: service.productType,
+//       price: service.variants[0].price
+//     }
+//     formattedProducts.push(singleItem)
+//   })
 
-  return formattedProducts
-}
+//   return formattedProducts
+// }
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ({
+const HomePageTemplate = ({
   headerImage,
   aboutImage,
   join,
@@ -47,14 +47,14 @@ export const HomePageTemplate = ({
   return (
     <Main>
       <FullWidthImage
-        featuredImage={aboutImage.fluid}
+        featuredImage={aboutImage}
         alt="Chef Doug McNish smiles in a black and gold kitchen."
       />
       <ContentLayout>
         <HomeAbout />
 
         <LeftImage
-          featuredImage={cauliflowerImage.fluid}
+          featuredImage={cauliflowerImage}
           alt="Chef Doug’s mission is to make Veganism more accessible"
         >
           <h2>Doug’s Mission: Vegan World Takeover</h2>
@@ -103,7 +103,7 @@ export const HomePageTemplate = ({
               counterparts.
             </p>
             <LargeImage
-              featuredImage={onCounter.fluid}
+              featuredImage={onCounter}
               alt="Doug McNish and his latest cookbook, The Classics Veganized."
             />
 
@@ -133,7 +133,7 @@ export const HomePageTemplate = ({
 
           <Paragraph>
             <LargeImage
-              featuredImage={pepper.fluid}
+              featuredImage={pepper}
               alt="Doug McNish juggling three raw red peppers."
             />
             <h2>Revolutionize Your Business With Doug Mcnish</h2>
@@ -171,7 +171,7 @@ export const HomePageTemplate = ({
           </a>
         </CenterBigText>
         <LargeImage
-          featuredImage={join.fluid}
+          featuredImage={join}
           alt="Join the movement. Choose evolution, and be a Vegan leader with Chef
             Doug McNish."
         />
@@ -201,7 +201,7 @@ export const HomePageTemplate = ({
 const HomePage = ({
   data: {
     page,
-    products,
+    // products,
     join,
     pepper,
     headerImage,
@@ -217,9 +217,9 @@ const HomePage = ({
         {...page}
         {...page.frontmatter}
         body={page.html}
-        products={products.edges.map(service => ({
-          ...service.node
-        }))}
+        // products={products.edges.map((service) => ({
+        //   ...service.node
+        // }))}
         headerImage={headerImage.childImageSharp}
         aboutImage={aboutImage.childImageSharp}
         kaleImage={kaleImage.childImageSharp}
@@ -264,74 +264,60 @@ export const pageQuery = graphql`
       }
     }
 
-    products: allShopifyProduct(sort: { fields: publishedAt, order: DESC }) {
-      edges {
-        node {
-          id
-          title
-          description
-          productType
-          images {
-            originalSrc
-          }
-          handle
-          variants {
-            price
-          }
-        }
-      }
-    }
+    # products: allShopifyProduct(sort: { publishedAt: DESC }) {
+    #   edges {
+    #     node {
+    #       id
+    #       title
+    #       description
+    #       productType
+    #       images {
+    #         originalSrc
+    #       }
+    #       handle
+    #       variants {
+    #         price
+    #       }
+    #     }
+    #   }
+    # }
 
     headerImage: file(relativePath: { eq: "headerImage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     aboutImage: file(
       relativePath: { eq: "Doug-Mcnish-About-featureImage.jpg" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     cauliflowerImage: file(relativePath: { eq: "Zaatar-cauliflower-2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     join: file(relativePath: { eq: "Doug-Mcnish-Join.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     pepper: file(relativePath: { eq: "Doug-Mcnish-Pepper.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     onCounter: file(relativePath: { eq: "Doug-Mcnish-Book-OnCounter.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
 
     kaleImage: file(relativePath: { eq: "kaleImage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
   }

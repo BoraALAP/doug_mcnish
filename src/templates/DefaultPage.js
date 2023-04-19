@@ -7,12 +7,7 @@ import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 
 // Export Template for use in CMS preview
-export const DefaultPageTemplate = ({
-  title,
-  subtitle,
-  featuredImage,
-  body,
-}) => (
+const DefaultPageTemplate = ({ title, subtitle, featuredImage, body }) => (
   <ContentLayout>
     <PageHeader
       title={title}
@@ -25,7 +20,7 @@ export const DefaultPageTemplate = ({
         <Content source={body} />
       </div>
     </section>
-    </ContentLayout>
+  </ContentLayout>
 )
 
 const DefaultPage = ({ data: { page } }) => (

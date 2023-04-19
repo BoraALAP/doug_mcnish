@@ -2,11 +2,11 @@ import React from 'react'
 import CMS from 'netlify-cms-app'
 import './cms-utils'
 
-import { HomePageTemplate } from '../templates/HomePage'
-import { ContactPageTemplate } from '../templates/ContactPage'
-import { DefaultPageTemplate } from '../templates/DefaultPage'
-import { BlogIndexTemplate } from '../templates/BlogIndex'
-import { SinglePostTemplate } from '../templates/SinglePost'
+import HomePageTemplate from '../templates/HomePage'
+import ContactPageTemplate from '../templates/ContactPage'
+import DefaultPageTemplate from '../templates/DefaultPage'
+import BlogIndexTemplate from '../templates/BlogIndex'
+import SinglePostTemplate from '../templates/SinglePost'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 
 CMS.registerMediaLibrary(uploadcare)

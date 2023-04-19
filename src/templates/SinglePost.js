@@ -8,7 +8,7 @@ import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 
-export const SinglePostTemplate = ({
+const SinglePostTemplate = ({
   title,
   featuredImage,
   date,
@@ -64,7 +64,7 @@ export const SinglePostTemplate = ({
 
 // Export Default SinglePost for front-end
 const SinglePost = ({ data: { post, allPosts } }) => {
-  const thisEdge = allPosts.edges.find(edge => edge.node.id === post.id)
+  const thisEdge = allPosts.edges.find((edge) => edge.node.id === post.id)
   return (
     <Layout
       meta={post.frontmatter.meta || false}
@@ -107,7 +107,7 @@ export const pageQuery = graphql`
 
     allPosts: allMarkdownRemark(
       filter: { fields: { contentType: { eq: "posts" } } }
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { frontmatter: { date: DESC } }
     ) {
       edges {
         node {

@@ -1,7 +1,6 @@
 import React from 'react'
 
-
-export default () => (
+const Function = () => (
   <div className="Spinner">
     <div className="semipolar-spinner">
       <div className="ring" />
@@ -12,3 +11,5 @@ export default () => (
     </div>
   </div>
 )
+
+export default Function

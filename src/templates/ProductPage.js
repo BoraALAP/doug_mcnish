@@ -21,13 +21,11 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.ca/gp/product/0735237069/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0735237069&linkCode=as2&tag=dougmcnish-20&linkId=60e5efb3776b43105b83e3d4ba75734a'
+              link: 'https://www.amazon.ca/gp/product/0735237069/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0735237069&linkCode=as2&tag=dougmcnish-20&linkId=60e5efb3776b43105b83e3d4ba75734a'
             },
             {
               company: 'Chapters Indigo',
-              link:
-                'https://www.chapters.indigo.ca/en-ca/books/product/9780735237063-item.html?s_campaign=aff-001-5056941-Penguin+Random+House+Canada+Limited-PLA-books-00-09-13710563-8727424&cjevent=5c2672f29adb11ea802f07b50a24060b'
+              link: 'https://www.chapters.indigo.ca/en-ca/books/product/9780735237063-item.html?s_campaign=aff-001-5056941-Penguin+Random+House+Canada+Limited-PLA-books-00-09-13710563-8727424&cjevent=5c2672f29adb11ea802f07b50a24060b'
             }
           ]
         },
@@ -36,18 +34,15 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.com/gp/product/0735237069?tag=randohouseinc7986-20#ace-6796040015'
+              link: 'https://www.amazon.com/gp/product/0735237069?tag=randohouseinc7986-20#ace-6796040015'
             },
             {
               company: 'Barnes and Noble',
-              link:
-                'https://www.barnesandnoble.com/w/the-classics-veganized-doug-mcnish/1136201449;jsessionid=D42EF3C0C9AB07D7D5929C4BA2503DBF.prodny_store01-atgap14?ean=9780735237063&st=AFF&2sid=Random%20House%20Inc_8373827_NA&sourceId=AFFRandom%20House%20Inc'
+              link: 'https://www.barnesandnoble.com/w/the-classics-veganized-doug-mcnish/1136201449;jsessionid=D42EF3C0C9AB07D7D5929C4BA2503DBF.prodny_store01-atgap14?ean=9780735237063&st=AFF&2sid=Random%20House%20Inc_8373827_NA&sourceId=AFFRandom%20House%20Inc'
             },
             {
               company: 'Books a Million (BAM)',
-              link:
-                'https://www.booksamillion.com/p/9780735237063?AID=10747236&PID=8373827&SID=PRHEFFDF5A7F1--9780735237063&cjevent=8318bf789adb11ea8035089b0a240611#'
+              link: 'https://www.booksamillion.com/p/9780735237063?AID=10747236&PID=8373827&SID=PRHEFFDF5A7F1--9780735237063&cjevent=8318bf789adb11ea8035089b0a240611#'
             }
           ]
         },
@@ -56,8 +51,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.de/Classics-Veganized-Favourite-Comfort-Lifestyle-ebook/dp/B084787TB9/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=the+classics+veganized&qid=1598632675&sr=8-1'
+              link: 'https://www.amazon.de/Classics-Veganized-Favourite-Comfort-Lifestyle-ebook/dp/B084787TB9/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=the+classics+veganized&qid=1598632675&sr=8-1'
             }
           ]
         },
@@ -66,8 +60,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.co.uk/Classics-Veganized-Favourite-Comfort-Lifestyle-ebook/dp/B084787TB9/ref=sr_1_1?dchild=1&keywords=the+classics+veganized&qid=1592841073&sr=8-1'
+              link: 'https://www.amazon.co.uk/Classics-Veganized-Favourite-Comfort-Lifestyle-ebook/dp/B084787TB9/ref=sr_1_1?dchild=1&keywords=the+classics+veganized&qid=1592841073&sr=8-1'
             }
           ]
         },
@@ -76,8 +69,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.com.au/gp/offer-listing/0735237069/ref=tmm_pap_new_olp_0?ie=UTF8&condition=new&qid=1597260208&sr=8-1'
+              link: 'https://www.amazon.com.au/gp/offer-listing/0735237069/ref=tmm_pap_new_olp_0?ie=UTF8&condition=new&qid=1597260208&sr=8-1'
             }
           ]
         }
@@ -91,8 +83,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.ca/Eat-Raw-Well-Gluten-Free-Recipes/dp/0778802957/ref=sr_1_1?crid=1DCG6MTVHF0M5&dchild=1&keywords=eat+raw+eat+well&qid=1607538585&sprefix=eat+raw%2Cstripbooks%2C181&sr=8-1'
+              link: 'https://www.amazon.ca/Eat-Raw-Well-Gluten-Free-Recipes/dp/0778802957/ref=sr_1_1?crid=1DCG6MTVHF0M5&dchild=1&keywords=eat+raw+eat+well&qid=1607538585&sprefix=eat+raw%2Cstripbooks%2C181&sr=8-1'
             }
           ]
         }
@@ -106,8 +97,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.ca/Raw-Quick-Delicious-5-Ingredient-Recipes/dp/0778804550'
+              link: 'https://www.amazon.ca/Raw-Quick-Delicious-5-Ingredient-Recipes/dp/0778804550'
             }
           ]
         }
@@ -121,8 +111,7 @@ const ProductPage = ({ data }) => {
           buttons: [
             {
               company: 'Amazon',
-              link:
-                'https://www.amazon.ca/Vegan-Everyday-500-Delicious-Recipes/dp/0778804992/ref=sr_1_1?dchild=1&keywords=vegan+everyday&qid=1607538562&s=books&sr=1-1'
+              link: 'https://www.amazon.ca/Vegan-Everyday-500-Delicious-Recipes/dp/0778804992/ref=sr_1_1?dchild=1&keywords=vegan+everyday&qid=1607538562&s=books&sr=1-1'
             }
           ]
         }
@@ -131,20 +120,20 @@ const ProductPage = ({ data }) => {
   ]
 
   const item = info.find(
-    it => product.productType === 'Book' && it.handle === product.handle
+    (it) => product.productType === 'Book' && it.handle === product.handle
   )
 
   const thisEdge = data.allServices.edges.find(
-    edge => edge.node.id === product.id
+    (edge) => edge.node.id === product.id
   )
 
   const Form = () => {
     if (product.productType === 'Book' && item && item.body) {
-      return item.body.map(country => (
+      return item.body.map((country) => (
         <PurchaseBox>
           <h3>{country.country}</h3>
           <Buttons>
-            {country.buttons.map(button => (
+            {country.buttons.map((button) => (
               <a href={button.link} target="_blank" rel="noreferrer">
                 <Button>{button.company}</Button>
               </a>
@@ -156,14 +145,14 @@ const ProductPage = ({ data }) => {
       return <ProductForm product={product} />
     }
   }
-
+  console.log(product)
   return (
     <Layout title={product.title || false}>
       <article itemScope itemType="http://schema.org/ProductPost">
         <Container>
           <Top>
             <Left>
-              <ProductGalleryThumbnails productimages={product.images} />
+              <ProductGalleryThumbnails featuredimage={product.featuredImage} />
             </Left>
             <Right>
               {product.title && <h1 itemProp="title">{product.title}</h1>}
@@ -282,7 +271,7 @@ const Bottom = styled.div`
 `
 
 export const pageQuery = graphql`
-  query($handle: String!) {
+  query ($handle: String!) {
     shopifyProduct(handle: { eq: $handle }) {
       id
       title
@@ -292,7 +281,7 @@ export const pageQuery = graphql`
       descriptionHtml
       shopifyId
       options {
-        id
+        shopifyId
         name
         values
       }
@@ -301,7 +290,6 @@ export const pageQuery = graphql`
         title
         price
         availableForSale
-        # compareAtPrice
         shopifyId
         selectedOptions {
           name
@@ -318,20 +306,12 @@ export const pageQuery = graphql`
           currencyCode
         }
       }
-      images {
-        originalSrc
-        id
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+      featuredImage {
+        gatsbyImageData
       }
     }
 
-    allServices: allShopifyProduct(sort: { fields: publishedAt, order: DESC }) {
+    allServices: allShopifyProduct(sort: { publishedAt: DESC }) {
       edges {
         node {
           id

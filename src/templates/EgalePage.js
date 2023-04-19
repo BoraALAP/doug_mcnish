@@ -10,7 +10,7 @@ import { Egale } from '../assets/logos/egale'
 import Youtube from '../components/UI/Youtube'
 
 // Export Template for use in CMS preview
-export const EgalePageTemplate = ({ body }) => (
+const EgalePageTemplate = ({ body }) => (
   <ContentLayout>
     <Info>
       <Egale />

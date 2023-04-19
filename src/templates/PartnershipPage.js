@@ -39,10 +39,10 @@ const Image = styled.img`
 `
 
 // Export Template for use in CMS preview
-export const PartnershipPageTemplate = ({
+const PartnershipPageTemplate = ({
   title,
   evviva,
-  gunnar,
+  edgyvedge,
   vegg,
   neonTiger
 }) => (
@@ -154,29 +154,82 @@ export const PartnershipPageTemplate = ({
       </ImageText>
 
       <ImageText
-        to="https://gunnarmademealprep.com/"
-        src={gunnar.fluid}
-        alt="gunnar logo"
-        title="GunnarMade, Health and
-      Fitness Coach"
+        to="https://theedgyvedge.com/"
+        src={edgyvedge.fluid}
+        alt="edgyvedge logo"
+        title="The Edgy Vedge: Bringing the Best of Plant Based to The Cayman Islands"
       >
         <p>
-          Executive Vegan Chef Doug McNish has worked in the world of plant
-          based whole foods for decades, so he’s proud to partner with Gunnar
-          Made in his mission to nourish as many people as possible with healthy
-          vegan meals. Based in Charleston, South Carolina, Gunnar Made is a
-          health and fitness coach who specializes in creating nutritional and
-          exercise programs that cater to each of his client's individual needs
-          and strengths.
+          Doug and the team behind{' '}
+          <a href="https://theedgyvedge.com/" target="_blank" rel="noreferrer">
+            The Edgy Vedge
+          </a>{' '}
+          first connected in the summer of 2021, instantly hit it off and
+          decided to join forces over their shared love for all things vegan
+          cuisine.{' '}
         </p>
         <p>
-          Chef McNish has teamed up with Gunnar Made to offer a Whole Food Plant
-          Based Meal Prep delivery service that utilizes Doug’s extensive
-          knowledge of plant based whole foods and the limitless benefits they
-          can offer our mind and bodies. With their combined expertise and
-          talents, Chef McNish and Gunnar Made aim to teach as many people as
-          possible about how they can improve their energy, gut health, immune
-          system and more by following a whole foods plant based diet.
+          Over the course of the next year, the team was able to work remotely
+          through weekly zoom calls and spent countless hours preparing to build
+          out and launch what is now one of Grand Cayman's first fully
+          plant-based restaurants with a full service cocktail bar.
+        </p>
+        <p>
+          Even though Grand Cayman is a small island of 70,000 people, it is
+          widely known as the Culinary Capital of the Caribbean and The Edgy
+          Vedge pulls no punches with its food, cocktails and kick ass service.
+          With a full sit-down menu featuring an array of burgers, wraps, bowls,
+          salads and other dishes like poutine, nachos and crispy crunchy
+          cauliflower wings, The Edgy Vedge has established itself as one of the
+          best plant-based culinary gastronomic destinations on the island.{' '}
+        </p>
+        <p>
+          Because it is a combination of a restaurant and{' '}
+          <a
+            href="https://order.theedgyvedge.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            deli-style marketplace
+          </a>
+          , diners can sit and enjoy their meal, and then take home their
+          favorite signature proteins, dips and sauces, desserts, salads and
+          more.{' '}
+        </p>
+        <p>
+          Edgy and cool with comfort food and{' '}
+          <a
+            href="https://theedgyvedge.com/menus#drinks"
+            target="_blank"
+            rel="noreferrer"
+          >
+            zero-waste cocktails
+          </a>{' '}
+          the restaurant space is perfect for events, gatherings or nights out
+          with friends.{' '}
+        </p>
+        <p>
+          Also offering an{' '}
+          <a
+            href="https://order.theedgyvedge.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            online ordering
+          </a>{' '}
+          feature to pre-order and pick up when in a rush.
+        </p>
+        <p>
+          Doug has curated the most{' '}
+          <a
+            href="https://theedgyvedge.com/menus"
+            target="_blank"
+            rel="noreferrer"
+          >
+            incredible menu
+          </a>{' '}
+          for The Edgy Vedge and will work closely with the kitchen team to
+          ensure quality and deliciousness is served. Every.Single.Time.
         </p>
       </ImageText>
 
@@ -253,7 +306,7 @@ export const PartnershipPageTemplate = ({
 )
 
 const PartnershipPage = ({
-  data: { page, vegg, gunnar, evviva, neonTiger }
+  data: { page, vegg, edgyvedge, evviva, neonTiger }
 }) => {
   return (
     <Layout
@@ -264,7 +317,7 @@ const PartnershipPage = ({
         {...page.frontmatter}
         body={page.html}
         vegg={vegg.childImageSharp}
-        gunnar={gunnar.childImageSharp}
+        edgyvedge={edgyvedge.childImageSharp}
         evviva={evviva.childImageSharp}
         neonTiger={neonTiger.childImageSharp}
       />
@@ -310,7 +363,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    gunnar: file(relativePath: { eq: "gunnar.png" }) {
+    edgyvedge: file(relativePath: { eq: "edgyvedge.png" }) {
       childImageSharp {
         fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid

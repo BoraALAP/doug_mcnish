@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Hashtag = ({ featuredImage }) => {
   return (
     <Container>
       <Left>
-        <Img
-          fluid={featuredImage}
+        <GatsbyImage
+          image={featuredImage}
           objectFit="cover"
           objectPosition="50% 50%"
           alt=""

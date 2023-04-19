@@ -8,9 +8,8 @@ import Content from '../components/Content'
 import Layout from '../components/Global/Layout'
 import ContentLayout from '../components/Global/ContentLayout'
 
-
 // Export Template for use in CMS preview
-export const FormPageTemplate = ({
+const FormPageTemplate = ({
   body,
   title,
   subtitle,
@@ -18,7 +17,7 @@ export const FormPageTemplate = ({
   address,
   phone,
   email,
-  locations,
+  locations
 }) => (
   <ContentLayout>
     <PageHeader
@@ -36,7 +35,7 @@ export const FormPageTemplate = ({
         </div>
       </div>
     </section>
-    </ContentLayout>
+  </ContentLayout>
 )
 
 const FormPage = ({ data: { page } }) => (

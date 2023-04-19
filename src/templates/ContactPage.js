@@ -11,13 +11,13 @@ import LeftImage from '../components/General/LeftImage'
 import { PageLink } from '../components/UI/PageLink'
 
 // Export Template for use in CMS preview
-export const ContactPageTemplate = ({ photo, email }) => {
+const ContactPageTemplate = ({ photo, email }) => {
   return (
     <ContentLayout>
       <Info>
         <LeftImage
           title="Plant Powered Business Inquiries"
-          featuredImage={photo.fluid}
+          featuredImage={photo}
           alt="Chef Doug McNish laughs in a kitchen decorated with a black countertop and walls, with gold appliances."
         >
           <p>
@@ -112,9 +112,7 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
   }

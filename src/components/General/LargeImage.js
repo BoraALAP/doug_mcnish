@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const LargeImage = ({ featuredImage, to }) => {
+  const image = getImage(featuredImage)
+  console.log(image)
   return (
     <Container>
-      <Img
-        fluid={featuredImage}
+      <GatsbyImage
+        image={image}
         objectFit="cover"
         objectPosition="50% 50%"
         alt={to}
@@ -17,6 +19,7 @@ const LargeImage = ({ featuredImage, to }) => {
 
 const Container = styled.div`
   display: grid;
+  height: 100%;
 `
 
 export default LargeImage

@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {ArrowDownCircle} from 'react-feather'
-import Img from 'gatsby-image'
+import { ArrowDownCircle } from 'react-feather'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const FullWidthImage = ({ featuredImage }) => {
+  const image = getImage(featuredImage)
   return (
     <Container>
-      <Img
-        fluid={featuredImage}
+      <GatsbyImage
+        image={image}
         objectFit="cover"
         objectPosition="50% 50%"
         alt=""
@@ -24,14 +25,13 @@ const FullWidthImage = ({ featuredImage }) => {
 const Container = styled.div`
   width: 100vw;
   box-sizing: border-box;
-  
-  position: relative;
-  .gatsby-image-wrapper{
-    height: 25rem;
-    @media screen and (min-width: 768px){
-   height: 600px;
-    }
 
+  position: relative;
+  .gatsby-image-wrapper {
+    height: 25rem;
+    @media screen and (min-width: 768px) {
+      height: 600px;
+    }
   }
 
   img {
